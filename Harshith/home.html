@@ -46,7 +46,7 @@
             color: white;
         }
         #ride-bar {
-            width: 50%;
+            width: 70%;
             padding: 20px;
             margin: auto;
             margin-top: 10px;
@@ -74,35 +74,34 @@
             <div>LOGIN</div>
         </div>
         <div id="info-bar">
-            <h1>SELF RIDE BIKE RENTALS</h1>
-            <h3>NOW STARTS AT ₹ 8/HOUR</h3>
+            <h1 class="head">SELF RIDE BIKE RENTALS</h1>
+            <h3 class="plan">NOW STARTS AT ₹ 8/HOUR</h3>
         </div>
         <div id="ride-bar">
-            <div>
+            <div  class="city">
                 <select>
-                    <option>Select City</option>
-                    <option>b</option>
-                    <option>g</option>
-                    <option>h</option>
-                    <option>j</option>
-                    <option>my</option>
-                    <option>mu</option>
+                    <option value="bengaluru">BENGALURU</option>
+                    <option value="hyderabad">HYDERABAD</option>
+                    <option value="jaipur">JAIPUR</option>
+                    <option value="gurugram">GURUGRAM</option>
+                    <option value="mysuru">MYSURU</option>
+                    <option value="udaipur">UDAIPUR</option>
+                    <option value="ahmedabad">AHMEDABAD</option>
                 </select>
             </div>
-            <div>
+            <div class="booking">
                 <select>
-                    <option>HOURLY/DAILY</option>
-                    <option>HOURLY</option>
-                    <option>DAILY</option>
+                    <option value="hour">HOURLY/DAILY</option>
+                    <option value="day">30 DAY BOOKING</option>
                 </select>
             </div>
-            <div>
+            <div class="startDate">
                 <input type="datetime-local" placeholder="START DATE"/>
             </div>
-            <div>
+            <div class="endDate">
                 <input type="datetime-local" placeholder="END DATE"/>
             </div>
-            <div>
+            <div class="rideBtn">
                 <button>RIDE NOW</button>
             </div>
         </div>
@@ -113,20 +112,46 @@
     let myDiv = document.getElementById("page-details");
     let imgBgArr = ["https://www.onnbikes.com/img/Self-ride-bike-rentals-desktop@2x.jpg", "https://www.onnbikes.com/img/long-term-desktopbanner@2x.jpg", "https://www.onnbikes.com/img/R2o-desktopbanner.jpg"];
 
-    let i = 0;
+    let headArr = ["SELF RIDE BIKE RENTALS", "LONG TERM RENTALS", "RENT TODAY, OWN TOMORROW"];
+    let planArr = ["NOW STARTS AT ₹ 8/HOUR", "CHOOSE FROM MONTHLY & QUARTERLY PLANS", "ZERO-DOWN PAYMENT, FLEXIBLE OWNERSHIP"];
+
+    let head_add = document.querySelector(".head");
+    let plan_add = document.querySelector(".plan");
+
+    let i = 1;
 
     setInterval(function(){
-                myDiv.style.backgroundImage = "url(" + imgBgArr[i++] + ")";
+                myDiv.style.backgroundImage = "url(" + imgBgArr[i] + ")";
+                head_add.innerHTML = headArr[i];
+                plan_add.innerHTML = planArr[i];
+                i++;
                 if(i === 3){
                     i = 0;
                 }
-            }, 4000);
+            }, 5000);
 
-            // let bgColor = ["red", "blue", "black"];
-    // setInterval(function(){
-    //             myDiv.style.backgroundColor = bgColor[i++];
-    //             if(i === 3){
-    //                 i = 0;
-    //             }
-    //         }, 2000);
+    function rideNow(){
+        
+        let select_city = document.querySelector(".city");
+        let city = select_city.querySelector("select").value;
+    
+        let select_plan = document.querySelector(".booking");
+        let plan = select_plan.querySelector("select").value;
+
+        let start_div = document.querySelector(".startDate");
+        let start_date = start_div.querySelector("input").value;
+
+        let end_div = document.querySelector(".endDate");
+        let end_date = end_div.querySelector("input").value;
+
+        if(start_date === ""){
+            alert("Please Select the start date");
+        } else if(end_date === "") {
+            alert("Please Select the end date")
+        } else {
+            localStorage.setItem("Date", JSON.stringify({city:city, plan:plan, startDate:start_date, endDate:end_date}));
+        }
+    }
+
+    document.querySelector(".rideBtn").querySelector("button").addEventListener("click", rideNow);
 </script>
