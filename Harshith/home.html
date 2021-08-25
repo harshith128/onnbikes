@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent a Bike or Scooty with Zero Deposite at ₹ 8/Hour - ONN Bikes</title>
+    <link rel = "shortcut icon" href = "https://pbs.twimg.com/profile_images/1212630252196790272/FxWkibqG.jpg" type = "image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .nav-bar {
+            margin: auto 40px;
+            display: flex;
+        }
+        .nav-bar > div{
+            margin: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+        }
+        .nav-bar > div:hover {
+            color: orange;
+        }
+        #logo {
+            width: 40%;
+            border-radius: 5px;
+        }
+        #page-details {
+            background-image: url("https://www.onnbikes.com/img/Self-ride-bike-rentals-desktop@2x.jpg");
+            height: 600px;
+            background-size: auto 580px;
+            background-repeat: no-repeat;
+        }
+        #info-bar {
+            text-align: center;
+            margin: auto;
+            margin-top: 150px;
+            color: white;
+        }
+        #ride-bar {
+            width: 50%;
+            padding: 20px;
+            margin: auto;
+            margin-top: 10px;
+            display: flex;
+            border: none;
+            background-color: white;
+        }
+        #ride-bar > div{
+            flex-grow: 1;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="page-details">
+        <div class="nav-bar">
+            <div>WHY ONN?</div>
+            <div>FLEET AND PRICING</div>
+            <div>SAFETY</div>
+            <div>
+                <img src="https://www.onnbikes.com/img/ONN-logo-unit-without-shadow.png" id="logo"/>
+            </div>
+            <div>FAQ</div>
+            <div>SIGNUP</div>
+            <div>LOGIN</div>
+        </div>
+        <div id="info-bar">
+            <h1>SELF RIDE BIKE RENTALS</h1>
+            <h3>NOW STARTS AT ₹ 8/HOUR</h3>
+        </div>
+        <div id="ride-bar">
+            <div>
+                <select>
+                    <option>Select City</option>
+                    <option>b</option>
+                    <option>g</option>
+                    <option>h</option>
+                    <option>j</option>
+                    <option>my</option>
+                    <option>mu</option>
+                </select>
+            </div>
+            <div>
+                <select>
+                    <option>HOURLY/DAILY</option>
+                    <option>HOURLY</option>
+                    <option>DAILY</option>
+                </select>
+            </div>
+            <div>
+                <input type="datetime-local" placeholder="START DATE"/>
+            </div>
+            <div>
+                <input type="datetime-local" placeholder="END DATE"/>
+            </div>
+            <div>
+                <button>RIDE NOW</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let myDiv = document.getElementById("page-details");
+    let imgBgArr = ["https://www.onnbikes.com/img/Self-ride-bike-rentals-desktop@2x.jpg", "https://www.onnbikes.com/img/long-term-desktopbanner@2x.jpg", "https://www.onnbikes.com/img/R2o-desktopbanner.jpg"];
+
+    let base = "https://www.onnbikes.com/img/Self-ride-bike-rentals-desktop@2x.jpg";
+
+    let s = 4;
+
+    imgBgArr.forEach(function(img){
+        new Image().src = base + img;
+        // caches images, avoiding white flash between background replacements
+    });
+
+    function backgroundimage(){
+        window.clearTimeout();
+        let k = 0;
+        for(i=0 ; i<imgBgArr.length ; i++){
+            setTimeout(function(){
+                myDiv.style.background = "url(" + base + imgBgArr[k] + ") no-repeat centre centre fixed";
+
+                myDiv.style.backgroundSize = "cover";
+                if((k + 1) === imgBgArr.length){
+                    setTimeout(function(){
+                        backgroundimage() }, (s * 1000))}
+                else { 
+                    k++;
+                }
+            }, (s * 1000) * i)
+        }
+    }
+    backgroundimage();
+</script>
