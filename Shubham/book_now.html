@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #homepage{
+            margin: 200px;
+            margin-top: 0px;
+            height: 100vh;
+        }
+        #content{
+            border: 1px solid blue;
+            margin: 0px;
+            height: 520px;
+        }
+    </style>
+</head>
+<body>
+    <div id="homepage">
+        <div id="content"></div>
+    </div>
+    <script>
+        const data = [
+            {
+                image:"https://d3bvfezcznypk7.cloudfront.net/BikeImages/JPG/HeroHFDeluxe@2x.jpg",
+                name:"Hero HF Deluxe",
+                free:"free 155 kms",
+                excess:"Excess 2km/hr",
+                price:"259",
+                address: "near star market kundalahalli gate,kundalahalli",
+                date1: "25 Aug 21",
+                date2: "25 Aug 21"
+
+            },
+            {
+                image:"https://d3bvfezcznypk7.cloudfront.net/BikeImages/JPG/HeroHFDeluxe@2x.jpg",
+                name:"Hero HF Deluxe",
+                free:"free 155 kms",
+                excess:"Excess 2km/hr",
+                price:"259",
+                address: "near star market kundalahalli gate,kundalahalli",
+                date1: "25 Aug 21",
+                date2: "25 Aug 21"
+
+            },
+            {
+                image:"https://d3bvfezcznypk7.cloudfront.net/BikeImages/JPG/HeroHFDeluxe@2x.jpg",
+                name:"Hero HF Deluxe",
+                free:"free 155 kms",
+                excess:"Excess 2km/hr",
+                price:"259",
+                address: "near star market kundalahalli gate,kundalahalli",
+                date1: "25 Aug 21",
+                date2: "25 Aug 21"
+
+            },
+        ];
+
+        const data_json = JSON.stringify(data);
+        localStorage.setItem("Rental",data_json);
+
+        let rental = localStorage.getItem("Rental");
+        rental = JSON.parse(rental);
+
+        function show(){
+            let parent = document.getElementById("homepage");
+            let data_div = document.getElementById("content");
+
+            rental.forEach(function(product) {
+                let div = document.createElement("div");
+                let image = document.createElement("img");
+                image.src = product.image;
+                let p_name = document.createElement("p");
+                p_name.innerText = product.name;
+                let free = document.createElement("p");
+                free.innerText = product.free;
+                let excess = document.createElement("p");
+                excess.innerText = product.excess;
+                let price = document.createElement("p");
+                price.innerText = product.price;
+                
+
+                let btn = document.createElement("button");
+                btn.innerText = "Book Now";
+                btn.onclick = function(){
+                    addtostorage(product);
+                    
+                };
+                div.append(image,p_name,free,excess,price,btn);
+                data_div.append(div);
+                parent.append(data_div);    
+            });
+        }
+        show();
+        // if(localStorage.getItem("checkout") === null){
+        //     localStorage.setItem("checkout",JSON.stringify([]));
+        // }
+        localStorage.setItem("checkout",JSON.stringify([]));
+
+        function addtostorage(p){
+            let data = JSON.parse(localStorage.getItem("checkout"));
+            data.push(p);
+            localStorage.setItem("checkout",JSON.stringify(data));
+
+        }
+    </script>
+</body>
+</html>

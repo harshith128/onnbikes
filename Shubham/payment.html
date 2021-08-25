@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: 'Montserrat', sans-serif;
+        }
+        #overall{
+            background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/doodles.png");
+            background-color: rgba(255,255,255,0.6);
+            background-blend-mode: lighten;
+        }
+        #homepage{
+            margin: 200px;
+            margin-top: 0px;
+            height: 100vh;
+        }
+        #content{
+            display: flex;
+            flex-direction: row-reverse;
+            border: 1px solid blue;
+            margin: 0px;
+            height: 520px;
+        }
+        #content > div{
+            border: 1px solid red;
+            flex-grow: 1;
+        }
+        #nav{
+            /* border: 1px solid black; */
+            height: 70px;
+            display: flex;
+            flex-direction: row;
+        }
+        #nav > div{
+            flex-grow: 1;
+            /* border: 1px solid red; */
+            text-align: center;
+            font-weight: bolder;
+            padding: 27px;
+            font-size: 15px;
+            
+        }
+        #cookie{
+            border: 1px solid black;
+            height: 30px;
+            background-color: black;
+        }
+        #image{
+            background-image: url("https://www.onnbikes.com/img/ONN-logo-unit-without-shadow.png");
+            /* width: auto; */
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-color: rgba(255,255,255,0.6);
+            background-blend-mode:multiply;
+            border-radius: 20px;
+            border: 1px solid #E0E0E0;
+        }
+        #content  img{
+            width: 120px;
+        }
+        p{
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+        h1{
+            margin-top: 0px;
+            padding: 0px;
+        }
+        #form{
+            display: flex;
+            flex-direction: column;
+        }
+        /* #form > div {
+            flex-direction: column;
+        } */
+    </style>
+</head>
+<body id="overall">
+    <div id="homepage">
+        <div id="nav">
+            <div>HOME</div>
+            <div>OFFERS</div>
+            <div>RENT-TO-OWN</div>
+            <div id="image"></div>
+                <!-- <img src="https://www.onnbikes.com/img/ONN-logo-unit-without-shadow.png" alt=""></div> -->
+            <div>FAQ</div>
+            <div>WELCOME</div>
+            <div>9876543210</div>
+        </div>
+        <div id="content">
+            
+            <div id="form">
+                <div id="date"></div>
+                
+                <div id="refund">
+                    <p>Refundable Deposit</p>
+                    <p>This amount has to be payed at time of vehicle delivery</p>
+                </div>
+                <div id="bill">
+                    <p>PRICING</p>
+                    <div id="tariff">
+                        <div>
+                            <span>Tariff (Inclusive of all taxes)</span>
+                            <span>
+                                <span>rupee</span>
+                                "449"
+                            </span>
+                        </div>
+    
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        function show(){
+            let homepage = document.getElementById("homepage");
+            let content = document.getElementById("content");
+            let form = document.getElementById("form");
+            let date = document.getElementById("date");
+            // let parent_3 = document.getElementById("rental_data");
+            let data = JSON.parse(localStorage.getItem("checkout"));
+
+            data.forEach(function(prod) {
+                var div = document.createElement("div");
+                var image = document.createElement("img");
+                image.src = prod.image;
+                var excess = document.createElement("p");
+                excess.innerText = prod.excess;
+                var free = document.createElement("p");
+                free.innerText = prod.free;
+
+                var name1 = prod.name;
+                var n1 = name1.split(" ");
+                var p1 = n1[0];
+                var h1 = n1[1] + " " +  n1[2];
+                var com = document.createElement("p");
+                com.innerText = p1;
+                var mod = document.createElement("h1");
+                mod.innerText = h1;
+                let address_label = document.createElement("h2");
+                address_label.innerText = "PICKUP & RETURN LOCATION ";
+                let address = document.createElement("p");
+                address.innerText = prod.address;
+
+                var price = document.createElement("p");
+                price.innerText = prod.price;
+
+                var strt = document.createElement("span");
+                strt.innerText = prod.date1;
+                var end = document.createElement("span");
+                end.innerText = prod.date2;
+
+                
+                date.append(strt,end);
+                form.append(date);
+                div.append(com,mod,image,address_label,address,excess,free);
+                content.append(form,div);
+                homepage.append(content);
+            });
+
+        }
+        show();
+
+    </script>
+</body>
+</html>
