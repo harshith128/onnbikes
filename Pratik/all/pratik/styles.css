@@ -103,13 +103,14 @@ p{
     width: 40%;
     border-radius: 5px;
 }
-body{
-    background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/doodles.png');
+body {
+    background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/doodles.png");
 }
+
 #main_div{
     display: grid;
     grid-template-columns: 20% 80%;
-    background-image: "https://www.toptal.com/designers/subtlepatterns/patterns/doodles.png";
+    /* background-image: "https://www.toptal.com/designers/subtlepatterns/patterns/doodles.png"; */
 }
 /* #main_div div {
     display: flex;
