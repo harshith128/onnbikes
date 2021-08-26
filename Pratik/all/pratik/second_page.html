@@ -48,7 +48,7 @@
             <input id="endDate" type="datetime-local" placeholder="END DATE"/>
         </div>
         <div class="rideBtn">
-            <button onclick="rideNow()">RIDE NOW</button>
+            <button onclick="rideNow()"><a>RIDE NOW</a></button>
         </div>
     </div>
     <div id="main_div">
@@ -123,6 +123,16 @@
 
         <div id="data_div">
 
+        </div>
+    </div>
+    <div class="popup" id="popup-1">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="close-btn" onclick="togglePopup()">×</div>
+            <h1>Select Pickup Location</h1>
+            <div id="popup_div">
+
+            </div>
         </div>
     </div>
     <script src='script.js'></script>
