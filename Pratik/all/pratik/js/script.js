@@ -254,7 +254,9 @@ function citylocationdataobj(){
     cityLocationArray.push(ci);
 
     
-    console.log('cityLocationArray:', cityLocationArray)
+    let temp= JSON.stringify(cityLocationArray);
+
+    localStorage.setItem("cityLocationData",temp);
     
 }
 citylocationdataobj();
