@@ -58,20 +58,64 @@
             flex-grow: 1;
             text-align: center;
         }
+        .appLink {
+            display: flex;
+        }
+        .appLink > div {
+            flex-grow: 1;
+            text-align: center;
+        }
+        h1, p{
+            text-align: center;
+        }
+        .safty {
+            margin-bottom: 50px;
+            display: flex;
+            margin: 4%;
+        }
+        .safty > div {
+            border: 1px solid gray;
+            margin: 2%;
+            text-align: center;
+            padding: 12px 6px;
+            padding-bottom: 60px;
+        }
+        .press {
+            margin: 80px 120px;
+            display: flex;
+        }
+        .press > div{
+            flex-grow: 1;
+        }
+        .press img {
+            align-items: center;
+            width: 70%;
+        }
+        .contact, .faq {
+            margin: 80px;
+            display: flex;
+        }
+        .contact > div{
+            flex-grow: 1;
+        }
+        .bikes > div {
+            display: grid;
+            grid-template-columns: auto auto;
+        }
     </style>
 </head>
 <body>
     <div id="page-details">
         <div class="nav-bar">
-            <div>WHY ONN?</div>
+            <div  class="why">WHY ONN?</div>
             <div>FLEET AND PRICING</div>
             <div>SAFETY</div>
             <div>
                 <img src="https://www.onnbikes.com/img/ONN-logo-unit-without-shadow.png" id="logo"/>
             </div>
-            <div>FAQ</div>
-            <div>SIGNUP</div>
-            <div>LOGIN</div>
+            <div class="faq-btn">FAQ</div>
+            <div>LOGIN/SIGNUP</div>
+            <div>+918378007800</div>
         </div>
         <div id="info-bar">
             <h1 class="head">SELF RIDE BIKE RENTALS</h1>
@@ -104,6 +148,115 @@
             <div class="rideBtn">
                 <button>RIDE NOW</button>
             </div>
+        </div>
+    </div>
+    <div class="appLink">
+        <div>
+            <img src="https://www.onnbikes.com/img/playstore.svg"/>
+        </div>
+        <div>
+            <h1>ONN Bikes Rental App</h1>
+        </div>
+        <div>
+            <img src="https://www.onnbikes.com/img/appstore.svg"/>
+        </div>
+    </div>
+    <h1>Why ONN?</h1>
+    <p>We simplified bike rentals, so you can focus on what's important to you.</p>
+    <div class="safty">
+        <div>
+            <img src="https://www.onnbikes.com/img/Safe-Rides-Icon.svg"/>
+            <h3>Safe Rides</h3>
+            <p>Your safety is our priority. From sanitizing all bikes before every use, to extensive on-ground safety measures, your rides with ONN will always be safe and reliable. We also offer helmets on-demand.</p>
+        </div>
+        <div>
+            <img src="https://www.onnbikes.com/img/Flexible-Ownership.svg"/>
+            <h3>Flexible Ownership</h3>
+            <p>Enjoy the freedom of owning a two-wheeler without the hefty down-payments, EMIs and paperwork. Now choose from rent-to-own, monthly/quarterly bookings, and even daily plans.</p>
+        </div>
+        <div>
+            <img src="https://www.onnbikes.com/img/Smarter-Mobility.svg"/>
+            <h3>Smarter Mobility</h3>
+            <p>With your trusty ONN app, you can choose any bike, make instant payments, get offers, and manage all aspect of your ONN experience right from the comfort and ease of your mobile app.</p>
+        </div>
+        <div>
+            <img src="https://www.onnbikes.com/img/ONN-Stations.svg"/>
+            <h3>ONN Stations</h3>
+            <p>Your local ONN Station is here to make ensure your two-wheeler experience is flawless. At your neighborhood station, you get to pick any bike, get maintenance, sanitized, and a lot more.</p>
+        </div>
+    </div>
+    <h1>Featured On</h1>
+    <p>Our complete press coverage.</p>
+    <div class="press">
+        <div>
+            <img src="https://blog.ourcrowd.com/wp-content/uploads/2018/08/ani-news.png"/>
+        </div>
+        <div>
+            <img src="https://bsmedia.business-standard.com/include/_mod/site/html5/images/business-standard-logo.png"/>
+        </div>
+        <div>
+            <img src="https://zinnov.com/sigma-accelerator/assets/images/press-release/BWDisruptBusinessWorld.png"/>
+        </div>
+        <div>
+            <img src="https://blog.ourcrowd.com/wp-content/uploads/2019/08/the-news-minute-new.jpg"/>
+        </div>
+        <div>
+            <img src="http://naga.farm/wp/wp-content/uploads/2020/02/2020-vccircle-logo-300x158.png"/>
+        </div>
+    </div>
+    <h1>Contact US</h1>
+    <p>Any Bike Renting Issue? Feel Free to Contact us.</p>
+    <div class="contact">
+        <div class="cont-form">
+            <input type="text" placeholder="First Name"/>
+            <input type="text" placeholder="Last Name"/></br>
+            <input type="email" placeholder="Email"/></br>
+            <input type="number" placeholder="Mobile Number"/></br>
+            <input type="text" placeholder="City"/></br>
+            <input type="text" placeholder="Message"/></br>
+            <input type="submit" placeholder="Submit"/></br>
+        </div>
+        <div class="ourAdd">
+        </div>
+    </div>
+    <h1>Top FAQs</h1>
+    <p>Renting a Bike should be Easy, Like our FAQs.</p>
+    <div class="faq">
+        <div>
+            <ul>
+                <li>How do I pay?</li>
+                <p>You can pay online using debit/credit card or e-wallets. You can also pay at the hub station during your vehicle pick-up.</p>
+                <li>Where can I pick up the bike from?</li>
+                <p>While booking your bike, you’ll be given an option to select a pick-up location in your vicinity.</p>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li>What documents do I need to show while booking?</li>
+                <p>You need to show your original valid driving license and submit any one original government verified ID proof.</p>
+                <li>Will I be getting a complimentary helmet?</li>
+                <p>Due to COVID-19 pandemic, we avoid providing helmets to customers. We suggest customers to bring their own helmets.</p>
+            </ul>
+        </div>
+    </div>
+    <div class="blog">
+        <p>If you have any more doubts, please visit our FAQ Section</p>
+        <p> Daily Bike Renting Plan is the most affordable plan in India. Check out our Fleet and Pricing section on top for more detailed      information and if you are a bike enthusiast, check out our Blog</p>
+        <p>Announcing our exclusive association with StrodeBike - Smart Electric Cycles enabled with ONN Nucleus to provide best riding experience.</p>
+    </div>
+    <div class="bikes">
+        <h3>Popular Bikes for Rent:</h3>
+        <div>
+            <p>Honda Activa for rent</p>
+            <p>Yamaha FZ for rent</p>
+            <p>Pulsar 150 for rent</p>
+            <p>Honda Dio for rent</p>
+            <p>Royal Enfield 350 Classic for rent</p>
+            <p>Avenger 220 Cruise for rent</p>
+            <p>Avenger 220 Street for rent</p>
+            <p>Dominar 400 ABS for rent</p>
+            <p>Bajaj CT 100 for rent</p>
+            <p>Pulsar NS 200 for rent</p>
         </div>
     </div>
 </body>
@@ -154,4 +307,15 @@
     }
 
     document.querySelector(".rideBtn").querySelector("button").addEventListener("click", rideNow);
+
+    document.querySelector(".why").addEventListener("click", scrollToWhy);
+
+    function scrollToWhy(){
+        document.querySelector(".safty").scrollIntoView();
+    }
+
+    document.querySelector(".faq-btn").addEventListener("click", scrollToFAQ);
+    function scrollToFAQ(){
+        document.querySelector(".faq").scrollIntoView();
+    }
 </script>
