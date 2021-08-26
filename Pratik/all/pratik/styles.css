@@ -1,0 +1,133 @@
+
+.nav-bar {
+    margin: auto 40px;
+    display: flex;
+}
+.nav-bar > div{
+    margin: 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.nav-bar > div:hover {
+    color: orange;
+}
+#logo {
+    width: 40%;
+    border-radius: 5px;
+}
+body{
+    background-image: url('https://www.toptal.com/designers/subtlepatterns/patterns/doodles.png');
+}
+#main_div{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    background-image: "https://www.toptal.com/designers/subtlepatterns/patterns/doodles.png";
+}
+/* #main_div div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+} */
+
+#data_div {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20%;
+    gap: 5%;
+}
+img{
+    width: 50%;
+    
+}
+#data_div div {
+    border: 1px solid aqua;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+}
+/* #sort_div {
+    margin-top: 25px;
+} */
+#filter_div {
+    width: 90%;
+    margin: 5%;
+    height: auto;
+    border: 1px solid blueviolet;
+    background-color: white;
+}
+.box{
+display: flex;
+flex-flow: row nowrap;
+justify-content: center;
+align-content: center;
+align-items:center;
+border:1px solid #e3f2fd;
+}
+.item{
+flex: 1 1 auto;
+border:1px solid #ffebee;
+}
+#ride-bar {
+    width: 70%;
+    padding: 20px;
+    margin: auto;
+    margin-top: 10px;
+    display: flex;
+    border: none;
+    background-color: white;
+}
+#ride-bar > div{
+    flex-grow: 1;
+    text-align: center;
+    
+}
+#manu {
+    margin-top: 0;
+    margin-bottom: 0%;
+}
+#filter_1 {
+    margin-top: 0%;
+    height: 70px;
+    /* background-color: yellowgreen; */
+    overflow: scroll;
+    overflow-x: hidden;
+}
+#filter_1 input {
+    margin-left: 30px;
+}
+#manu2 {
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+#filter_2 {
+    margin-top: 0%;
+    height: 70px;
+    /* background-color: yellowgreen; */
+    overflow: scroll;
+    overflow-x: hidden;
+}
+#filter_2 input {
+    margin-left: 30px;
+}
+#filter_3 {
+    margin-top: 0%;
+    height: 70px;
+    /* background-color: yellowgreen; */
+    overflow: scroll;
+    overflow-x: hidden;
+}
+#filter_3 input {
+    margin-left: 30px;
+}
+#manu3 {
+    margin-top: 0%;
+    margin-bottom: 0%;
+}
+.filter1_components {
+    margin-left: 5px;
+}
