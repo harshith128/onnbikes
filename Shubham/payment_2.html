@@ -109,9 +109,6 @@
         #promo{
             background-color: white;
         }
-        #promo > input{
-            margin-left: 30px;
-        }
         #div1{
             display: flex;
            
@@ -120,22 +117,21 @@
             display: flex;
             margin: 10px;
             margin-right: 50px;
-            font-size: 8px;
-            border: 1px solid green ;
-            height: 25px;
+            font-size: 10px;
+            /* border: 1px solid green ; */
+    
             text-align: center;
 
         }
         #div3{
             display: flex;
             margin: 10px;
-            margin-left: 50px;
-            font-size: 8px;
-            border: 1px solid green ;
-            height: 25px;
+            margin-left: 80px;
+            font-size: 10px;
+            /* border: 1px solid green ; */
         }
         #div2 > img{
-            width: 15%;
+            width: 15px;
         }
         #div3 > img{
             width: 25%;
@@ -149,7 +145,22 @@
         #right_3{
             background-color: white;
         }
+        .class2{
+            display: flex;
+        }
+        #price{
+            margin-left: 180px;
+        }
+        #in{
+            margin-left: 5px;
+        }
+        #app{
+            margin-left: 5px;
+        }
 
+        #insure{
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body id="overall">
@@ -171,12 +182,27 @@
                 <div id="right_3">
                 </div>
                 <div id="promo">
-                    <div>
-                        
+                    <div id="t_price">
+                        <div id="tariff"></div>
+                        <div id="price"></div>
                     </div>
+                    <div id="code">
+                        <div id="in"></div>
+                        <div id="app"></div>
+                    </div>
+                    <div id="insure">
+                        <div id="ch"></div>
+                        <div id="lab"></div>
+                        <div id="ins_p"></div>
+                    </div>
+                    <div id="para"></div>
                     <div id="div1">
-                        <div id="div2"></div>
-                        <div id="div3"></div>
+                        <div id="div2">
+                            <span style="background-color: red;border: 1px solid black;border-radius: 10px;">&#9747;</span>
+                        </div>
+                        <div id="div3">
+                            <span>&#9989;</span>
+                        </div>
                     </div>
 
                 </div>
@@ -243,6 +269,18 @@
             let date_show = document.getElementById("right_top")
             let right_3 = document.getElementById("right_3");
             let promo = document.getElementById("promo");
+            let t_price = document.getElementById("t_price");
+            let tariff_var = document.getElementById("tariff");
+            let price_var = document.getElementById("price");
+            let code = document.getElementById("code");
+            let inn = document.getElementById("in");
+            let app = document.getElementById("app");
+            let insure = document.getElementById("insure");
+            let ch = document.getElementById("ch");
+            let lab = document.getElementById("lab");
+            let para = document.getElementById("para");
+            let ins_p = document.getElementById("ins_p");
+
 
             let div1 = document.getElementById("div1");//tick+cross
             let div2 = document.getElementById("div2");//tick
@@ -274,43 +312,47 @@
                 tariff.setAttribute("class","class1");
                 let price = document.createElement("p");
                 price.innerText = product.price;
+                price.style.fontSize = "14px"
 
 
                 let input = document.createElement("input");
                 input.setAttribute("type","text");
+                input.style.borderRadius = "10px";
                 // input_value = input.value;
                 let btn = document.createElement("button");
                 btn.innerText = "Apply promocode";
                 btn.setAttribute("class","class1");
                 let tot = document.createElement("p");
                 tot.innerText = `Total amount is ${product.price}`;
+                //insure
                 let check = document.createElement("input");
                 check.setAttribute("type","checkbox");
                 let label = document.createElement("label");
-                label.innerText = "Insure my ride 0";
+                label.innerText = "Insure my ride";
+                let ins_price = document.createElement("P");
+                ins_price.innerText = "0";
                 label.setAttribute("class","class1")
+                let para = document.createElement("p");
+                para.innerText = "*Covers the rider,pillion and vehicle T&C apply";
+                para.style.fontSize = "10px";
                 check.onclick = function(){
                     if(check.checked == true) {
-                        label.innerText = "Insure my ride +15";
+                        ins_price.innerText = "+15";
                         product.price = Number(product.price) + Number(15);
                         tot.innerText = `Total amount is ${product.price}`;
                         tot.setAttribute("class","class1")
                     }
                     else if(check.checked == false){
-                        label.innerText = "Insure my ride 0";
+                        ins_price.innerText = "0";
                         product.price = product.price - Number(15);
                         tot.innerText = `Total amount is ${product.price}`;
                         tot.setAttribute("class","class1")
                     }
                 }
 
-                let tick = document.createElement("img");
-                tick.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWc1ZzCrayKJ0jATVFhX_DII3PEL_jU_6Umw&usqp=CAU"
-                let cross = document.createElement("img");
-                cross.src = "https://as1.ftcdn.net/v2/jpg/01/45/20/02/500_F_145200273_450ViYipr5uU3WIwqzwjsRDHYTMcUH9P.jpg";
-                let p1 = document.createElement("p");
+                let p1 = document.createElement("span");
                 p1.innerText = "Excludes fuel";
-                let p2 = document.createElement("p");
+                let p2 = document.createElement("span");
                 p2.innerText = "Include all taxes";
 
                 btn.onclick = function(){
@@ -326,10 +368,23 @@
                     }
                 };
 
-                div2.append(cross,p1);
-                div3.append(tick,p2);
+                ch.append(check);
+                lab.append(label);
+                ins_p.append(ins_price);
+                insure.append(check,label,ins_p);
+                insure.setAttribute("class","class2");
+                inn.append(input);
+                app.append(btn);
+                code.append(inn,app);
+                code.setAttribute("class","class2");
+                tariff_var.append(tariff)
+                price_var.append(price);
+                t_price.append(tariff_var,price_var);
+                t_price.setAttribute("class","class2");
+                div2.append(p1);
+                div3.append(p2);
                 div1.append(div2,div3);
-                promo.append(pricing,tariff,price,input,btn,check,label,tot,div1);
+                promo.append(pricing,t_price,code,insure,para,tot,div1);
                 date_show.append(start_date,end_date);
                 right_3.append(ref,dep,pay);
                 right_content.append(date_show,right_3,promo);
