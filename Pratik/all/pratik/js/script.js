@@ -5,6 +5,12 @@ function togglePopup() {
 
 function bookNowClicked(p){
     ck_login = check_login();
+    
+    //storing Data for next page
+    var arr7 = [];
+    arr7.push(p);
+    var tptp = JSON.stringify(arr7);
+    localStorage.setItem("bookedBike",tptp);
 
     if(ck_login){
         function togglePopup() {
@@ -22,8 +28,6 @@ function bookNowClicked(p){
 
             
         }
-        showDataOnPopup();
-    
         function fun123(one,two,three){
             console.log("I am fun123");
             function createobj(one,two,three){
@@ -32,10 +36,12 @@ function bookNowClicked(p){
                 this.lk = three
             }
             var tmp = new createobj(one,two,three);
-            localStorage.setItem("namename",JSON.stringify(tmp));
-
+            localStorage.setItem("selectedLocationData",JSON.stringify(tmp));
+        
             location.href = "tp.html";
         }
+        showDataOnPopup();
+
         togglePopup();
 
     }else{
@@ -47,150 +53,280 @@ function check_login() {
     return true;
 }
 
-function pickupLocationData(city_datacity){
-
-    console.log(city_datacity);
-
+function fun1234(one,two,three){
     
+    function createobj(one,two,three){
+        this.loac =one,
+        this.lc = two,
+        this.lk = three
+    }
+    var tmp = new createobj(one,two,three);
+    localStorage.setItem("selectedLocationData",JSON.stringify(tmp));
+
+    //location.href = "tp.html";
+
+    sendDataToNextPage();
+}  
+
+
+function pickupLocationData(city_datacity){
 
     if(city_datacity == "hyderabad"){
 
+        var popup_div = document.getElementById('popup_div');
+        //popup_div.removeChild(div);
+
+
+        //reginumber,cityname11,place,station_timing,place_loc,available
+        //crteatin popus
+        
+        var dt3 =JSON.parse(localStorage.getItem("cityLocationData"));
+        
+       dt3.forEach(function (cityes){
+            if(cityes.cityname11 == "hyderabad"){
+
+                var div = document.createElement('div');
+                div.style.backgroundColor = "#f7f7f7";
+                var heading = document.createElement('h3')
+                heading.innerText = cityes.place;
+                var para = document.createElement('P');
+                para.innerText = cityes.station_timing;
+                var para2 = document.createElement('P');
+                para2.innerText = cityes.place_loc;
+                var para3 = document.createElement('P');
+                para3.style.backgroundColor ="#00b468";
+                para3.style.height = '25px';
+                para3.onclick = function(){fun1234(cityes.place,cityes.station_timing,cityes.place_loc)}
+                para3.innerText = "5+  Available   ➜"
+
+                div.append(heading,para,para2,para3);
+
+                popup_div.append(div);
+                
+            }
+        })
     }
 
     if(city_datacity == "jaipur"){
 
+        var popup_div = document.getElementById('popup_div');
+        //popup_div.removeChild(div);
+
+
+        //reginumber,cityname11,place,station_timing,place_loc,available
+        //crteatin popus
+        
+        var dt3 =JSON.parse(localStorage.getItem("cityLocationData"));
+        
+       dt3.forEach(function (cityes){
+            if(cityes.cityname11 == "jaipur"){
+
+                var div = document.createElement('div');
+                div.style.backgroundColor = "#f7f7f7";
+                var heading = document.createElement('h3')
+                heading.innerText = cityes.place;
+                var para = document.createElement('P');
+                para.innerText = cityes.station_timing;
+                var para2 = document.createElement('P');
+                para2.innerText = cityes.place_loc;
+                var para3 = document.createElement('P');
+                para3.style.backgroundColor ="#00b468";
+                para3.style.height = '25px';
+                para3.onclick = function(){fun1234(cityes.place,cityes.station_timing,cityes.place_loc)}
+                para3.innerText = "5+  Available   ➜"
+
+                div.append(heading,para,para2,para3);
+
+                popup_div.append(div);
+                
+            }
+        })
     }
 
     if(city_datacity == "gurugram"){
+
+        var popup_div = document.getElementById('popup_div');
+        //popup_div.removeChild(div);
+
+
+        //reginumber,cityname11,place,station_timing,place_loc,available
+        //crteatin popus
+        
+        var dt3 =JSON.parse(localStorage.getItem("cityLocationData"));
+        
+       dt3.forEach(function (cityes){
+            if(cityes.cityname11 == "gurugram"){
+
+                var div = document.createElement('div');
+                div.style.backgroundColor = "#f7f7f7";
+                var heading = document.createElement('h3')
+                heading.innerText = cityes.place;
+                var para = document.createElement('P');
+                para.innerText = cityes.station_timing;
+                var para2 = document.createElement('P');
+                para2.innerText = cityes.place_loc;
+                var para3 = document.createElement('P');
+                para3.style.backgroundColor ="#00b468";
+                para3.style.height = '25px';
+                para3.onclick = function(){fun1234(cityes.place,cityes.station_timing,cityes.place_loc)}
+                para3.innerText = "5+  Available   ➜"
+
+                div.append(heading,para,para2,para3);
+
+                popup_div.append(div);
+                
+            }
+        })
 
     }
 
     if(city_datacity == "mysuru"){
 
+        var popup_div = document.getElementById('popup_div');
+        //popup_div.removeChild(div);
+
+
+        //reginumber,cityname11,place,station_timing,place_loc,available
+        //crteatin popus
+        
+        var dt3 =JSON.parse(localStorage.getItem("cityLocationData"));
+        
+       dt3.forEach(function (cityes){
+            if(cityes.cityname11 == "mysuru"){
+
+                var div = document.createElement('div');
+                div.style.backgroundColor = "#f7f7f7";
+                var heading = document.createElement('h3')
+                heading.innerText = cityes.place;
+                var para = document.createElement('P');
+                para.innerText = cityes.station_timing;
+                var para2 = document.createElement('P');
+                para2.innerText = cityes.place_loc;
+                var para3 = document.createElement('P');
+                para3.style.backgroundColor ="#00b468";
+                para3.style.height = '25px';
+                para3.onclick = function(){fun1234(cityes.place,cityes.station_timing,cityes.place_loc)}
+                para3.innerText = "5+  Available   ➜"
+
+                div.append(heading,para,para2,para3);
+
+                popup_div.append(div);
+                
+            }
+        })
     }
 
     if(city_datacity == "udaipur"){
 
+        var popup_div = document.getElementById('popup_div');
+        //popup_div.removeChild(div);
+
+
+        //reginumber,cityname11,place,station_timing,place_loc,available
+        //crteatin popus
+        
+        var dt3 =JSON.parse(localStorage.getItem("cityLocationData"));
+        
+       dt3.forEach(function (cityes){
+            if(cityes.cityname11 == "udaipur"){
+
+                var div = document.createElement('div');
+                div.style.backgroundColor = "#f7f7f7";
+                var heading = document.createElement('h3')
+                heading.innerText = cityes.place;
+                var para = document.createElement('P');
+                para.innerText = cityes.station_timing;
+                var para2 = document.createElement('P');
+                para2.innerText = cityes.place_loc;
+                var para3 = document.createElement('P');
+                para3.style.backgroundColor ="#00b468";
+                para3.style.height = '25px';
+                para3.onclick = function(){fun1234(cityes.place,cityes.station_timing,cityes.place_loc)}
+                para3.innerText = "5+  Available   ➜"
+
+                div.append(heading,para,para2,para3);
+
+                popup_div.append(div);
+                
+            }
+        })
     }
 
     if(city_datacity == "ahmedabad"){
+       
 
+        var popup_div = document.getElementById('popup_div');
+        //popup_div.removeChild(div);
+
+
+        //reginumber,cityname11,place,station_timing,place_loc,available
+        //crteatin popus
+        
+        var dt3 =JSON.parse(localStorage.getItem("cityLocationData"));
+        
+       dt3.forEach(function (cityes){
+            if(cityes.cityname11 == "ahmedabad"){
+               
+
+                var div = document.createElement('div');
+                div.style.backgroundColor = "#f7f7f7";
+                var heading = document.createElement('h3')
+                heading.innerText = cityes.place;
+                var para = document.createElement('P');
+                para.innerText = cityes.station_timing;
+                var para2 = document.createElement('P');
+                para2.innerText = cityes.place_loc;
+                var para3 = document.createElement('P');
+                para3.style.backgroundColor ="#00b468";
+                para3.style.height = '25px';
+                para3.onclick = function(){fun1234(cityes.place,cityes.station_timing,cityes.place_loc)}
+                para3.innerText = "5+  Available   ➜"
+
+                div.append(heading,para,para2,para3);
+
+                popup_div.append(div);
+                
+            }
+        })
     }
 
     if(city_datacity == "bengaluru"){
 
+    
+
         var popup_div = document.getElementById('popup_div');
+        //popup_div.removeChild(div);
 
-        var div = document.createElement('div');
-        div.style.backgroundColor = "#f7f7f7";
-        var heading = document.createElement('h3')
-        heading.innerText = "Kundalahalli";
-        var para = document.createElement('P');
-        para.innerText = "Station timing : 7 AM - 8 PM"
-        var para2 = document.createElement('P');
-        para2.innerText = "Kundalahalli gate signal"
-        var para3 = document.createElement('P');
-        para3.style.backgroundColor ="#00b468";
-        para3.style.height = '25px';
-        para3.onclick = function(){fun123("Kundalahalli","Station timing : 7 AM - 8 PM","Kundalahalli gate signal")}
-        para3.innerText = "Next"
+
+        //reginumber,cityname11,place,station_timing,place_loc,available
+        //crteatin popus
         
-
-        div.append(heading,para,para2,para3);
-
-        popup_div.append(div);
-
-        var div = document.createElement('div');
-        div.style.backgroundColor = "#f7f7f7";
-        var heading = document.createElement('h3')
-        heading.innerText = "Electronic City";
-        var para = document.createElement('P');
-        para.innerText = "Station timing : 7 AM - 8 PM"
-        var para2 = document.createElement('P');
-        para2.innerText = "Kundalahalli gate signal"
-        var para3 = document.createElement('P');
-        para3.style.backgroundColor ="#00b468";
-        para3.style.height = '25px';
-        para3.onclick = function(){fun123()}
-        para3.innerText = "Next"
-
-        div.append(heading,para,para2,para3);
-
-        popup_div.append(div);
-
-        var div = document.createElement('div');
-        div.style.backgroundColor = "#f7f7f7";
-        var heading = document.createElement('h3')
-        heading.innerText = "HSR 7th Sector";
-        var para = document.createElement('P');
-        para.innerText = "Station timing : 7 AM - 8 PM"
-        var para2 = document.createElement('P');
-        para2.innerText = "Kundalahalli gate signal"
-        var para3 = document.createElement('P');
-        para3.style.backgroundColor ="#00b468";
-        para3.style.height = '25px';
-        para3.onclick = function(){fun123()}
-        para3.innerText = "Next"
-
-        div.append(heading,para,para2,para3);
-
-        popup_div.append(div);
-
-        var div = document.createElement('div');
-        div.style.backgroundColor = "#f7f7f7";
-        var heading = document.createElement('h3')
-        heading.innerText = "Koramangala";
-        var para = document.createElement('P');
-        para.innerText = "Station timing : 7 AM - 8 PM"
-        var para2 = document.createElement('P');
-        para2.innerText = "Kundalahalli gate signal"
-        var para3 = document.createElement('P');
-        para3.style.backgroundColor ="#00b468";
-        para3.style.height = '25px';
-        para3.onclick = function(){fun123()}
-        para3.innerText = "Next"
-
-        div.append(heading,para,para2,para3);
-
-        popup_div.append(div);
-
-        var div = document.createElement('div');
-        div.style.backgroundColor = "#f7f7f7";
-        var heading = document.createElement('h3')
-        heading.innerText = "Electronic city Hub";
-        var para = document.createElement('P');
-        para.innerText = "Station timing : 7 AM - 8 PM"
-        var para2 = document.createElement('P');
-        para2.innerText = "Kundalahalli gate signal"
-        var para3 = document.createElement('P');
-        para3.style.backgroundColor ="#00b468";
-        para3.style.height = '25px';
-        para3.onclick = function(){fun123()}
-        para3.innerText = "Next"
-
-        div.append(heading,para,para2,para3);
-
-        popup_div.append(div);
-
-        var div = document.createElement('div');
-        div.style.backgroundColor = "#f7f7f7";
-        var heading = document.createElement('h3')
-        heading.innerText = "Kundalahalli";
-        var para = document.createElement('P');
-        para.innerText = "Station timing : 7 AM - 8 PM"
-        var para2 = document.createElement('P');
-        para2.innerText = "Kundalahalli gate signal"
-        var para3 = document.createElement('P');
-        para3.style.backgroundColor ="#00b468";
-        para3.style.height = '25px';
-        para3.onclick = function(){fun123()}
-        para3.innerText = "Next"
+        var dt3 =JSON.parse(localStorage.getItem("cityLocationData"));
         
+       dt3.forEach(function (cityes){
+            if(cityes.cityname11 == "bengaluru"){
+                
 
-        div.append(heading,para,para2,para3);
+                var div = document.createElement('div');
+                div.style.backgroundColor = "#f7f7f7";
+                var heading = document.createElement('h3')
+                heading.innerText = cityes.place;
+                var para = document.createElement('P');
+                para.innerText = cityes.station_timing;
+                var para2 = document.createElement('P');
+                para2.innerText = cityes.place_loc;
+                var para3 = document.createElement('P');
+                para3.style.backgroundColor ="#00b468";
+                para3.style.height = '25px';
+                para3.onclick = function(){fun1234(cityes.place,cityes.station_timing,cityes.place_loc)}
+                para3.innerText = "5+  Available   ➜"
 
-        popup_div.append(div);
+                div.append(heading,para,para2,para3);
 
+                popup_div.append(div);
+                
+            }
+        })
     }
     
 
@@ -261,3 +397,49 @@ function citylocationdataobj(){
 }
 citylocationdataobj();
             
+
+
+
+
+
+
+//This Fuction is only for sendign Data to Localstorage 
+
+
+function sendDataToNextPage(){
+    var datas2 = JSON.parse(localStorage.getItem("selectedLocationData"));
+    var datas3 = JSON.parse(localStorage.getItem("Date"));
+    var datas4 = JSON.parse(localStorage.getItem("bookedBike"));
+
+    var checkout_arr = [];
+
+    var id = datas4[0].id;
+    var cityname = datas3.city;
+    var city_location = datas2.loac;
+    var city_location_address = datas2.lk;
+    var city_location_station_timing = datas2.lc;
+    var endDate = datas3.endDate;
+    var startDate = datas3.startDate;
+    var plan = datas3.plan;
+    var image = datas4[0].image;
+    var bikeName = datas4[0].name;
+    var price = datas4[0].price;
+
+    var address = city_location+", "+city_location_address;
+
+    var obj={
+        cityName: cityname,
+        plan:plan,
+        address:address,
+        date1:startDate,
+        date2:endDate,
+        excess:"Exess 2km/hr",
+        free: "free 150 kms",
+        image: image,
+        name: bikeName,
+        price: price,
+    }
+
+    let temp = JSON.stringify(obj);
+    localStorage.setItem("checkout", temp);
+}
