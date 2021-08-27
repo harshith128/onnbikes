@@ -22,6 +22,8 @@
             display: block;
             transition: top 0.3s;
             display: flex;
+            color: rgb(39, 39, 92);
+            background-color: white;
         }
         .nav-bar {
             margin: auto 40px;
@@ -35,6 +37,7 @@
             text-align: center;
             justify-content: center;
             align-items: center;
+            cursor: pointer;
         }
         .nav-bar > div:hover, #scroll > div:hover {
             color: orange;
@@ -77,7 +80,7 @@
             flex-grow: 1;
             text-align: center;
         }
-        h1, p{
+        h1, p, h3{
             text-align: center;
         }
         .safty {
@@ -104,15 +107,61 @@
             width: 70%;
         }
         .contact, .faq {
-            margin: 80px;
+            margin: 80px auto;
             display: flex;
+            width: 90%;
         }
-        .contact > div{
+        .contact > div, .faq > div{
             flex-grow: 1;
+            border: 1px solid black;
+            width: 40%;
+            margin: 10px 5%;
+        }
+        .contact > div > input:nth-child(n + 3){
+            width: 94%;
+            margin: 1%;
+            height: 2rem;
+        }
+        .contact > div > input:nth-child(-n + 2){
+            width: 45%;
+            margin: 1%;
+            height: 2rem;
+        }
+        .contact > div > textarea{
+            height: 80px;
+            margin: 1%;
+            width: 94%;
+        }
+        textarea::placeholder{
+            padding: 10px;
+        }
+        .submit {
+            background-color: blue;
+            cursor: pointer;
+            color: white;
+        }
+        input[type="text"]::placeholder, input[type="number"]::placeholder,input[type="email"]::placeholder{
+            padding-left: 10px;
+        }
+        .faq p, .faq li {
+            line-height: 25px;
+            text-align: left;
         }
         .bikes > div {
+            width: 50%;
+            margin: auto;
             display: grid;
             grid-template-columns: auto auto;
+        }
+        .bikes p {
+            line-height: 30px;
+        }
+        .blog {
+            width: 94%;
+            margin: auto;
+        }
+        .bikes h3 {
+            margin: 50px auto 25px;
         }
     </style>
 </head>
@@ -236,8 +285,8 @@
             <input type="email" placeholder="Email"/></br>
             <input type="number" placeholder="Mobile Number"/></br>
             <input type="text" placeholder="City"/></br>
-            <input type="text" placeholder="Message"/></br>
-            <input type="submit" placeholder="Submit"/></br>
+            <textarea id="text" placeholder="Message"></textarea>
+            <input type="submit" placeholder="Submit" class="submit"/>
         </div>
         <div class="ourAdd">
         </div>
@@ -248,18 +297,22 @@
         <div>
             <ul>
                 <li>How do I pay?</li>
-                <p>You can pay online using debit/credit card or e-wallets. You can also pay at the hub station during your vehicle pick-up.</p>
-                <li>Where can I pick up the bike from?</li>
-                <p>While booking your bike, you’ll be given an option to select a pick-up location in your vicinity.</p>
             </ul>
+                <p>You can pay online using debit/credit card or e-wallets. You can also pay at the hub station during your vehicle pick-up.</p>
+            <ul>
+                <li>Where can I pick up the bike from?</li>
+            </ul>
+                <p>While booking your bike, you’ll be given an option to select a pick-up location in your vicinity.</p>
         </div>
         <div>
             <ul>
                 <li>What documents do I need to show while booking?</li>
-                <p>You need to show your original valid driving license and submit any one original government verified ID proof.</p>
-                <li>Will I be getting a complimentary helmet?</li>
-                <p>Due to COVID-19 pandemic, we avoid providing helmets to customers. We suggest customers to bring their own helmets.</p>
             </ul>
+                <p>You need to show your original valid driving license and submit any one original government verified ID proof.</p>
+            <ul>
+                <li>Will I be getting a complimentary helmet?</li>
+            </ul>
+                <p>Due to COVID-19 pandemic, we avoid providing helmets to customers. We suggest customers to bring their own helmets.</p>
         </div>
     </div>
     <div class="blog">
