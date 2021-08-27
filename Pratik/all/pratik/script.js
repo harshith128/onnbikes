@@ -165,6 +165,10 @@ function filt(ckbox){
         var btn = document.createElement('button');
         btn.innerText = "Book Now";
 
+        btn.onclick=(function (){
+            bookNowClicked(products);
+        })
+
         div.append(image,name,price,btn);
 
         data_div.append(div);
@@ -201,6 +205,10 @@ function filt2(ckbox2){
 
         var btn = document.createElement('button');
         btn.innerText = "Book Now";
+
+        btn.onclick=(function (){
+            bookNowClicked(products);
+        })
 
         div.append(image,name,price,btn);
 
@@ -239,6 +247,10 @@ function filt3(ckbox3){
 
         var btn = document.createElement('button');
         btn.innerText = "Book Now";
+
+        btn.onclick=(function (){
+            bookNowClicked(products);
+        })
         
 
         div.append(image,name,price,btn);
