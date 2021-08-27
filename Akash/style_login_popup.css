@@ -1,311 +1,254 @@
-.modal-btn {
-    padding: 10px 20px;
-    color: #01b491;
-    font-size: 16px;
-    font-weight: bold;
-    outline: solid #01b491 2px;
-    cursor: pointer;
-}
-
-#modal-toggle {
-    display: none;
-}
-
-.modal-content,
-.modal-backdrop {
-    opacity: 0;
-    position: fixed;
-    padding: 15px;
-    padding-top: 50px;
-    z-index: -1;
-    overflow: hidden;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-}
-
-.modal-content {
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    left: 0;
-    right: 0;
-    height: 550px;
-    max-height: 98%;
-    width: 70%;
-    max-width: 600px;
-    text-align: center;
-    transform: translateX(125%);
-}
-
-.modal-backdrop {
-    left: 0;
-    top: 0;
-    height: 100%;
-    height: 100vh;
-    width: 100%;
-    width: 100vw;
-    transform: scale(0);
-}
-
-#modal-toggle:checked~.modal-backdrop {
-    opacity: 1;
-    background-color: rgba(28, 107, 226, 0.5);
-    z-index: 998;
-    transform: scale(1);
-}
-
-#modal-toggle:checked~.modal-content {
-    opacity: 1;
-    background-color: #fff;
-    overflow-y: auto;
-    overflow-x: hidden;
-    pointer-events: auto;
-    cursor: auto;
-    z-index: 999;
-    transform: translateX(0%);
-}
-
-@media (max-width: 600px) {
-    #modal-toggle:checked~.modal-backdrop {
-        opacity: 0;
-    }
-    .modal-content {
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 100vw;
-    }
-}
-
-.modal-close-btn {
-    margin-top: 5px;
-    display: inline-block;
-    cursor: pointer;
-    position: absolute;
-    right: 10px;
-    top: 5px;
-}
-
-.modal-close-btn svg {
-    transition: 0.2s;
-}
-
-.modal-close-btn svg line {
-    stroke-width: 5px;
-    stroke: #1763c7;
-}
-
-.modal-close-btn:hover svg {
-    transform: rotate(90deg);
-}
-
-
-/* BASIC FUNCTIONALITY .tabs */
-
-.tabs {
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 10px 0;
-}
-
-.tabs>.radio {
-    display: none;
-}
-
-.tabs>.radio:checked+.table+.tabs-content {
-    display: block;
-}
-
-.tabs>.table {
-    order: -1;
-    flex-basis: 50%;
-    flex-shrink: 1;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.tabs .tabs-content {
-    width: 100%;
-    display: none;
-}
-
-
-/* END BASIC FUNCTIONALITY .tabs */
-
-
-/*  THEME for .tabs with login & sign-in  */
-
-.tabs>.table {
-    padding: 20px 0;
-    text-align: center;
-    border-bottom: solid #1163ce 5px;
-    color: #1274c4;
-    cursor: pointer;
-}
-
-.tabs>.table span {
-    font-weight: 600;
-}
-
-.tabs>.table:hover {
-    color: #186fc0;
-    background: rgba(0, 121, 107, 0.2);
-}
-
-.tabs>.radio:checked+.table {
-    color: #fff;
-    background: #0f5dd1;
-    cursor: auto;
-}
-
-.tabs>.radio:checked+.table span {
-    display: inline-block;
-    font-weight: 500;
-    transform: scale(1.2);
-    transition: 0.1s;
-}
-
-
-/*  END THEME for .tabs with login & sign-in  */
-
-
-/*  START style login & sign up  */
-
-.tabs>.tabs-content .login_socnet {
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    flex-wrap: no-wrap;
-    justify-content: space-around;
-}
-
-.tabs>.tabs-content .login_socnet a {
-    margin: 20px;
-    margin-bottom: 0;
-    width: 100%;
-    font-size: 60px;
-    text-decoration: none;
-    transition: 0.2s;
-}
-
-.tabs>.tabs-content .login_socnet a:hover {
-    transform: scale(1.1);
-    filter: drop-shadow(1px 3px 2px rgba(0, 0, 0, 0.2));
-}
-
-.tabs>.tabs-content .login_socnet .fa-vk {
-    color: #7986CB;
-}
-
-.tabs>.tabs-content .login_socnet .fa-google-plus {
-    color: #E57373;
-}
-
-.tabs>.tabs-content .login_socnet .fa-facebook {
-    color: #5C6BC0;
-}
-
-.tabs>.tabs-content form {
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    -webkit-flex-direction: column;
-    -moz-flex-direction: column;
-    -ms-flex-direction: column;
-    -o-flex-direction: column;
-    flex-direction: column;
-}
-
-.tabs>.tabs-content form input {
-    padding: 10px;
-    margin: 15px 0;
-    border: none;
-    border-bottom: solid 1px #1563c9;
-    font-size: 18px;
-    letter-spacing: 1px;
-    transition: 0.1s;
-}
-
-.tabs>.tabs-content form input:focus {
-    transform: translateX(10px);
-    outline: none;
-}
-
-.tabs>.tabs-content input[type="submit"] {
-    padding: 15px 0;
-    width: 100%;
-    background: #116bc0;
-    color: #fff;
-    border: none;
-    font-size: 18px;
-    cursor: pointer;
-}
-
-.tabs>.tabs-content input[type="submit"]:focus {
-    transform: none;
-}
-
-.tabs>.tabs-content .forgot-password label {
-    margin: 0 auto;
-    width: 50%;
-    color: #1774c0;
-    text-decoration: none;
-    font-size: 12px;
+body {
+    font-family: sans-serif;
+    margin: 0;
     line-height: 1.5;
 }
 
-.tabs>.tabs-content .forgot-password label:hover {
-    text-decoration: underline;
+* {
+    box-sizing: border-box;
+    margin: 0;
 }
 
-
-/*  END style login & sign up  */
-
-.forgot-password #forgot-password-toggle {
-    display: none;
-}
-
-.forgot-password .forgot-password-content {
-    height: 0;
-    width: 0;
-    opacity: 0;
-    visibility: hidden;
-    overflow: hidden;
-    cursor: pointer;
-    transition: opacity 0.2s ease-in;
-}
-
-.forgot-password .forgot-password-content input[type="email"] {
-    width: 80%;
-    margin-right: 0px;
-    border-right: none;
-}
-
-.forgot-password .forgot-password-content input[type="submit"] {
-    width: 20%;
-    margin-left: 0px;
-}
-
-.forgot-password #forgot-password-toggle:checked~.forgot-password-content {
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: flex;
-    opacity: 1;
+.login-popup {
+    position: fixed;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    z-index: 999;
-    pointer-events: auto;
-    cursor: auto;
+    z-index: 1099;
+    background-color: rgba(0, 0, 0, 0.6);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.login-popup.show {
     visibility: visible;
+    opacity: 1;
+}
+
+.login-popup.hid {
+    visibility: hidden;
+}
+
+.login-popup .box {
+    background-color: #ffffff;
+    width: 750px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-wrap: wrap;
+    opacity: 0;
+    margin-left: 50px;
+    transition: all 1s ease;
+}
+
+.login-popup.show .box {
+    opacity: 1;
+    margin-left: 0;
+}
+
+.login-popup .box .img-area {
+    flex: 0 0 50%;
+    max-width: 50%;
+    position: relative;
+    overflow: hidden;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-popup .box .img-area h1 {
+    font-size: 30px;
+}
+
+.login-popup .box .img-area .img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('ONN1.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.login-popup .box .form {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 40px 30px;
+}
+
+.login-popup .box .form h1 {
+    color: #000000;
+    font-size: 30px;
+    margin: 0 0 30px;
+}
+
+.login-popup .box .form .form-control {
+    height: 45px;
+    margin-bottom: 30px;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #cccccc;
+    font-size: 15px;
+    color: #000000;
+}
+
+.login-popup .box .form .form-control:focus {
+    outline: none;
+}
+
+.login-popup .box .form label {
+    font-size: 15px;
+    color: #555555;
+}
+
+.login-popup .box .form .btn {
+    width: 100%;
+    background-color: #E91E63;
+    margin-top: 40px;
+    height: 45px;
+    border: none;
+    border-radius: 25px;
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.login-popup .box .form .btn:focus {
+    outline: none;
+}
+
+.login-popup .box .form .close {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+/*responsive*/
+
+@media(max-width: 767px) {
+    .login-popup .box {
+        width: calc(100% - 30px);
+    }
+    .login-popup .box .img-area {
+        display: none;
+    }
+    .login-popup .box .form {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+.button-box {
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 5px;
+}
+
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 110px;
+    height: 100%;
+    background: linear-gradient(to right, #1b2585, #3160e2);
+    border-radius: 5px;
+    transition: .5s;
+}
+
+.toggle-btn {
+    padding: 10px 30px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+
+.social-icons {
+    margin: 30px auto;
+    text-align: center;
+}
+
+.social-icons img {
+    width: 50px;
+    margin: 0 12px;
+    box-shadow: 0 0 20px 0 #7f7f7f3d;
+    cursor: pointer;
+    border-radius: 60%;
+}
+
+#login {
+    left: 50px;
+}
+
+.input-group {
+    top: 180px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+
+.submit-btn {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, #1b2585, #3160e2);
+    border: 0;
+    outline: none;
+}
+
+.chech-box {
+    margin: 30px 10px 30px 0;
+}
+
+span {
+    color: #777;
+    font-size: 12px;
+    bottom: 68px;
+    position: absolute;
+}
+
+#register {
+    left: 450px;
+}
+
+.button-box button {
+    background: transparent;
+}
+
+.form-box {
+    width: 320px;
+    height: 480px;
+    position: relative;
+    margin: 5% auto;
+    background: #ffff;
+    padding: 10px;
+    overflow: hidden;
 }
