@@ -63,17 +63,23 @@ function fun1234(one,two,three){
     var tmp = new createobj(one,two,three);
     localStorage.setItem("selectedLocationData",JSON.stringify(tmp));
 
-    location.href = "tp.html";
+    //location.href = "tp.html";
 
     sendDataToNextPage();
 }  
 
 
 function pickupLocationData(city_datacity){
+    
+        var popup_div = document.getElementById('popup_div').value;
+        popup_div = null;
+        
+        
 
     if(city_datacity == "hyderabad"){
 
         var popup_div = document.getElementById('popup_div');
+        
         //popup_div.removeChild(div);
 
 
@@ -87,6 +93,7 @@ function pickupLocationData(city_datacity){
 
                 var div = document.createElement('div');
                 div.style.backgroundColor = "#f7f7f7";
+                
                 var heading = document.createElement('h3')
                 heading.innerText = cityes.place;
                 var para = document.createElement('P');
@@ -360,8 +367,8 @@ function citylocationdataobj(){
     var ci = new create(8,"hyderabad","Secunderabad","Station timing : 9 AM - 7 PM","Opposite to Yashoda Hospital",5);
     cityLocationArray.push(ci);
     var ci = new create(9,"hyderabad","Madhapur","Station timing : 9 AM - 7 PM","Below Vijaya Lakshmi supermark",5);
-    cityLocationArray.push(ci);
-    var ci = new create(10,"hyderabad","RAIDURGAM POLICE COMMISSIONARATE","Station timing : 9 AM - 7 PM","OYO 3607 Apartment",5);
+    cityLocationArray.push(ci);             
+    var ci = new create(10,"hyderabad","Raidurgam Police Commissionarate","Station timing : 9 AM - 7 PM","OYO 3607 Apartment",5);
     cityLocationArray.push(ci);
     var ci = new create(11,"hyderabad","Dilsukhnagar","Station timing : 9 AM - 7 PM","Beside Income Tax Office",5);
     cityLocationArray.push(ci);
