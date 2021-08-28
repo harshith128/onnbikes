@@ -37,7 +37,14 @@
             
         }
         #content{
-            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+            /* border: 1px solid blue; */
+            margin-top: 30px;
+            height: 520px;
+        }
+        #content > div{
+            flex-grow: 2;
         }
         #content  img{
             width: 120px;
@@ -56,6 +63,88 @@
         .class_small{
             font-size: 11px;
             opacity: 0.5;
+        }
+        #right_top{
+            display: flex;
+            flex-direction:row;
+            background-color: white;  
+            font-size: 15px;       
+            
+        }
+        #right_top > div{
+            margin: 20px;
+            flex-grow: 1;
+            
+            
+        }
+        #right_content{
+            border: 1px solid black ;
+            width: 200px;
+        }
+        #right_content > div:nth-child(3){
+            border: 1px solid grey ;
+        }
+        #promo{
+            background-color: white;
+        }
+        #div1{
+            display: flex;
+           
+        }
+        #div2{
+            display: flex;
+            margin: 10px;
+            margin-right: 50px;
+            font-size: 10px;
+            /* border: 1px solid green ; */
+    
+            text-align: center;
+
+        }
+        #div3{
+            display: flex;
+            margin: 10px;
+            margin-left: 80px;
+            font-size: 10px;
+            /* border: 1px solid green ; */
+        }
+        #div2 > img{
+            width: 15px;
+        }
+        #div3 > img{
+            width: 25%;
+        }
+        .class1{
+            font-size: 13px;
+        }
+        #right_3{
+            background-color: white;
+            border: 1px solid grey;
+            margin: 2px;
+        }
+        .class2{
+            display: flex;
+        }
+        #in,#app{
+            margin-left: 5px;
+        }
+        #price{
+            margin-left: 180px;
+        }
+        #insure{
+            margin-top: 5px;
+        }
+        #total > div:nth-child(2){
+            margin-left: 210px;
+        }
+        #ch{
+            margin-top: 12px;
+        }
+        #ins_p{
+            margin-left: 240px;
+        }
+        #last_button,#accept{
+            border: 1px solid white;
         }
     </style>
 </head>
