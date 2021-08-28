@@ -63,7 +63,7 @@ function fun1234(one,two,three){
     var tmp = new createobj(one,two,three);
     localStorage.setItem("selectedLocationData",JSON.stringify(tmp));
 
-    location.href = "tp.html";
+    location.href = "third.html";
 
     sendDataToNextPage();
 }  
