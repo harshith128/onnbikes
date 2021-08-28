@@ -299,17 +299,19 @@
                 arr2.push(year2);
                 arr2.push(month2);
                 arr2.push(day2);
-                var number_days = 0;
+                var number_days = 1;
                 var ans = date_diff(arr1,arr2);
                 console.log(ans[0],ans[1]);
                 if(ans[0] == 0){
-                    number_days = ans[1];
+                    number_days = number_days * ans[1];
                 }
                 else{
+                    number_days = 0;
                     var len = ans[0].length;
                     for(var i=0;i<len;i++){
-                        number_days = ans[1]+30;
+                        number_days = number_days+30;
                     }
+                    number_days = number_days+ans[1];
                 }
 
                 function date_diff(dt1,dt2){
@@ -400,6 +402,7 @@
                 pay.setAttribute("class","class1")
 
                 // pricing
+                let tot_val = product.price * number_days
                 let pricing = document.createElement("p");
                 pricing.innerText = "PRICING";
                 pricing.setAttribute("class","class1")
@@ -407,7 +410,7 @@
                 tariff.innerText = "Tariff(Inclusive of all tax)";
                 tariff.setAttribute("class","class1");
                 let price = document.createElement("p");
-                price.innerText = product.price;
+                price.innerText = tot_val;
                 price.style.fontSize = "14px"
 
                 let input = document.createElement("input");
@@ -417,14 +420,15 @@
                 let btn = document.createElement("button");
                 btn.innerText = "Apply promocode";
                 btn.setAttribute("class","class1");
+                
 
                 btn.onclick = function(){
                     //console.log(input.value);
                     if(input.value == "masai30"){
-                        product.price = Math.floor(product.price - (product.price*0.3));
+                        tot_val = Math.floor(tot_val - (tot_val*0.3));
 
-                        tot_price.innerText = product.price;
-                        btn2.innerHTML = `Payment ${product.price}`;
+                        tot_price.innerText = tot_val;
+                        btn2.innerHTML = `Payment ${tot_val}`;
                         btn.onclick = "";
                     }
                     else {
@@ -446,16 +450,16 @@
                 check.onclick = function(){
                     if(check.checked == true) {
                         ins_price.innerText = "+15";
-                        product.price = Number(product.price) + Number(15);
-                        tot_price.innerText = product.price;
-                        btn2.innerHTML = `Payment ${product.price}`;
+                        tot_val = Number(tot_val) + Number(15);
+                        tot_price.innerText = tot_val;
+                        btn2.innerHTML = `Payment ${tot_val}`;
                         // tot_price.setAttribute("class","class1")
                     }
                     else if(check.checked == false){
                         ins_price.innerText = "0";
-                        product.price = product.price - Number(15);
-                        tot_price.innerText = product.price;
-                        btn2.innerHTML = `Payment ${product.price}`;
+                        tot_val = tot_val - Number(15);
+                        tot_price.innerText = tot_val;
+                        btn2.innerHTML = `Payment ${tot_val}`;
                         // tot_price.setAttribute("class","class1")
                     }
                 }
@@ -467,12 +471,13 @@
                 p2.innerText = "Include all taxes";
 
                 //total
+                // let tot_val = product.price * number_days
                 let tot_sen = document.createElement("div");
                 tot_sen.innerText = "Total amount is";
                 let tot_price = document.createElement("div");
-                tot_price.innerText = product.price
+                tot_price.innerText = tot_val
                 let btn2 = document.createElement("button");
-                btn2.innerHTML = `Payment ${product.price}`;
+                btn2.innerHTML = `Payment ${tot_val}`;
                 btn2.style.backgroundColor = "Blue";
                 btn2.style.opacity = "0.5";
 
