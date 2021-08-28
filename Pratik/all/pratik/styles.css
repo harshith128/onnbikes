@@ -1,3 +1,52 @@
+/* For Ride Now button */
+
+.select_class {
+    height: 50px;
+    font-size: 18px;
+    outline: 0px;
+    border: 0px;
+    
+}
+
+
+.select_from_ride_bar {
+    height: 50px;
+    font-size: 18px;
+    outline: 0px;
+    border: 0px;
+}
+
+
+.start_date_cal {
+    height: 50px;
+    font-size: 18px;
+    outline: 0px;
+    border: 0px;
+    
+}
+
+
+.end_date_cal {
+    height: 50px;
+    font-size: 18px;
+    outline: 0px;
+    border: 0px;
+    
+}
+
+
+
+/* DATA div hover effect from here */
+
+.data_loading > div:hover{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.6);
+}
+.data_loading > div {
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    padding: 10px;
+}
+
+
 .popup .overlay {
     position: fixed;
     top: 0px;
@@ -86,8 +135,10 @@ p{
 .nav-bar {
     margin: auto 40px;
     display: flex;
+    color: rgb(30, 45, 81);
+    font-weight: bold;
 }
-.nav-bar > div{
+.nav-bar > div, #scroll > div{
     margin: 30px;
     flex-grow: 1;
     display: flex;
@@ -95,13 +146,21 @@ p{
     text-align: center;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    
+    background-color: white;
 }
-.nav-bar > div:hover {
+.nav-bar > div:hover, #scroll > div:hover {
     color: orange;
 }
 #logo {
     width: 40%;
     border-radius: 5px;
+}
+.top_img_icon{
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
 }
 body {
     background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/doodles.png");
@@ -158,8 +217,7 @@ flex: 1 1 auto;
 border:1px solid #ffebee;
 }
 #ride-bar {
-    width: 70%;
-    padding: 20px;
+    width: 80%;
     margin: auto;
     margin-top: 10px;
     display: flex;
@@ -171,6 +229,25 @@ border:1px solid #ffebee;
     flex-grow: 1;
     text-align: center;
     
+}
+#ride-bar * {
+    border: none;
+    cursor: pointer;
+}
+/* #ride-bar select, #ride-bar input{
+    padding: 20px;
+    padding-top: 24px;
+    color: rgb(88, 88, 88);
+} */
+
+.rideBtn button{
+    background-color: rgb(30, 45, 81);
+    height: 100%;
+    color: white;
+    font-size: 24px;
+    line-height: 37.1429px;
+    font-weight: 400;
+    padding: 16px;
 }
 #manu {
     margin-top: 0;

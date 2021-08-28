@@ -13,21 +13,21 @@
     <div class="bg-image"></div>
     <div id="page-details">
         <div class="nav-bar">
-            <div>WHY ONN?</div>
-            <div>FLEET AND PRICING</div>
-            <div>SAFETY</div>
+            <div>HOME</div>
+            <div>OFFERS</div>
+            <div>RENT-TO-OWN</div>
             <div>
-                <img src="https://www.onnbikes.com/img/ONN-logo-unit-without-shadow.png" id="logo"/>
+                <img class="top_img_icon" src="https://www.onnbikes.com/img/ONN-logo-unit-without-shadow.png" id="logo"/>
             </div>
             <div>FAQ</div>
-            <div>LOGIN/SIGNUP</div>
+            <div>WELCOME</div>
             <div>+918378007800</div>
         </div>
         
     </div>
     <div id="ride-bar">
         <div  class="city">
-            <select  id="city_name">
+            <select  id="city_name" class="select_class">
                 <option value="bengaluru">BENGALURU</option>
                 <option value="hyderabad">HYDERABAD</option>
                 <option value="jaipur">JAIPUR</option>
@@ -38,16 +38,16 @@
             </select>
         </div>
         <div class="booking">
-            <select id="second_select">
+            <select id="second_select" class="select_from_ride_bar">
                 <option value="hour">HOURLY/DAILY</option>
                 <option value="day">30 DAY BOOKING</option>
             </select>
         </div>
         <div class="startDate">
-            <input id="startDate" type="datetime-local" placeholder="START DATE"/>
+            <input id="startDate" type="datetime-local" placeholder="START DATE" class="start_date_cal"/>
         </div>
         <div class="endDate">
-            <input id="endDate" type="datetime-local" placeholder="END DATE"/>
+            <input id="endDate" type="datetime-local" placeholder="END DATE" class="end_date_cal"/>
         </div>
         <div class="rideBtn">
             <button onclick="rideNow()"><a>RIDE NOW</a></button>
@@ -123,7 +123,7 @@
             </div>
         </div>
 
-        <div id="data_div">
+        <div id="data_div" class="data_loading">
                 <!-- In this div all the data from locasorage is lod  or crete div inside it by javasript -->
         </div>
     </div>
