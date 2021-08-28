@@ -164,6 +164,8 @@ p{
 }
 body {
     background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/doodles.png");
+    background-color: rgba(255,255,255,0.6);
+    background-blend-mode: lighten;
 }
 
 #main_div{

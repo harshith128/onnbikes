@@ -145,7 +145,7 @@ function filt(ckbox){
 
         if(products.manufacturer == ckbox){
             newprod.push(products);
-            console.log(products);
+            //console.log(products);
         }
     })
 
