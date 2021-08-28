@@ -183,7 +183,7 @@ body {
     margin-top: 25px;
     display: grid;
     grid-template-columns: 20% 20% 20% 20%;
-    gap: 5%;
+    gap: 3%;
 }
 img{
     width: 50%;

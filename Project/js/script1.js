@@ -138,7 +138,7 @@ function filt(ckbox){
     var product = JSON.parse(localStorage.getItem("bike_data"))
     
     var data_div = document.getElementById('data_div');
-    data_div.innerHTML = null;
+    data_div.innerHTML = "";
     var newprod =[];
     product.forEach(function (products){
         

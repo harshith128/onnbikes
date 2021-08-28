@@ -1,6 +1,10 @@
 
 function togglePopup() {
     document.getElementById("popup-1").classList.toggle("active");
+    var popup_div = document.getElementById('popup_div');
+    popup_div.innerHTML="";
+  
+    
 }
 
 function bookNowClicked(p){
