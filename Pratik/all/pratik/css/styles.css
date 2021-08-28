@@ -1,6 +1,6 @@
 #main_div {
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: 15% 85%;
     gap: 5%;
 }
 /* #main_div div {
@@ -51,7 +51,7 @@
     height: 30px;
     font-size: 18px;
     color: white;
-    background-color: blue;
+    background-color: #1e2d51;
 }
 .center11 {
     text-align: center11;

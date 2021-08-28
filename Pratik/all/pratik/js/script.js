@@ -63,7 +63,7 @@ function fun1234(one,two,three){
     var tmp = new createobj(one,two,three);
     localStorage.setItem("selectedLocationData",JSON.stringify(tmp));
 
-    //location.href = "tp.html";
+    location.href = "tp.html";
 
     sendDataToNextPage();
 }  
@@ -446,7 +446,7 @@ function sendDataToNextPage(){
         name: bikeName,
         price: price,
     }
-
-    let temp = JSON.stringify(obj);
+    checkout_arr.push(obj);
+    let temp = JSON.stringify(checkout_arr);
     localStorage.setItem("checkout", temp);
 }
