@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: 'Montserrat', sans-serif;
+        }
+        #overall{
+            background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/doodles.png");
+            background-color: rgba(255,255,255,0.6);
+            background-blend-mode: lighten;
+        }
+        #homepage{
+            margin: 200px;
+            margin-top: 0px;
+            height: 100vh;
+        }
+        #nav{
+            /* border: 1px solid black; */
+            height: 70px;
+            display: flex;
+            flex-direction: row;
+            font-size: 15px;
+            letter-spacing: -1px;
+        }
+        #nav > div{
+            flex-grow: 1;
+            /* border: 1px solid red; */
+            text-align: center;
+            font-weight: bolder;
+            padding: 27px;
+            font-size: 15px;
+            
+        }
+        #content{
+            margin-top: 20px;
+        }
+        #content  img{
+            width: 120px;
+        }
+        #image{
+            background-image: url("https://www.onnbikes.com/img/ONN-logo-unit-without-shadow.png");
+            background-position: center;
+            /* width: auto; */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: rgba(255,255,255,0.6);
+            background-blend-mode:multiply;
+            border-radius: 20px;
+            border: 1px solid #E0E0E0;
+        }
+        .class_small{
+            font-size: 11px;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body id="overall">
+    <div id="homepage">
+        <div id="nav">
+            <div>HOME</div>
+            <div>OFFERS</div>
+            <div>RENT-TO-OWN</div>
+            <div id="image"></div>
+                <!-- <img src="https://www.onnbikes.com/img/ONN-logo-unit-without-shadow.png" alt=""></div> -->
+            <div>FAQ</div>
+            <div>WELCOME</div>
+            <div>9876543210</div>
+        </div>
+        <div id="content">
+
+        </div>
+
+    </div>
+    <script>
+        function show_left(){
+            let homepage = document.getElementById("homepage");
+            let content = document.getElementById("content");
+            let right_3 = document.getElementById("right_3");
+            // let tariff = document.getElementById("tariff");
+            // let price_show = document.getElementById("price");
+            // let parent_3 = document.getElementById("rental_data");
+            let data = JSON.parse(localStorage.getItem("checkout"));
+
+            data.forEach(function(prod) {
+                var div = document.createElement("div");
+                var image = document.createElement("img");
+                image.src = prod.image;
+                var excess = document.createElement("span");
+                excess.innerText = prod.excess;
+                excess.setAttribute("class","class_small");
+                var free = document.createElement("span");
+                free.innerText = prod.free;
+                free.setAttribute("class","class_small");
+
+                var name1 = prod.name;
+                var n1 = name1.split(" ");
+                var p1 = n1[0];
+                var h1 = n1[1] + " " +  n1[2];
+                var com = document.createElement("p");
+                com.innerText = p1;
+                com.style.marginBottom = "0px";
+                var mod = document.createElement("h1");
+                mod.innerText = h1;
+                mod.style.marginTop="0px";
+                let address_label = document.createElement("h2");
+                address_label.innerText = "PICKUP & RETURN LOCATION ";
+                let address = document.createElement("p");
+                address.innerText = prod.address;
+                address.style.color = "blue";
+
+                var price = document.createElement("p");
+                price.innerText = prod.price;
+                
+
+                
+
+                div.append(com,mod,image,address_label,address,excess,free);
+                content.append(div);
+                homepage.append(content);
+            });
+
+        }
+        show_left();
+    </script>
+</body>
+</html>
