@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div>
+    <h3>Credit / Debit / ATM Card</h3>
+  <form id="myCard">
+    <input type="text" id="card" placeholder="Enter Card Number"/>
+    <label>Valid thru</label>
+    <input placeholder="month" type="number" id="month" min="01" max="12"/>
+    <input placeholder="year" type="number" id="year" max="2030" min="2021"/>
+    <label>CVV</label>
+    <input type="password" id="cvv" minlength="3" maxlength="3"/>
+    <input type="submit" value="PAY"/>
+  </form>
+  <button id="change">Choose Different Method</button>
+  </div>
+</body>
+</html>
+<script>
+    function verification() {
+
+      let cardNum = document.getElementById("card").value;
+      let month = document.getElementById("month").value;
+      let year = document.getElementById("year").value;
+      let cvv = document.getElementById("cvv").value;
+      if(cardNum === '' || month == 0 || year == 0 || cvv == 0 || cardNum.length != 12){
+        alert("Please enter valied details");
+      } else {
+        setTimeout(function(){
+          generateOTPBox();
+        }, 2000);
+      }
+    }
+
+    document.getElementById("myCard").onsubmit = function(event){
+      event.preventDefault();
+      verification();
+    }
+
+    document.getElementById("change").addEventListener("click", changePayMethod);
+    function changePayMethod(){
+      window.location = "payment.html";
+    }
+
+    function generateOTPBox(){
+      document.body.innerHTML = null;
+      let div = document.createElement("div");
+
+      let p_otp = document.createElement("p");
+      p_otp.innerText = "OTP VERIFICATION";
+
+      let p_inbox = document.createElement("input");
+      p_inbox.type = "text";
+      p_inbox.setAttribute("id", "inBox");
+
+      let btn = document.createElement("button");
+      btn.innerText = "Verify";
+      btn.setAttribute("id", "otpBtn");
+
+      let resend = document.createElement("p");
+      resend.innerText = "Resend OTP";
+      resend.setAttribute("id", "again");
+      
+      let p_count = document.createElement("p");
+      p_count.setAttribute("id", "countDown")
+
+      div.append(p_otp, p_inbox, btn, resend, p_count);
+      document.body.append(div);
+
+      generateVerifyOTP();
+    }
+
+    function generateVerifyOTP(otp){
+        let num = Math.floor(Math.random()*999999);
+        console.log(num);
+
+        let countDown = document.getElementById("countDown");
+        document.getElementById("again").addEventListener("click", generateOTPBox);
+        
+        let i = 60;
+
+        let count = setInterval(countDownTimer, 1000);
+        let set = document.getElementById("inBox").value;
+
+        function countDownTimer(){
+            countDown.innerText = `${i} seconds`;
+            i--;
+            // let set = document.getElementById("inBox").value;
+            // if(set == num){
+            //   clearInterval(count);
+            //   countDown.remove();
+            //   alert("Payment Succesfull");
+            //   window.location = "home.html"
+            // }
+            if(i == -1){
+              clearInterval(count);
+              countDown.remove();
+              alert("Payment Unsuccesfull");
+              window.location = "payment.html"
+            }
+        }
+
+        document.getElementById("otpBtn").addEventListener("click", verified);
+        function verified(){
+          let set = document.getElementById("inBox").value;
+          if(set == num){
+              clearInterval(count);
+              countDown.remove();
+              alert("Payment Succesfull");
+              window.location = "home.html"
+            } else {
+              alert("Invalied OTP")
+            }
+        }
+    }
+</script>
