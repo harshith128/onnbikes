@@ -46,6 +46,15 @@ function hidPop(e2) {
         alert('Log in successfully');
         console.log("success");
         loginPopup.classList.remove("show");
+        
+        // Below code for storing login information
+        var obj = {
+            isLogin : true,
+            userid:Email,
+            pass:pass,
+        }
+        localStorage.setItem("loginData",JSON.stringify(obj));
+        
         document.location.href = "second_page.html";
     } else {
         alert('Wrong email id or password');
