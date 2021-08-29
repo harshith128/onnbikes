@@ -23,14 +23,16 @@
             display: flex;
             flex-direction: row-reverse;
             /* border: 1px solid blue; */
-            margin-top: 30px;
+            margin-top: 10px;
             height: 520px;
         }
         #content > div{
             flex-grow: 2;
         }
         #content  img{
-            width: 120px;
+            width: 170px;
+            margin-left: 10px;
+            margin-bottom: 0px;
         }
         #nav{
             /* border: 1px solid black; */
@@ -42,20 +44,29 @@
             flex-grow: 1;
             /* border: 1px solid red; */
             text-align: center;
-            font-weight: bolder;
-            padding: 27px;
-            font-size: 15px;
-            
+            color: #1E2D51;
+            font-weight:790;
+            padding: 30px;
+            font-size: 12px;            
         }
+        #nav > div:nth-child(4){
+            height: 10px;
+            width: 5px;
+            /* border: 1px solid #E0E0E0; */
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.6);
+            background-color: white;
+        }
+
         #image{
             background-image: url("https://www.onnbikes.com/img/ONN-logo-unit-without-shadow.png");
             /* width: auto; */
-            background-size: cover;
+            background-size: contain;
             background-position: center;
+            background-repeat: no-repeat;
             background-color: rgba(255,255,255,0.6);
             background-blend-mode:multiply;
             border-radius: 20px;
-            border: 1px solid #E0E0E0;
+            /* border: 1px solid #E0E0E0; */
         }
         #right_top{
             display: flex;
@@ -66,10 +77,11 @@
         #right_top > div{
             margin: 20px;
             flex-grow: 1;
+            /* height: 40px; */
         }
         #right_content{
-            border: 1px solid black ;
-            width: 200px;
+            /* border: 1px solid black ; */
+            width: 0px;
         }
         #right_3{
             background-color: white;
@@ -90,6 +102,7 @@
             border: 1px solid grey;
             box-shadow: 0 3px 10px rgb(0 0 0 / 0.6);
             background-color: white;
+            padding: 10px;
         }
         #code{
             margin: 5px;
@@ -121,6 +134,36 @@
             font-size: 10px;
             /* border: 1px solid green ; */
         }
+        #d_time1,#d_time2{
+            margin-top: 10px;
+        }
+        #accept{
+            margin-top: 10px;
+        }
+        #right_top p{
+            margin: 3px;
+            font-size: 10px;
+        }
+        #dt1,#dt2{
+            font-size: 26px;
+        }
+        #tm1,#tm2{
+            font-size: 13px;
+            margin-top: 0px;
+        }
+        #mn1,#mn2{
+            font-size: 9px;
+        }
+        #st_date,#end_date{
+            color: #1E2D51;
+        }
+        h2{
+            margin-top: 2px;
+            font-size: 15px;
+            margin-bottom: 3px;
+        }
+
+    
 
 
     </style>
@@ -140,8 +183,22 @@
         <div id="content">
             <div id="right_content">
                 <div id="right_top">
-                    <div id="st_date"></div>
-                    <div id="end_date"></div>
+                    <div id="st_date">
+                        <p >START TRIP</p>
+                        <div id="d_time1">
+                            <span id="dt1"></span>
+                            <span id="tm1"></span>
+                            <div id="mn1"></div>
+                        </div>
+                    </div>
+                    <div id="end_date">
+                        <p>END TRIP</p>
+                        <div id="d_time2">
+                            <span id="dt2"></span>
+                            <span id="tm2"></span>
+                            <div id="mn2"></div>
+                        </div>
+                    </div>
                 </div>
                 <div id="right_3">
 
@@ -221,13 +278,21 @@
                 var h1 = n1[1] + " " +  n1[2];
                 var com = document.createElement("p");
                 com.innerText = p1;
+                com.style.marginBottom = "0px"
                 var mod = document.createElement("h1");
                 mod.innerText = h1;
+                mod.style.fontSize = "20px";
+                mod.style.margin = "0px";
                 let address_label = document.createElement("h2");
                 address_label.innerText = "PICKUP & RETURN LOCATION ";
+                // address_label.style.marginTop = "2px";
                 let address = document.createElement("p");
                 address.innerText = prod.address;
                 address.style.color = "blue";
+                address.style.fontSize = "11px";
+                address.style.marginTop = "0px";
+                address.style.opacity = "0.6"
+
 
                 var price = document.createElement("p");
                 price.innerText = prod.price;
@@ -250,7 +315,17 @@
            
             let right_top = document.getElementById("right_top");
             let st_date = document.getElementById("st_date");
+            let d_time1 = document.getElementById("d_time1");
+            let dt1 = document.getElementById("dt1");
+            let tm1 = document.getElementById("tm1");
+            let mn1 = document.getElementById("mn1");
+
+            
             let end_date = document.getElementById("end_date");
+            let d_time2 = document.getElementById("d_time2");
+            let dt2 = document.getElementById("dt2");
+            let tm2 = document.getElementById("tm2");
+            let mn2 = document.getElementById("mn2");
            
             let promo = document.getElementById("promo");
             let right_3 = document.getElementById("right_3");
@@ -282,6 +357,8 @@
                 //date 
                 var arr1 = [];
                 var arr2 = [];
+                var time1 = [];
+                var time2 = [];
 // -------------------------------------------------------------------------------------------------------------------------------------------
                 var d1 = product.date1
                 var d1 = d1.split("T");
@@ -290,6 +367,57 @@
                 arr1.push(year1);
                 arr1.push(month1);
                 arr1.push(day1);
+                time1.push(hour1);
+                time1.push(minute1);
+                let mn_words = arr1[1];
+                switch (mn_words) {
+                    case 1:
+                        text = "Jan"
+                        break;
+                    case 2:
+                        text = "Feb"
+                        break;
+                    case 3:
+                        text = "Mar"
+                        break;
+                    case 4:
+                        text = "April"
+                        break;    
+                    case 5:
+                        text = "May"
+                        break;
+                    case 6:
+                        text = "June"
+                        break;
+                    case 7:
+                        text = "July"
+                        break;
+                    case 8:
+                        text = "Aug"
+                        break;
+                    case 9:
+                        text = "Sept"
+                        break;
+                    case 10:
+                        text = "Oct"
+                        break;
+                    case 11:
+                        text = "Nov"
+                        break;
+                    case 12:
+                        text = "Dec"                                                                       
+                    
+                
+                    default:
+                        break;
+                }
+                dt1.innerText = arr1[2];
+                dt1.style.font = "26px";
+                tm1.innerText = time1[0] +":"+time1[1];
+                tm1.style.font = "13px";
+                mn1.innerText = text + " " + arr1[0];
+                mn1.style.font = "9px";
+               // console.log(arr1[1]);
 
                 var d2 = product.date2
                 var d2 = d2.split("T");
@@ -298,9 +426,56 @@
                 arr2.push(year2);
                 arr2.push(month2);
                 arr2.push(day2);
+                time2.push(hour2);
+                time2.push(minute2);
+                let mn_words2 = arr2[1];
+                switch (mn_words2) {
+                    case 1:
+                        text2 = "Jan"
+                        break;
+                    case 2:
+                        text2 = "Feb"
+                        break;
+                    case 3:
+                        text2 = "Mar"
+                        break;
+                    case 4:
+                        text2 = "April"
+                        break;    
+                    case 5:
+                        text2 = "May"
+                        break;
+                    case 6:
+                        text2 = "June"
+                        break;
+                    case 7:
+                        text2 = "July"
+                        break;
+                    case 8:
+                        text2 = "Aug"
+                        break;
+                    case 9:
+                        text2 = "Sept"
+                        break;
+                    case 10:
+                        text2 = "Oct"
+                        break;
+                    case 11:
+                        text2 = "Nov"
+                        break;
+                    case 12:
+                        text2 = "Dec"                                                                       
+                    
+                
+                    default:
+                        break;
+                }
+                dt2.innerText = arr2[2];
+                tm2.innerText = time2[0] +":"+time2[1];
+                mn2.innerText = text2 + " " + arr2[0];;
+                //console.log(arr2[2]);
                 var number_days = 1;
                 var ans = date_diff(arr1,arr2);
-                console.log(ans[0],ans[1]);
                 if(ans[0] == 0){
                     number_days = number_days * ans[1];
                 }
@@ -394,11 +569,22 @@
 
                 let ref = document.createElement("div");
                 ref.innerText = "Refundable Deposit";
+                ref.style.padding = "10px"
+                ref.style.marginBottom = "0px"
+                ref.style.fontSize = "15px"
                 let dep = document.createElement("div");
                 dep.innerText = "0";
+                dep.style.padding = "8px"
+                dep.style.paddingTop = "18px"
+                dep.style.paddingLeft = "38px"
+                dep.style.paddingRight= "0px"
+
+                
                 let pay = document.createElement("p");
                 pay.innerText = "This amount has to be paid at the time of vehicle delivery";
-                pay.setAttribute("class","class1")
+                pay.style.marginTop = "1px";
+                pay.style.fontSize = "10px"
+                // pay.setAttribute("class","class1")
 
                 // pricing
                 var tot_val = product.price * number_days;
@@ -406,6 +592,7 @@
                 let pricing = document.createElement("p");
                 pricing.innerText = "PRICING";
                 pricing.setAttribute("class","class1")
+                // pricing.style.padding = "10px"
                 let tariff = document.createElement("p");
                 tariff.innerText = "Tariff(Inclusive of all tax)";
                 tariff.setAttribute("class","class1");
@@ -468,6 +655,7 @@
                         tot_val = tot_val - Number(15);
                         tot_price.innerText = tot_val;
                         btn2.innerHTML = `Payment ${tot_val}`;
+                        localStorage.setItem(JSON.stringify("total_price"),tot_val);
                         // tot_price.setAttribute("class","class1")
                     }
                 }
@@ -488,6 +676,8 @@
                 btn2.innerHTML = `Payment ${tot_val}`;
                 btn2.style.backgroundColor = "Blue";
                 btn2.style.opacity = "0.5";
+                btn2.style.width = "400px";
+                btn2.style.height = "50px"
 
                 console.log(tot_val);
 
@@ -532,7 +722,8 @@
 
 
                 //append-------------------------------------
-                right_top.append(start,end_date);
+               // right_top.append(start,end_date);
+                
                 ref.append(pay);
                 right_3.append(ref,dep);
                 right_3.setAttribute("class","class2");
