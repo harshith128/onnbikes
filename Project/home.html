@@ -375,7 +375,7 @@
                 <input type="datetime-local" placeholder="END DATE"/>
             </div>
             <div class="rideBtn">
-                <button onclick="gotonextpage()">RIDE NOW</button>
+                <button>RIDE NOW</button>
             </div>
         </div>
     </div>
@@ -518,7 +518,7 @@
     //code for go to next page/popup page
 
     function gotonextpage(){
-        location.href = "login_popup.html";
+        // location.href = "login_popup.html";
     }
 
     let myDiv = document.getElementById("page-details");
@@ -663,6 +663,7 @@
             alert("Please select Valid End Date and Time");
         } else {
             localStorage.setItem("Date", JSON.stringify({city:city, plan:plan, startDate:start_date, endDate:end_date}));
+            location.href = "login_popup.html";
         }
     }
 
