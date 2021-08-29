@@ -5,20 +5,101 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    body {
+      background-color: rgb(250, 250, 250);
+    }
+    #cardpage {
+      width: 40%;
+      border: 1px solid gray;
+      margin: 50px auto;
+      color: rgb(100, 100, 100);
+    }
+    #cardpage > h3{
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+    .cont {
+      width: 80%;
+      margin: auto;
+      margin-top: 20px;
+    }
+    #cardpage input {
+      height: 28px;
+      font-size: 16px;
+    }
+    #card {
+      margin-top: 10px;
+      width: 100%;
+    }
+    #cardpage label {
+      margin-top: 10px;
+    }
+    #cvv, #month, #year{
+      width: 25%;
+      margin: 2%;
+    }
+    #cvv {
+      margin-left: 44px;
+    }
+    #cardpage input:not(#cardpage input[type=submit]) {
+      margin-bottom: 25px;
+      padding-left: 10px;
+    }
+    #cardpage input[type=submit]{
+      padding: 5px;
+      font-size: 14px;
+      background-color: rgb(30, 45, 81);
+      color: white;
+      box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    }
+    #change {
+      width: 25%;
+      padding: 5px;
+      margin: 20px auto;
+      background-color: rgb(30, 45, 81);
+      box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+      color: white;
+    }
+    #change:hover, #cardpage input[type=submit]:hover{
+      box-shadow: 0 3px 10px rgb(0 0 0 / 0.6);
+    }
+    .rbi{
+      border: 1px solid rgb(199, 199, 7);
+      background-color: rgb(255, 255, 193);
+      padding: 10px;
+      text-align: justify;
+      font-size: 14px;
+    }
+    .rbi + p{
+      font-size: 12px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
-  <div>
+  <div id="cardpage">
     <h3>Credit / Debit / ATM Card</h3>
-  <form id="myCard">
-    <input type="text" id="card" placeholder="Enter Card Number"/>
-    <label>Valid thru</label>
-    <input placeholder="month" type="number" id="month" min="01" max="12"/>
-    <input placeholder="year" type="number" id="year" max="2030" min="2021"/>
-    <label>CVV</label>
-    <input type="password" id="cvv" minlength="3" maxlength="3"/>
-    <input type="submit" value="PAY"/>
-  </form>
-  <button id="change">Choose Different Method</button>
+    <div class="cont">
+      <form id="myCard">
+        <label>Card Number</label></br>
+        <input type="text" id="card" placeholder="Enter Card Number"/>
+        <label>Valid thru:</label>
+        <input placeholder="Month" type="number" id="month" min="01" max="12"/>
+        <input placeholder="Year" type="number" id="year" max="2030" min="2021"/></br>
+        <label>CVV</label>
+        <input type="password" id="cvv" minlength="3" maxlength="3" placeholder="CVV"/></br>
+        <p class="rbi">As per RBI's directive, w.e.f October 01, 2020, any Indian deabit/credit card not yet used for online e-commerce will be blocked for all online transactions. In such failure, please contact your card issuing bank to enable online usage.</p>
+        <p>I agree with the Privacy Policy by proceeding with this payment.</p>
+        <input type="submit" value="Make Payment"/>
+      </form>
+      <button id="change">Cancel</button>
+    </div>
   </div>
 </body>
 </html>

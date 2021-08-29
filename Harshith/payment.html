@@ -92,6 +92,22 @@
             border: 1px solid red;
             margin: auto;
         }
+        .red {
+            background-color: red;
+            padding: 0px;
+            color: white;
+            font-size: 10px;
+            padding: 2px;
+            border-radius: 12px;
+        }
+        .green {
+            background-color: green;
+            padding: 0px;
+            color: white;
+            font-size: 10px;
+            padding: 2px;
+            border-radius: 12px;
+        }
     </style>
 </head>
 <body>
@@ -154,21 +170,47 @@
                 <h2>Booking Details</h2>
             </div>
             <div>
-                <div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                <div class="main">
+                    <div class="book"></div>
+                    <div class="book"></div>
+                    <div class="book"></div>
+                    <div class="book"></div>
+                    <div class="book"></div>
+                    <div class="book"></div>
                 </div>
                 <p>Other Details</p>
-                <div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                <div class="other">
+                    <div>
+                        <div>
+                            <p>Kilometers Eligible</p>
+                            <p>300 Km</p>
+                        </div>
+                        <p>The number of kms you can ride at no extra charge</p>
+                    </div>
+                    <div>
+                        <div class="excess">
+                            <p>Excess Kms Fare</p>
+                        </div>
+                        <p>You can ride the eligible km for free excluding fuel</p>
+                    </div>
+                    <div>
+                        <div>
+                            <p>Speed Limit</p>
+                            <p>80Km/hr</p>
+                        </div>
+                        <p>Penalty applicable in case of violation</p>
+                    </div>
+                    <div>
+                        <div>
+                            <p>Late Return(First two hours of delay)</p>
+                            <p>₹100</p>
+                        </div>
+                        <p>₹9/hour after two hours of delay</p>
+                    </div>
+                    <div>
+                        <P><span class="red">&#x2718;</span>Excludes fuel</P>
+                        <P><span class="green">&#x2714;</span>Includes all taxes</P>
+                    </div>
                 </div>
             </div>
         </div>
@@ -176,6 +218,64 @@
 </body>
 </html>
 <script>
+
+    function addBooking(){
+        let details = document.querySelectorAll(".book");
+        let addLocal = JSON.parse(localStorage.getItem("checkout"));
+        let start = addLocal[0].date1;
+        let end = addLocal[0].date2;
+        let excess = addLocal[0].excess;
+        let free = addLocal[0].free;
+        let name = addLocal[0].name;
+        let price = +addLocal[0].price;
+        let total = Math.floor(price * 1.05);
+        let add = addLocal[0].address;
+
+        let p_name = document.createElement("p");
+        p_name.innerText = name;
+        let p_total = document.createElement("p");
+        p_total = total;
+        details[0].append(p_name, p_total);
+
+        let start_p = document.createElement("p");
+        let p_start = document.createElement("p");
+        let end_p = document.createElement("p");
+        let p_end = document.createElement("p");
+
+        start_p.innerText = "START TRIP";
+        end_p.innerText = "END TRIP";
+        p_start.innerText = start;
+        p_end.innerText = end;
+        details[1].append(start_p, end_p, p_start, p_end);
+
+        let place = document.createElement("p");
+        place.innerText = "PICKUP & RETURN LOCATION";
+        let newAdd = document.createElement("p");
+        newAdd.innerText = add;
+        details[2].append(place, add);
+
+        let breakdown = document.createElement("p");
+        breakdown.innerText = "Payment Breakdown";
+        details[3].append(breakdown);
+
+        let tariff = document.createElement("p");
+        tariff.innerHTML = 'Tariff<span>  (Inclussive all taxes)</span>'
+        let addTariff = document.createElement("p");
+        addTariff.innerText = price;
+        details[4].append(tariff, addTariff);
+
+        let amount = document.createElement("p");
+        amount.innerText = "Payable Amount";
+        let addamount = document.createElement("p");
+        addamount.innerText = total;
+        details[5].append(amount, addamount);
+
+        let addexcess = document.querySelector(".excess");
+        let p_excess = document.createElement("p");
+        p_excess.innerText = excess;
+        addexcess.append(p_excess);
+    }
+    addBooking();
     document.querySelector(".cardPay").addEventListener("click", loadPayment);
 
     function loadPayment(){
