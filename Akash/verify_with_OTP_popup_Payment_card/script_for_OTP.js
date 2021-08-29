@@ -36,9 +36,10 @@ function generateVerifyOTP() {
     //resend OTP function
 
     function resendOTP() {
-        clearInterval(count);
-        countDown.remove();
-         showPopup();
+        //clearInterval(count);
+        //countDown.remove();
+        // showPopup();
+        location.href = "";
     }
 
     let i = 60;
