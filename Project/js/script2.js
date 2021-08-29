@@ -424,6 +424,7 @@ function sendDataToNextPage(){
     var datas3 = JSON.parse(localStorage.getItem("Date"));
     var datas4 = JSON.parse(localStorage.getItem("bookedBike"));
 
+
     var checkout_arr = [];
 
     var id = datas4[0].id;
