@@ -54,7 +54,9 @@ function bookNowClicked(p){
 }
 
 function check_login() {
-    return true;
+    let checks=JSON.parse(localStorage.getItem("loginData"));
+    let status = checks.isLogin;
+    return status;
 }
 
 function fun1234(one,two,three){
