@@ -162,7 +162,15 @@
         console.log(num);
 
         let countDown = document.getElementById("countDown");
-        document.getElementById("again").addEventListener("click", generateOTPBox);
+        document.getElementById("again").addEventListener("click", resendOTP);
+
+        //resendOTP function is the extra
+
+        function resendOTP(){
+          clearInterval(count);
+          countDown.remove();
+          generateOTPBox();
+        }
         
         let i = 60;
 
