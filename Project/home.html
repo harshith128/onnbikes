@@ -343,7 +343,7 @@
                 <img src="https://www.onnbikes.com/img/ONN-logo-unit-without-shadow.png" id="logo"/>
             </div>
             <div id="faq-btn">FAQ</div>
-            <div>LOGIN/SIGNUP</div>
+            <div onclick="goToLoginPage()">LOGIN/SIGNUP</div>
             <div>+918378007800</div>
         </div>
         <div id="info-bar">
@@ -669,4 +669,8 @@
 
     document.querySelector(".rideBtn").querySelector("button").addEventListener("click", rideNow);
 
+    //on nav bar the login/signup part is working
+    function goToLoginPage(){
+        location.href = "login_popup.html";
+    }
 </script>
