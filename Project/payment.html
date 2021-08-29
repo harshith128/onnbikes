@@ -265,8 +265,8 @@
         let excess = addLocal[0].excess;
         let free = addLocal[0].free;
         let name = addLocal[0].name;
-        let price = +addLocal[0].price;
-        let total = Math.floor(price * 1.05);
+        let total = +JSON.parse(localStorage.getItem("total_price")).price;
+        let price = Math.floor(total / 1.05);
         let add = addLocal[0].address;
 
         let p_name = document.createElement("p");
