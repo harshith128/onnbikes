@@ -420,8 +420,7 @@
                 let btn = document.createElement("button");
                 btn.innerText = "Apply promocode";
                 btn.setAttribute("class","class1");
-                localStorage.setItem(JSON.stringify("total_price"),tot_val);
-                
+                localStorage.setItem("total_price", JSON.stringify({price:tot_val}));
 
                 btn.onclick = function(){
                     //console.log(input.value);
@@ -432,7 +431,7 @@
                         }
                         let crt = JSON.parse(localStorage.getItem("payment_data"));
                         crt = tot_val;
-                        localStorage.setItem(JSON.stringify("total_price"),crt);
+                        localStorage.setItem("total_price", JSON.stringify({price:crt}));
                         tot_price.innerText = tot_val;
                         btn2.innerHTML = `Payment ${tot_val}`;
                         btn.onclick = "";
@@ -459,7 +458,7 @@
                         ins_price.innerText = "+15";
                         tot_val = Number(tot_val) + Number(15);
                         tot_price.innerText = tot_val;
-                        localStorage.setItem(JSON.stringify("total_price"),tot_val);
+                        localStorage.setItem("total_price", JSON.stringify({price:tot_val}));
                         btn2.innerHTML = `Payment ${tot_val}`;
                         // tot_price.setAttribute("class","class1")
                     }
