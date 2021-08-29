@@ -115,7 +115,7 @@
             margin-top: 12px;
         }
         #ins_p{
-            margin-left: 240px;
+            margin-left: 200px;
         }
         #div2{
             display: flex;
@@ -162,6 +162,17 @@
             font-size: 15px;
             margin-bottom: 3px;
         }
+        #t_price{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        #tariff{
+            margin-right: 0px;
+
+        }
+        #price{
+            margin-left: 160px;
+        }
 
     
 
@@ -204,11 +215,10 @@
 
                 </div>
                 <div id="promo">
+                    <div id="ban"></div>
                     <div id="t_price">
-                        <div id="ban">
-                            <div id="tariff"></div>
-                            <div id="price"></div>
-                        </div>
+                        <div id="tariff"></div>
+                        <div id="price"></div>
                     </div>
                     <div id="code">
                         <div id="in"></div>
@@ -226,7 +236,7 @@
                     <div id="total"></div>
                     <div id="div1">
                         <div id="div2">
-                            <span style="background-color: red;border: 1px solid black;width: 10px;">&#9747;</span>
+                            <span style="background-color: red;border: 1px solid black;width: 10px;height: 11px;">&#9747;</span>
                         </div>
                         <div id="div3">
                             <span>&#9989;</span>
@@ -576,7 +586,7 @@
                 dep.innerText = "0";
                 dep.style.padding = "8px"
                 dep.style.paddingTop = "18px"
-                dep.style.paddingLeft = "38px"
+                dep.style.paddingLeft = "60px"
                 dep.style.paddingRight= "0px"
 
                 
@@ -589,16 +599,16 @@
                 // pricing
                 var tot_val = product.price * number_days;
                 let tariff_val = tot_val;
-                let pricing = document.createElement("p");
-                pricing.innerText = "PRICING";
-                pricing.setAttribute("class","class1")
+                // let pricing = document.createElement("p");
+                ban.innerText = "PRICING";
+                ban.setAttribute("class","class1")
                 // pricing.style.padding = "10px"
-                let tariff = document.createElement("p");
-                tariff.innerText = "Tariff(Inclusive of all tax)";
-                tariff.setAttribute("class","class1");
-                let price = document.createElement("p");
-                price.innerText = tot_val;
-                price.style.fontSize = "14px"
+                // let tariff = document.createElement("p");
+                tariff_var.innerText = "Tariff(Inclusive of all tax)";
+                tariff_var.setAttribute("class","class1");
+                // let price = document.createElement("p");
+                price_var.innerText = tot_val;
+                price_var.style.fontSize = "14px"
 
                 let input = document.createElement("input");
                 input.setAttribute("type","text");
@@ -607,7 +617,7 @@
                 let btn = document.createElement("button");
                 btn.innerText = "Apply promocode";
                 btn.setAttribute("class","class1");
-                localStorage.setItem(JSON.stringify("total_price"),tot_val);
+                localStorage.setItem("total_price", JSON.stringify({price:tot_val}));
                 
 
                 btn.onclick = function(){
@@ -619,7 +629,7 @@
                         }
                         let crt = JSON.parse(localStorage.getItem("payment_data"));
                         crt = tot_val;
-                        localStorage.setItem(JSON.stringify("total_price"),crt);
+                        localStorage.setItem("total_price", JSON.stringify({price:crt}));
                         tot_price.innerText = tot_val;
                         btn2.innerHTML = `Payment ${tot_val}`;
                         btn.onclick = "";
@@ -635,8 +645,10 @@
                 check.setAttribute("type","checkbox");
                 let label = document.createElement("p");
                 label.innerText = "Insure my ride";
+                // label.style.marginRight = "0"
                 let ins_price = document.createElement("P");
                 ins_price.innerText = "0";
+                // ins_price.style.marginLeft = "0"
                 label.setAttribute("class","class1")
                 let para = document.createElement("p");
                 para.innerText = "*Covers the rider,pillion and vehicle T&C apply";
@@ -646,7 +658,7 @@
                         ins_price.innerText = "+15";
                         tot_val = Number(tot_val) + Number(15);
                         tot_price.innerText = tot_val;
-                        localStorage.setItem(JSON.stringify("total_price"),tot_val);
+                        localStorage.setItem("total_price", JSON.stringify({price:tot_val}));
                         btn2.innerHTML = `Payment ${tot_val}`;
                         // tot_price.setAttribute("class","class1")
                     }
@@ -655,7 +667,7 @@
                         tot_val = tot_val - Number(15);
                         tot_price.innerText = tot_val;
                         btn2.innerHTML = `Payment ${tot_val}`;
-                        localStorage.setItem(JSON.stringify("total_price"),tot_val);
+                        localStorage.setItem("total_price", JSON.stringify({price:tot_val}));
                         // tot_price.setAttribute("class","class1")
                     }
                 }
@@ -672,12 +684,16 @@
                 tot_sen.innerText = "Total amount is";
                 let tot_price = document.createElement("div");
                 tot_price.innerText = tot_val
+                tot_price.style.marginLeft = "190px"
                 let btn2 = document.createElement("button");
                 btn2.innerHTML = `Payment ${tot_val}`;
                 btn2.style.backgroundColor = "Blue";
                 btn2.style.opacity = "0.5";
-                btn2.style.width = "400px";
-                btn2.style.height = "50px"
+                btn2.style.width = "334px";
+                btn2.style.height = "34px"
+                btn2.style.marginLeft = "8px" 
+                btn2.style.fontSize = "20px"
+                btn2.style.color = "white"
 
                 console.log(tot_val);
 
@@ -706,7 +722,7 @@
                         btn2.style.opacity = "1"
                         btn2.onclick = function(){
                             localStorage.setItem("payment_data",JSON.stringify(data_payment));
-                            window.location.href = "file:///F:/workspace/project_no_css/New%20folder/onnbikes/Shubham/book_now.html";
+                            window.location.href = "payment.html";
                         }
                     }
                     else if (ch2.checked == false){
@@ -728,10 +744,11 @@
                 right_3.append(ref,dep);
                 right_3.setAttribute("class","class2");
                 
-                tariff_var.append(tariff)
-                price_var.append(price);
-                ban.append(pricing,tariff_var,price_var);
-                t_price.append(ban);
+                // tariff_var.append(tariff)
+                // price_var.append(price);
+                // ban.append(pricing,tariff_var,price_var);
+                // t_price.append(ban);
+                t_price.setAttribute("class","class2");
                 
                 inn.append(input);
                 app.append(btn);
@@ -754,7 +771,7 @@
 
                 total_cont.append(tot_sen,tot_price);
                 total_cont.setAttribute("class","class2");
-                promo.append(pricing,t_price,code,insure,div1,total_cont);
+                promo.append(t_price,code,insure,div1,total_cont);
 
                 last_button.append(btn2)
                 check_last.append(ch2);
