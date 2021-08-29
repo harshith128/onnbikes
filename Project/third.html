@@ -88,7 +88,7 @@
         }
         #promo{
             border: 1px solid grey;
-            box-shadow: 0 3px 10px rgb(0 0 0 / 0.6);
+            box-shadow: 2px 2px 2px 2px grey;
             background-color: white;
         }
         #code{
@@ -140,8 +140,6 @@
         <div id="content">
             <div id="right_content">
                 <div id="right_top">
-                    <div id="st_date"></div>
-                    <div id="end_date"></div>
                 </div>
                 <div id="right_3">
 
@@ -203,8 +201,7 @@
             
 
             // let parent_3 = document.getElementById("rental_data");
-        let data = JSON.parse(localStorage.getItem("checkout"));
-        // console.log(data);
+        let data = JSON.parse(localStorage.getItem("checkout_dum"));
 
         data.forEach(function(prod) {
             var div = document.createElement("div");
@@ -247,11 +244,7 @@
             let homepage = document.getElementById("homepage");
             let content = document.getElementById("content");
             let right_content = document.getElementById("right_content");
-           
-            let right_top = document.getElementById("right_top");
-            let st_date = document.getElementById("st_date");
-            let end_date = document.getElementById("end_date");
-           
+            let date_show = document.getElementById("right_top");
             let promo = document.getElementById("promo");
             let right_3 = document.getElementById("right_3");
             let t_price = document.getElementById("t_price");
@@ -277,115 +270,12 @@
             let last_button = document.getElementById("last_button");
             
 
-            let data = JSON.parse(localStorage.getItem("checkout"));
-            console.log(data);
+            let data = JSON.parse(localStorage.getItem("checkout_dum"));
             data.forEach(function(product){
                 //date 
-                var arr1 = [];
-                var arr2 = [];
-// -------------------------------------------------------------------------------------------------------------------------------------------
-                var d1 = product.date1
-                var d1 = d1.split("T");
-                var [year1,month1,day1] = d1[0].split("-").map(Number);
-                var [hour1,minute1] = d1[1].split(":").map(Number);
-                arr1.push(year1);
-                arr1.push(month1);
-                arr1.push(day1);
 
-                var d2 = product.date2
-                var d2 = d2.split("T");
-                var [year2,month2,day2] = d2[0].split("-").map(Number);
-                var [hour2,minute2] = d2[1].split(":").map(Number);
-                arr2.push(year2);
-                arr2.push(month2);
-                arr2.push(day2);
-                var number_days = 0;
-                var ans = date_diff(arr1,arr2);
-                console.log(ans[0],ans[1]);
-                if(ans[0] == 0){
-                    number_days = ans[1];
-                }
-                else{
-                    var len = ans[0].length;
-                    for(var i=0;i<len;i++){
-                        number_days = ans[1]+30;
-                    }
-                }
-
-                function date_diff(dt1,dt2){
-                    if(dt1[0] == dt2[0]){
-                        if(dt1[1] == dt2[1]){
-                            var days = (dt2[2] - dt1[2]);
-                            var mon = 0;
-                            return [mon,days];
-                        }else{
-                            var mondiff=month_diff(dt1,dt2);
-                            console.log('mondiff:', mondiff)
-                            var days_in_month_dt1 = days_in_month(dt1[1]);
-                            var days1 = days_in_month_dt1 - (dt1[2]);
-                            console.log('days1:', days1)
-                            var days_in_month_dt2 = dt2[2]
-                            console.log('days_in_month_dt2:', days_in_month_dt2)
-                            var mon = mondiff;
-                            var days = days1+days_in_month_dt2;
-                            return [mon,days];
-                        }
-                    }
-                }
-                function month_diff(dt1,dt2){
-                    let mon1 = dt1[1];
-                    let mon2 = dt2[1];
-                    obj = {
-                            01:31,
-                            02:28,
-                            03:31,
-                            04:30,
-                            05:31,
-                            06:30,
-                            07:31,
-                            08:31,
-                            09:30,
-                            10:31,
-                            11:30,
-                            12:31,
-                        }
-                        var day =0;
-                        for(key in obj){
-                            if(key > mon1 && key < mon2){
-                                day++;
-                            }
-                        }
-                        return day;
-                }
-
-                function days_in_month(month){
-                    obj = {
-                        01:31,
-                        02:28,
-                        03:31,
-                        04:30,
-                        05:31,
-                        06:30,
-                        07:31,
-                        08:31,
-                        09:30,
-                        10:31,
-                        11:30,
-                        12:31,
-                    }
-                    month =(Number(month));
-                    for(key in obj){
-                        //var temp = Number(key);
-                        if(key == month){
-                            return (obj[key]);
-                        }
-                    }
-                }
-
-// -------------------------------------------------------------------------------------------------------------------------------------------                
-            
-                let start = document.createElement("p");//2021-08-29T12:41
-                start.innerText = product.date1;
+                let start_date = document.createElement("div");
+                start_date.innerText = product.date1;
                 let end_date = document.createElement("div");
                 end_date.innerText = product.date2;
 
@@ -487,14 +377,14 @@
                     if(ch2.checked == true){
                         btn2.style.backgroundColor = "Blue";
                         btn2.style.opacity = "1"
-                        btn2.onclick = function(){
-                            window.location.href = "second_page.html";
-                        }
+                        // btn2.onclick = function(){
+                        //     window.location = "book_now.html";
+                        // }
                     }
                     else if (ch2.checked == false){
                         btn2.style.backgroundColor = "Blue";
                         btn2.style.opacity = "0.5";
-                        btn2.onclick="";
+                        //btn2.onclick="";
                     }
                 }
 
@@ -504,7 +394,7 @@
 
 
                 //append-------------------------------------
-                right_top.append(start,end_date);
+                date_show.append(start_date,end_date);
                 ref.append(pay);
                 right_3.append(ref,dep);
                 right_3.setAttribute("class","class2");
@@ -542,7 +432,7 @@
                 para_acc.append(p3);
                 accept.append(ch2,p3);
 
-                right_content.append(right_3,promo,accept,last_button);
+                right_content.append(date_show,right_3,promo,accept,last_button);
 
 
             });
