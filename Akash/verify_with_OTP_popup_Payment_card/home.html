@@ -343,7 +343,7 @@
                 <img src="https://www.onnbikes.com/img/ONN-logo-unit-without-shadow.png" id="logo"/>
             </div>
             <div id="faq-btn">FAQ</div>
-            <div onclick="goToLoginPage()">LOGIN/SIGNUP</div>
+            <div>LOGIN/SIGNUP</div>
             <div>+918378007800</div>
         </div>
         <div id="info-bar">
@@ -515,12 +515,6 @@
 </body>
 </html>
 <script>
-    //code for go to next page/popup page
-
-    function gotonextpage(){
-        // location.href = "login_popup.html";
-    }
-
     let myDiv = document.getElementById("page-details");
     let imgBgArr = ["https://www.onnbikes.com/img/Self-ride-bike-rentals-desktop@2x.jpg", "https://www.onnbikes.com/img/long-term-desktopbanner@2x.jpg", "https://www.onnbikes.com/img/R2o-desktopbanner.jpg"];
 
@@ -663,14 +657,9 @@
             alert("Please select Valid End Date and Time");
         } else {
             localStorage.setItem("Date", JSON.stringify({city:city, plan:plan, startDate:start_date, endDate:end_date}));
-            location.href = "login_popup.html";
         }
     }
 
     document.querySelector(".rideBtn").querySelector("button").addEventListener("click", rideNow);
 
-    //on nav bar the login/signup part is working
-    function goToLoginPage(){
-        location.href = "login_popup.html";
-    }
 </script>

@@ -39,7 +39,7 @@ function autoCreatedData(){
     image13="https://imgd.aeplcdn.com/1200x900/bw/models/honda-livo-drum--bs-vi20200630131631.jpg";
     image14="https://images.carandbike.com/bike-images/large/bajaj/avenger-cruise-220/bajaj-avenger-cruise-220.jpg?v=11";
 
-    var newprod = new create(1,"Honda CD110",269,image1,"Honda","CD110","Motorcycle",3);
+    var newprod = new create(1,"Honda CD110",269,image1,"Honda","Honda CD110","Motorcycle",3);
     dt.push(newprod);
     var newprod = new create(2,"Honda Activa",289,image2,"Honda","Activa","Scooter",5);
     dt.push(newprod);
