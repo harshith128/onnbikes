@@ -98,3 +98,9 @@
     flex: 1;
     /* border: 1px solid yellow; */
 }
+
+/* Scroll view is impliemented here */
+#scroll_div {
+    overflow: scroll;
+    height: 450px;
+}
