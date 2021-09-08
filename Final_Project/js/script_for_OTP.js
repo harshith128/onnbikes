@@ -73,7 +73,7 @@ function generateVerifyOTP() {
             clearInterval(count);
             countDown.remove();
             alert("Payment Succesfull");
-            window.location = "index.html"
+            window.location = "../index.html"
         } else {
             alert("Invalied OTP");
         }

@@ -66,5 +66,5 @@ function hidPop(e2) {
 close.addEventListener("click", function() {
 
     loginPopup.classList.remove("show");
-    document.location.href = "home.html";
+    document.location.href = "../index.html";
 })
