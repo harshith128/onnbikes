@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>show data</title>
+    <link rel='stylesheet' href='css/styles1.css'/>
+    <link rel='stylesheet' href="css/styles2.css"/>
+    
+</head>
+<body>
+    <div class="bg-image"></div>
+    <div id="page-details">
+        <div class="nav-bar">
+            <div onclick="goToHomePage()">HOME</div>
+            <div>OFFERS</div>
+            <div>RENT-TO-OWN</div>
+            <div>
+                <img class="top_img_icon" src="https://www.onnbikes.com/img/ONN-logo-unit-without-shadow.png" id="logo"/>
+            </div>
+            <div>FAQ</div>
+            <div>WELCOME</div>
+            <div>+918378007800</div>
+        </div>
+        
+    </div>
+    <div id="ride-bar">
+        <div  class="city">
+            <select  id="city_name" class="select_class">
+                <option value="bengaluru">BENGALURU</option>
+                <option value="hyderabad">HYDERABAD</option>
+                <option value="jaipur">JAIPUR</option>
+                <option value="gurugram">GURUGRAM</option>
+                <option value="mysuru">MYSURU</option>
+                <option value="udaipur">UDAIPUR</option>
+                <option value="ahmedabad">AHMEDABAD</option>
+            </select>
+        </div>
+        <div class="booking">
+            <select id="second_select" class="select_from_ride_bar">
+                <option value="hour">HOURLY/DAILY</option>
+                <option value="day">30 DAY BOOKING</option>
+            </select>
+        </div>
+        <div class="startDate">
+            <input id="startDate" type="datetime-local" placeholder="START DATE" class="start_date_cal"/>
+        </div>
+        <div class="endDate">
+            <input id="endDate" type="datetime-local" placeholder="END DATE" class="end_date_cal"/>
+        </div>
+        <div class="rideBtn">
+            <button onclick="rideNow()"><a>RIDE NOW</a></button>
+        </div>
+    </div>
+    <div id="main_div">
+        <div id="sort_div">
+            <div id="filter_div">
+                <div class="box">
+                    <p class="item" id="p_1">FILTER</p>
+                    <p class="item" id="p_2"></p>
+                    <p class="item" id="p_3" onclick="clearFun()"><a href="" onclick="clearFun()">clear all</a></p>
+                </div>
+                
+                <h3 id="manu">MANUFACTURER</h3>
+                <div id="filter_1">
+                    <input type="checkbox" class="filter1_components" id="check1" onclick="fun1(this)">
+                    <label for="check1">Royal Enfield</label>
+                    <br>
+
+                    <input type="checkbox" class="filter1_components" id="check2" onclick="fun2(this)">
+                    <label for="check1">Bajaj</label>
+                    <br>
+
+                    <input type="checkbox" class="filter1_components" id="check3" onclick="fun3(this)">
+                    <label for="check1">Honda</label>
+                    <br>
+
+                    <input type="checkbox" class="filter1_components" id="check4" onclick="fun4(this)">
+                    <label for="check1">Yamaha</label>
+                    <br>
+                </div>
+                <h3 id="manu2">MODEL</h3>
+                <div id="filter_2">
+                    <input type="checkbox" class="filter1_components" id="check5" onclick="fun5(this)">
+                    <label for="check5">350 Classic</label>
+                    <br>
+
+                    <input type="checkbox" class="filter1_components" id="check6" onclick="fun6(this)">
+                    <label for="check6">Avenger 220 Street</label>
+                    <br>
+
+                    <input type="checkbox" class="filter1_components" id="check7" onclick="fun7(this)">
+                    <label for="check7">Activa</label>
+                    <br>
+
+                    <input type="checkbox" class="filter1_components" id="check8" onclick="fun8(this)">
+                    <label for="check8">FZ</label>
+                    <br>
+
+                    <input type="checkbox" class="filter1_components" id="check9" onclick="fun9(this)">
+                    <label for="check9">Dio</label>
+                    <br>
+
+                    <input type="checkbox" class="filter1_components" id="check10" onclick="fun10(this)">
+                    <label for="check10">Pulsar</label>
+                    <br>
+
+                    <input type="checkbox" class="filter1_components" id="check11" onclick="fun11(this)">
+                    <label for="check11">CT 100</label>
+                    <br><br>
+                </div>
+                <h3 id="manu3">VEHICLE TYPE</h3>
+                <div id="filter_3">
+                    <input type="checkbox" id="check12" onclick="fun12(this)">
+                    <label for="check12">Motorcycle</label>
+                    <br>
+
+                    <input type="checkbox" id="check13" onclick="fun13(this)">
+                    <label for="check13">Scooter</label>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <div id="scroll_div" class="scroll_class">
+            <div id="data_div" class="data_loading">
+                    <!-- In this div all the data from locasorage is lod  or crete div inside it by javasript -->
+            </div>
+        </div>
+    </div>
+    <div class="popup" id="popup-1">
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="close-btn" onclick="togglePopup()">×</div>
+            <h1>Select Pickup Location</h1>
+            <div id="popup_div">
+
+            </div>
+        </div>
+    </div>
+<script src="js/script3.js"></script>
+<script src="js/script1.js"></script>
+<script src='js/script2.js'></script>
+<script src="js/script4.js"></script>
+</body>
+</html>

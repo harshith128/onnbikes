@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login popup box</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="style_login_popup.css" type="text/css">
+
+
+</head>
+
+<body>
+    
+    <div class="bg-image"></div>
+    <div class="login-popup">
+        <div class="box">
+            <div class="img-area">
+                <div class="img">
+                </div>
+            </div>
+            <div class="form">
+                <div class="close">x</div>
+                <!--- modification start from here --->
+                <!--- upper blue color signin and login button --->
+                <div class="form-box">
+                    <div class="button-box">
+                        <div id="btn"></div>
+                        <button type="button" class="toggle-btn" onclick="login()">LOGIN</button>
+                        <button type="button" class="toggle-btn" onclick="register()">SIGNIN</button>
+                    </div>
+                    <!--- social icons for google and facebook --->
+                    <div class="social-icons">
+                        <img src="fsss.jpeg">
+                        <img src="goog.png" id="goog-1">
+                    </div>
+                    <div id="for_OR">
+                        <p>OR</p>
+                    </div>
+                    <!--- login form modification --->
+                    <form id="login" class="input-group" role="form" onsubmit="login2(event)">
+                        <input type="text" class="input-field" id="Email" placeholder="Email id" required>
+                        <input type="password" class="input-field" id="pass" placeholder="Enter password" required>
+                        <input type="checkbox" class="chech-box"><span id="span_A">Remember</span>
+                        <a href="#" id="fogot_A">Forgot?</a>
+                        <button type="submit" class="submit-btn" onclick="hidPop(event)" class="lgsu_w">log In</button>
+                        <div id="new_onn_bike_sg">
+                            <a href="#">New to onn Bikes?signup</a>
+                        </div>
+                    </form>
+
+                    <!--- Signin form modification --->
+                    <form id="register" class="input-group" role="form" onsubmit="signUp(event)">
+                        <input type="text" class="input-field" id="fname" placeholder="First name" required>
+                        <input type="text" class="input-field" id="lname" placeholder="Last name" required>
+                        <input type="email" class="input-field" id="email" placeholder="Email Id" required>
+                        <input type="text" class="input-field" id="num" placeholder="mobile number" required>
+                        <input type="password" class="input-field" id="pwd" placeholder="Enter password" required>
+                        <button type="submit" class="submit-btn" class="lgsu_w">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script_log_popup.js"></script>
+
+</body>
+
+</html>
+<script>
+    var x = document.getElementById("login");
+    var y = document.getElementById("register");
+    var z = document.getElementById("btn");
+
+    function register() {
+        x.style.left = "-400px";
+        y.style.left = "50px";
+        z.style.left = "110px";
+    }
+
+    function login() {
+        x.style.left = "50px";
+        y.style.left = "450px";
+        z.style.left = "0";
+    }
+</script>
+
+<!--- script for signup details store in local storage --->
+<script>
+    const signUp = e => {
+        var formData = JSON.parse(localStorage.getItem('formData')) || [];
+        let exist = formData.length &&
+            JSON.parse(localStorage.getItem('formData')).some(data => data.fname.toLowerCase() == document.getElementById('fname').value.toLowerCase() && data.lname.toLowerCase() == document.getElementById('lname').value.toLowerCase() && data.email.toLowerCase() == document.getElementById('email').value.toLowerCase());
+        if (!exist) {
+            var obj = {
+                fname: document.getElementById('fname').value,
+                lname: document.getElementById('lname').value,
+                email: document.getElementById('email').value,
+                num: document.getElementById('num').value,
+                pwd: document.getElementById('pwd').value
+            }
+            formData.push(obj);
+            localStorage.setItem('formData', JSON.stringify(formData));
+            console.log(localStorage.getItem('formData'));
+            dispData();
+            document.querySelector('form').reset();
+            document.getElementById('fname').focus();
+        } else {
+            alert("Oppss... Duplicate found!!!\nYou have already signed-up Please login");
+            console.log("Sorry already exist this account");
+        }
+        e.preventDefault();
+    }
+
+
+    function login2(el) {
+        el.preventDefault();
+        let Email = document.getElementById('Email').value;
+        let pass = document.getElementById('pass').value;
+        
+
+        let dt = JSON.parse(localStorage.getItem('formData'))
+        
+
+        let email2 = dt[0].email;
+
+        
+        let pass2 = dt[0].pwd;
+        
+
+        if (Email == email2 && pass == pass2) {
+            alert('Log in successfully');
+            console.log("success");
+        } else {
+            alert('Wrong email id or password');
+            console.log("Access denied");
+        }
+
+        
+
+        
+
+    }
+</script>

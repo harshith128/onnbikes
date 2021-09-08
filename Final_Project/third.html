@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                *{
+            font-family: 'Montserrat', sans-serif;
+        }
+        #overall{
+            background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/doodles.png");
+            background-color: rgba(255,255,255,0.6);
+            background-blend-mode: lighten;
+        }
+        #homepage{
+            margin: 200px;
+            margin-top: 0px;
+            height: 100vh;
+        }
+        #content{
+            display: flex;
+            flex-direction: row-reverse;
+            /* border: 1px solid blue; */
+            margin-top: 10px;
+            height: 520px;
+        }
+        #content > div{
+            flex-grow: 2;
+        }
+        #content  img{
+            width: 170px;
+            margin-left: 10px;
+            margin-bottom: 0px;
+        }
+        #nav{
+            /* border: 1px solid black; */
+            height: 70px;
+            display: flex;
+            flex-direction: row;
+        }
+        #nav > div{
+            flex-grow: 1;
+            /* border: 1px solid red; */
+            text-align: center;
+            color: #1E2D51;
+            font-weight:790;
+            padding: 30px;
+            font-size: 12px;            
+        }
+        #nav > div:nth-child(4){
+            height: 10px;
+            width: 5px;
+            /* border: 1px solid #E0E0E0; */
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.6);
+            background-color: white;
+        }
+
+        #image{
+            background-image: url("https://www.onnbikes.com/img/ONN-logo-unit-without-shadow.png");
+            /* width: auto; */
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(255,255,255,0.6);
+            background-blend-mode:multiply;
+            border-radius: 20px;
+            /* border: 1px solid #E0E0E0; */
+        }
+        #right_top{
+            display: flex;
+            flex-direction:row;
+            background-color: white;         
+            
+        }
+        #right_top > div{
+            margin: 20px;
+            flex-grow: 1;
+            /* height: 40px; */
+        }
+        #right_content{
+            /* border: 1px solid black ; */
+            width: 0px;
+        }
+        #right_3{
+            background-color: white;
+            /* border: 1px solid greenyellow; */
+            margin: 2px;
+            box-shadow: 2px 2px 2px 2px grey;
+        }
+        .class1{
+            font-size: 13px;
+        }
+        .class2{
+            display: flex;
+        }
+        #price{
+            margin-left: 180px;
+        }
+        #promo{
+            border: 1px solid grey;
+            box-shadow: 0 3px 10px rgb(0 0 0 / 0.6);
+            background-color: white;
+            padding: 10px;
+        }
+        #code{
+            margin: 5px;
+            background-color: white;
+        }
+        #app{
+            margin-left: 5px;
+        }
+        #ch{
+            margin-top: 12px;
+        }
+        #ins_p{
+            margin-left: 200px;
+        }
+        #div2{
+            display: flex;
+            margin: 10px;
+            margin-right: 50px;
+            font-size: 10px;
+            /* border: 1px solid green ; */
+    
+            text-align: center;
+
+        }
+        #div3{
+            display: flex;
+            margin: 10px;
+            margin-left: 80px;
+            font-size: 10px;
+            /* border: 1px solid green ; */
+        }
+        #d_time1,#d_time2{
+            margin-top: 10px;
+        }
+        #accept{
+            margin-top: 10px;
+        }
+        #right_top p{
+            margin: 3px;
+            font-size: 10px;
+        }
+        #dt1,#dt2{
+            font-size: 26px;
+        }
+        #tm1,#tm2{
+            font-size: 13px;
+            margin-top: 0px;
+        }
+        #mn1,#mn2{
+            font-size: 9px;
+        }
+        #st_date,#end_date{
+            color: #1E2D51;
+        }
+        h2{
+            margin-top: 2px;
+            font-size: 15px;
+            margin-bottom: 3px;
+        }
+        #t_price{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        #tariff{
+            margin-right: 0px;
+
+        }
+        #price{
+            margin-left: 160px;
+        }
+
+    
+
+
+    </style>
+</head>
+<body id="overall">
+    <div id="homepage">
+        <div id="nav">
+            <div>HOME</div>
+            <div>OFFERS</div>
+            <div>RENT-TO-OWN</div>
+            <div id="image"></div>
+                <!-- <img src="https://www.onnbikes.com/img/ONN-logo-unit-without-shadow.png" alt=""></div> -->
+            <div>FAQ</div>
+            <div>WELCOME</div>
+            <div>9876543210</div>
+        </div>
+        <div id="content">
+            <div id="right_content">
+                <div id="right_top">
+                    <div id="st_date">
+                        <p >START TRIP</p>
+                        <div id="d_time1">
+                            <span id="dt1"></span>
+                            <span id="tm1"></span>
+                            <div id="mn1"></div>
+                        </div>
+                    </div>
+                    <div id="end_date">
+                        <p>END TRIP</p>
+                        <div id="d_time2">
+                            <span id="dt2"></span>
+                            <span id="tm2"></span>
+                            <div id="mn2"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="right_3">
+
+                </div>
+                <div id="promo">
+                    <div id="ban"></div>
+                    <div id="t_price">
+                        <div id="tariff"></div>
+                        <div id="price"></div>
+                    </div>
+                    <div id="code">
+                        <div id="in"></div>
+                        <div id="app"></div>
+                    </div>
+                    <div id="insure">
+                        <!-- <div id="ch"></div>
+                        <div id="lab"></div>
+                        <div id="ins_p"></div> -->
+                        <span id="ch"></span>
+                        <span id="lab"></span>
+                        <span id="ins_p"></span>
+                    </div>
+                    <div id="para"></div>
+                    <div id="total"></div>
+                    <div id="div1">
+                        <div id="div2">
+                            <span style="background-color: red;border: 1px solid black;width: 10px;height: 11px;">&#9747;</span>
+                        </div>
+                        <div id="div3">
+                            <span>&#9989;</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="accept">
+                    <div id="check_last"></div>
+                    <div id="para_acc">
+                    </div>
+                </div>
+                <div id="last_button"></div>
+                <!-- <div id="promo">
+                    <p>shubham</p> -->
+                    <!-- <input type="text" id="pcode">
+                    <button onclick="apply()">apply</button> -->
+                <!-- </div> -->
+            </div>
+
+        </div>
+
+    </div>
+    <script>
+    function show_left(){
+        let homepage = document.getElementById("homepage");
+        let content = document.getElementById("content");
+        let right_3 = document.getElementById("right_3");
+        let tariff = document.getElementById("tariff");
+        let price_show = document.getElementById("price");
+            
+
+            // let parent_3 = document.getElementById("rental_data");
+        let data = JSON.parse(localStorage.getItem("checkout"));
+        // console.log(data);
+
+        data.forEach(function(prod) {
+            var div = document.createElement("div");
+            var image = document.createElement("img");
+            image.src = prod.image;
+            var excess = document.createElement("span");
+                excess.innerText = prod.excess;
+                var free = document.createElement("span");
+                free.innerText = prod.free;
+
+                var name1 = prod.name;
+                var n1 = name1.split(" ");
+                var p1 = n1[0];
+                var h1 = n1[1] + " " +  n1[2];
+                var com = document.createElement("p");
+                com.innerText = p1;
+                com.style.marginBottom = "0px"
+                var mod = document.createElement("h1");
+                mod.innerText = h1;
+                mod.style.fontSize = "20px";
+                mod.style.margin = "0px";
+                let address_label = document.createElement("h2");
+                address_label.innerText = "PICKUP & RETURN LOCATION ";
+                // address_label.style.marginTop = "2px";
+                let address = document.createElement("p");
+                address.innerText = prod.address;
+                address.style.color = "blue";
+                address.style.fontSize = "11px";
+                address.style.marginTop = "0px";
+                address.style.opacity = "0.6"
+
+
+                var price = document.createElement("p");
+                price.innerText = prod.price;
+                
+
+                
+
+                div.append(com,mod,image,address_label,address,excess,free);
+                content.append(div);
+                homepage.append(content);
+            });
+    }
+
+
+
+        function show_right(){
+            let homepage = document.getElementById("homepage");
+            let content = document.getElementById("content");
+            let right_content = document.getElementById("right_content");
+           
+            let right_top = document.getElementById("right_top");
+            let st_date = document.getElementById("st_date");
+            let d_time1 = document.getElementById("d_time1");
+            let dt1 = document.getElementById("dt1");
+            let tm1 = document.getElementById("tm1");
+            let mn1 = document.getElementById("mn1");
+
+            
+            let end_date = document.getElementById("end_date");
+            let d_time2 = document.getElementById("d_time2");
+            let dt2 = document.getElementById("dt2");
+            let tm2 = document.getElementById("tm2");
+            let mn2 = document.getElementById("mn2");
+           
+            let promo = document.getElementById("promo");
+            let right_3 = document.getElementById("right_3");
+            let t_price = document.getElementById("t_price");
+            let ban = document.getElementById("ban");
+            let tariff_var = document.getElementById("tariff");
+            let price_var = document.getElementById("price");
+            let code = document.getElementById("code");
+            let inn = document.getElementById("in");
+            let app = document.getElementById("app");
+            let insure = document.getElementById("insure");
+            let ch = document.getElementById("ch");
+            let lab = document.getElementById("lab");
+            let ins_p = document.getElementById("ins_p");
+
+            let div1 = document.getElementById("div1");//tick+cross
+            let div2 = document.getElementById("div2");//tick
+            let div3 = document.getElementById("div3");//cross
+
+            let total_cont = document.getElementById("total");
+            let accept = document.getElementById("accept");
+            let check_last = document.getElementById("check_last");
+            let para_acc = document.getElementById("para_acc");
+            let last_button = document.getElementById("last_button");
+            
+
+            let data = JSON.parse(localStorage.getItem("checkout"));
+            data.forEach(function(product){
+                //date 
+                var arr1 = [];
+                var arr2 = [];
+                var time1 = [];
+                var time2 = [];
+// -------------------------------------------------------------------------------------------------------------------------------------------
+                var d1 = product.date1
+                var d1 = d1.split("T");
+                var [year1,month1,day1] = d1[0].split("-").map(Number);
+                var [hour1,minute1] = d1[1].split(":").map(Number);
+                arr1.push(year1);
+                arr1.push(month1);
+                arr1.push(day1);
+                time1.push(hour1);
+                time1.push(minute1);
+                let mn_words = arr1[1];
+                switch (mn_words) {
+                    case 1:
+                        text = "Jan"
+                        break;
+                    case 2:
+                        text = "Feb"
+                        break;
+                    case 3:
+                        text = "Mar"
+                        break;
+                    case 4:
+                        text = "April"
+                        break;    
+                    case 5:
+                        text = "May"
+                        break;
+                    case 6:
+                        text = "June"
+                        break;
+                    case 7:
+                        text = "July"
+                        break;
+                    case 8:
+                        text = "Aug"
+                        break;
+                    case 9:
+                        text = "Sept"
+                        break;
+                    case 10:
+                        text = "Oct"
+                        break;
+                    case 11:
+                        text = "Nov"
+                        break;
+                    case 12:
+                        text = "Dec"                                                                       
+                    
+                
+                    default:
+                        break;
+                }
+                dt1.innerText = arr1[2];
+                dt1.style.font = "26px";
+                tm1.innerText = time1[0] +":"+time1[1];
+                tm1.style.font = "13px";
+                mn1.innerText = text + " " + arr1[0];
+                mn1.style.font = "9px";
+               // console.log(arr1[1]);
+
+                var d2 = product.date2
+                var d2 = d2.split("T");
+                var [year2,month2,day2] = d2[0].split("-").map(Number);
+                var [hour2,minute2] = d2[1].split(":").map(Number);
+                arr2.push(year2);
+                arr2.push(month2);
+                arr2.push(day2);
+                time2.push(hour2);
+                time2.push(minute2);
+                let mn_words2 = arr2[1];
+                switch (mn_words2) {
+                    case 1:
+                        text2 = "Jan"
+                        break;
+                    case 2:
+                        text2 = "Feb"
+                        break;
+                    case 3:
+                        text2 = "Mar"
+                        break;
+                    case 4:
+                        text2 = "April"
+                        break;    
+                    case 5:
+                        text2 = "May"
+                        break;
+                    case 6:
+                        text2 = "June"
+                        break;
+                    case 7:
+                        text2 = "July"
+                        break;
+                    case 8:
+                        text2 = "Aug"
+                        break;
+                    case 9:
+                        text2 = "Sept"
+                        break;
+                    case 10:
+                        text2 = "Oct"
+                        break;
+                    case 11:
+                        text2 = "Nov"
+                        break;
+                    case 12:
+                        text2 = "Dec"                                                                       
+                    
+                
+                    default:
+                        break;
+                }
+                dt2.innerText = arr2[2];
+                tm2.innerText = time2[0] +":"+time2[1];
+                mn2.innerText = text2 + " " + arr2[0];;
+                //console.log(arr2[2]);
+                var number_days = 1;
+                var ans = date_diff(arr1,arr2);
+                if(ans[0] == 0){
+                    number_days = number_days * ans[1];
+                }
+                else{
+                    number_days = 0;
+                    var len = ans[0].length;
+                    for(var i=0;i<len;i++){
+                        number_days = number_days+30;
+                    }
+                    number_days = number_days+ans[1];
+                }
+
+                function date_diff(dt1,dt2){
+                    if(dt1[0] == dt2[0]){
+                        if(dt1[1] == dt2[1]){
+                            var days = (dt2[2] - dt1[2]);
+                            var mon = 0;
+                            return [mon,days];
+                        }else{
+                            var mondiff=month_diff(dt1,dt2);
+                            console.log('mondiff:', mondiff)
+                            var days_in_month_dt1 = days_in_month(dt1[1]);
+                            var days1 = days_in_month_dt1 - (dt1[2]);
+                            console.log('days1:', days1)
+                            var days_in_month_dt2 = dt2[2]
+                            console.log('days_in_month_dt2:', days_in_month_dt2)
+                            var mon = mondiff;
+                            var days = days1+days_in_month_dt2;
+                            return [mon,days];
+                        }
+                    }
+                }
+                function month_diff(dt1,dt2){
+                    let mon1 = dt1[1];
+                    let mon2 = dt2[1];
+                    obj = {
+                            01:31,
+                            02:28,
+                            03:31,
+                            04:30,
+                            05:31,
+                            06:30,
+                            07:31,
+                            08:31,
+                            09:30,
+                            10:31,
+                            11:30,
+                            12:31,
+                        }
+                        var day =0;
+                        for(key in obj){
+                            if(key > mon1 && key < mon2){
+                                day++;
+                            }
+                        }
+                        return day;
+                }
+
+                function days_in_month(month){
+                    obj = {
+                        01:31,
+                        02:28,
+                        03:31,
+                        04:30,
+                        05:31,
+                        06:30,
+                        07:31,
+                        08:31,
+                        09:30,
+                        10:31,
+                        11:30,
+                        12:31,
+                    }
+                    month =(Number(month));
+                    for(key in obj){
+                        //var temp = Number(key);
+                        if(key == month){
+                            return (obj[key]);
+                        }
+                    }
+                }
+
+// -------------------------------------------------------------------------------------------------------------------------------------------                
+            
+                let start = document.createElement("p");//2021-08-29T12:41
+                start.innerText = product.date1;
+                let end_date = document.createElement("div");
+                end_date.innerText = product.date2;
+
+                // refundable
+
+                let ref = document.createElement("div");
+                ref.innerText = "Refundable Deposit";
+                ref.style.padding = "10px"
+                ref.style.marginBottom = "0px"
+                ref.style.fontSize = "15px"
+                let dep = document.createElement("div");
+                dep.innerText = "0";
+                dep.style.padding = "8px"
+                dep.style.paddingTop = "18px"
+                dep.style.paddingLeft = "60px"
+                dep.style.paddingRight= "0px"
+
+                
+                let pay = document.createElement("p");
+                pay.innerText = "This amount has to be paid at the time of vehicle delivery";
+                pay.style.marginTop = "1px";
+                pay.style.fontSize = "10px"
+                // pay.setAttribute("class","class1")
+
+                // pricing
+                var tot_val = product.price * number_days;
+                let tariff_val = tot_val;
+                // let pricing = document.createElement("p");
+                ban.innerText = "PRICING";
+                ban.setAttribute("class","class1")
+                // pricing.style.padding = "10px"
+                // let tariff = document.createElement("p");
+                tariff_var.innerText = "Tariff(Inclusive of all tax)";
+                tariff_var.setAttribute("class","class1");
+                // let price = document.createElement("p");
+                price_var.innerText = tot_val;
+                price_var.style.fontSize = "14px"
+
+                let input = document.createElement("input");
+                input.setAttribute("type","text");
+                input.style.borderRadius = "10px";
+                // input_value = input.value;
+                let btn = document.createElement("button");
+                btn.innerText = "Apply promocode";
+                btn.setAttribute("class","class1");
+                localStorage.setItem("total_price", JSON.stringify({price:tot_val}));
+                
+
+                btn.onclick = function(){
+                    //console.log(input.value);
+                    if(input.value == "masai30"){
+                        tot_val = Math.floor(tot_val - (tot_val*0.3));
+                        if(localStorage.getItem("cart") === null){
+                            localStorage.setItem("cart",JSON.stringify([]));
+                        }
+                        let crt = JSON.parse(localStorage.getItem("payment_data"));
+                        crt = tot_val;
+                        localStorage.setItem("total_price", JSON.stringify({price:crt}));
+                        tot_price.innerText = tot_val;
+                        btn2.innerHTML = `Payment ${tot_val}`;
+                        btn.onclick = "";
+                    }
+                    else {
+                        alert("not a valid code");
+                    }
+                };
+
+
+                //insure
+                let check = document.createElement("input");
+                check.setAttribute("type","checkbox");
+                let label = document.createElement("p");
+                label.innerText = "Insure my ride";
+                // label.style.marginRight = "0"
+                let ins_price = document.createElement("P");
+                ins_price.innerText = "0";
+                // ins_price.style.marginLeft = "0"
+                label.setAttribute("class","class1")
+                let para = document.createElement("p");
+                para.innerText = "*Covers the rider,pillion and vehicle T&C apply";
+                para.style.fontSize = "10px";
+                check.onclick = function(){
+                    if(check.checked == true) {
+                        ins_price.innerText = "+15";
+                        tot_val = Number(tot_val) + Number(15);
+                        tot_price.innerText = tot_val;
+                        localStorage.setItem("total_price", JSON.stringify({price:tot_val}));
+                        btn2.innerHTML = `Payment ${tot_val}`;
+                        // tot_price.setAttribute("class","class1")
+                    }
+                    else if(check.checked == false){
+                        ins_price.innerText = "0";
+                        tot_val = tot_val - Number(15);
+                        tot_price.innerText = tot_val;
+                        btn2.innerHTML = `Payment ${tot_val}`;
+                        localStorage.setItem("total_price", JSON.stringify({price:tot_val}));
+                        // tot_price.setAttribute("class","class1")
+                    }
+                }
+
+                //exclude
+                let p1 = document.createElement("span");
+                p1.innerText = "Excludes fuel";
+                let p2 = document.createElement("span");
+                p2.innerText = "Include all taxes";
+
+                //total
+                // let tot_val = product.price * number_days
+                let tot_sen = document.createElement("div");
+                tot_sen.innerText = "Total amount is";
+                let tot_price = document.createElement("div");
+                tot_price.innerText = tot_val
+                tot_price.style.marginLeft = "190px"
+                let btn2 = document.createElement("button");
+                btn2.innerHTML = `Payment ${tot_val}`;
+                btn2.style.backgroundColor = "Blue";
+                btn2.style.opacity = "0.5";
+                btn2.style.width = "334px";
+                btn2.style.height = "34px"
+                btn2.style.marginLeft = "8px" 
+                btn2.style.fontSize = "20px"
+                btn2.style.color = "white"
+
+                console.log(tot_val);
+
+                let ch2 = document.createElement("input");
+                ch2.setAttribute("type","checkbox");
+                let p3 = document.createElement("u");
+                p3.innerText = "I agree to the terms of use";
+                p3.style.color = "blue";
+                // let btn2 = document.createElement("button");
+                // btn2.innerHTML = `Payment ${product.price}`;
+                
+                var data_payment = [
+                    {
+                        name:product.name,
+                        date1:product.date1,
+                        date2:product.date2,
+                        price:tot_val,
+                        tariff:tariff_val
+                    }
+                ]
+
+
+                ch2.onclick = function(){
+                    if(ch2.checked == true){
+                        btn2.style.backgroundColor = "Blue";
+                        btn2.style.opacity = "1"
+                        btn2.onclick = function(){
+                            localStorage.setItem("payment_data",JSON.stringify(data_payment));
+                            window.location.href = "payment.html";
+                        }
+                    }
+                    else if (ch2.checked == false){
+                        btn2.style.backgroundColor = "Blue";
+                        btn2.style.opacity = "0.5";
+                        btn2.onclick="";
+                    }
+                }
+
+
+
+
+
+
+                //append-------------------------------------
+               // right_top.append(start,end_date);
+                
+                ref.append(pay);
+                right_3.append(ref,dep);
+                right_3.setAttribute("class","class2");
+                
+                // tariff_var.append(tariff)
+                // price_var.append(price);
+                // ban.append(pricing,tariff_var,price_var);
+                // t_price.append(ban);
+                t_price.setAttribute("class","class2");
+                
+                inn.append(input);
+                app.append(btn);
+                code.append(inn,app);
+                code.setAttribute("class","class2");
+                
+
+                ch.append(check);
+                lab.append(label);
+                ins_p.append(ins_price);
+                insure.append(ch,lab,ins_p);
+                insure.setAttribute("class","class2");
+                
+
+                div2.append(p1);
+                div3.append(p2);
+                div1.append(div2,div3);
+                div1.setAttribute("class","class2");
+                
+
+                total_cont.append(tot_sen,tot_price);
+                total_cont.setAttribute("class","class2");
+                promo.append(t_price,code,insure,div1,total_cont);
+
+                last_button.append(btn2)
+                check_last.append(ch2);
+                para_acc.append(p3);
+                accept.append(ch2,p3);
+
+                right_content.append(right_3,promo,accept,last_button);
+
+
+            });
+        }
+        show_left();
+        show_right();
+    </script>
+    
+</body>
+</html>
