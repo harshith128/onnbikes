@@ -90,16 +90,27 @@
 <!--- script for signup details store in local storage --->
 <script>
     const signUp = e => {
+        let user_fname = document.getElementById('fname').value;
+        let user_lname = document.getElementById('lname').value;
+        let user_email = document.getElementById('email').value;
+        let user_num = document.getElementById('num').value;
+        let user_pwd = document.getElementById('pwd').value;
+
+        if(user_fname == "" || user_lname == "" || user_num == "" || user_pwd.length == ""){
+            alert("Please fill all details");
+            return null;
+        }
+
         var formData = JSON.parse(localStorage.getItem('formData')) || [];
         let exist = formData.length &&
             JSON.parse(localStorage.getItem('formData')).some(data => data.fname.toLowerCase() == document.getElementById('fname').value.toLowerCase() && data.lname.toLowerCase() == document.getElementById('lname').value.toLowerCase() && data.email.toLowerCase() == document.getElementById('email').value.toLowerCase());
         if (!exist) {
             var obj = {
-                fname: document.getElementById('fname').value,
-                lname: document.getElementById('lname').value,
-                email: document.getElementById('email').value,
-                num: document.getElementById('num').value,
-                pwd: document.getElementById('pwd').value
+                fname: user_fname,
+                lname: user_lname,
+                email: user_email,
+                num: user_num,
+                pwd: user_pwd
             }
             formData.push(obj);
             localStorage.setItem('formData', JSON.stringify(formData));

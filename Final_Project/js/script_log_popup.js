@@ -21,7 +21,7 @@ function showPopup() {
             loginPopup.classList.add("show");
         }
         console.log(i)
-    }, 1000);
+    }, 100);
 }
 
 
