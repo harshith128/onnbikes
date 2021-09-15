@@ -506,12 +506,12 @@
                             return [mon,days];
                         }else{
                             var mondiff=month_diff(dt1,dt2);
-                            console.log('mondiff:', mondiff)
+                            // console.log('mondiff:', mondiff)
                             var days_in_month_dt1 = days_in_month(dt1[1]);
                             var days1 = days_in_month_dt1 - (dt1[2]);
-                            console.log('days1:', days1)
+                            // console.log('days1:', days1)
                             var days_in_month_dt2 = dt2[2]
-                            console.log('days_in_month_dt2:', days_in_month_dt2)
+                            // console.log('days_in_month_dt2:', days_in_month_dt2)
                             var mon = mondiff;
                             var days = days1+days_in_month_dt2;
                             return [mon,days];
@@ -695,7 +695,7 @@
                 btn2.style.fontSize = "20px"
                 btn2.style.color = "white"
 
-                console.log(tot_val);
+                // console.log(tot_val);
 
                 let ch2 = document.createElement("input");
                 ch2.setAttribute("type","checkbox");
