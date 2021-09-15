@@ -28,7 +28,7 @@
                     <div class="button-box">
                         <div id="btn"></div>
                         <button type="button" class="toggle-btn" onclick="login()">LOGIN</button>
-                        <button type="button" class="toggle-btn" onclick="register()">SIGNIN</button>
+                        <button type="button" class="toggle-btn" onclick="register()">SIGNUP</button>
                     </div>
                     <!--- social icons for google and facebook --->
                     <div class="social-icons">
@@ -96,9 +96,14 @@
         let user_num = document.getElementById('num').value;
         let user_pwd = document.getElementById('pwd').value;
 
-        if(user_fname.trim() == "" || user_lname.trim() == "" || user_num.trim() == "" || user_pwd.length.trim() == ""){
+        if(user_fname == "" || user_lname == "" || user_num == "" || user_pwd.length == "" || user_email == ""){
             alert("Please fill all details");
             return null;
+        }
+
+        if(checkForNull(user_fname) || checkForNull(user_lname) || checkForNull(user_email) || checkForNull(user_num) || checkForNull(user_pwd)){
+            alert("null");
+            return null
         }
 
         var formData = JSON.parse(localStorage.getItem('formData')) || [];
@@ -114,13 +119,13 @@
             }
             formData.push(obj);
             localStorage.setItem('formData', JSON.stringify(formData));
-            console.log(localStorage.getItem('formData'));
+            // console.log(localStorage.getItem('formData'));
             dispData();
             document.querySelector('form').reset();
             document.getElementById('fname').focus();
         } else {
             alert("Oppss... Duplicate found!!!\nYou have already signed-up Please login");
-            console.log("Sorry already exist this account");
+            // console.log("Sorry already exist this account");
         }
         e.preventDefault();
     }
@@ -143,15 +148,19 @@
 
         if (Email == email2 && pass == pass2) {
             alert('Log in successfully');
-            console.log("success");
+            // console.log("success");
         } else {
             alert('Wrong email id or password');
-            console.log("Access denied");
+            // console.log("Access denied");
         }
 
-        
 
-        
+    }
 
+    function checkForNull(str){
+        if(str[0] == " "){
+            return true
+        }
+        return false
     }
 </script>
