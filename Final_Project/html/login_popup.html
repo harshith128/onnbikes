@@ -114,13 +114,13 @@
             }
             formData.push(obj);
             localStorage.setItem('formData', JSON.stringify(formData));
-            console.log(localStorage.getItem('formData'));
+            //console.log(localStorage.getItem('formData'));
             dispData();
             document.querySelector('form').reset();
             document.getElementById('fname').focus();
         } else {
             alert("Oppss... Duplicate found!!!\nYou have already signed-up Please login");
-            console.log("Sorry already exist this account");
+            //console.log("Sorry already exist this account");
         }
         e.preventDefault();
     }
@@ -143,10 +143,10 @@
 
         if (Email == email2 && pass == pass2) {
             alert('Log in successfully');
-            console.log("success");
+            //console.log("success");
         } else {
             alert('Wrong email id or password');
-            console.log("Access denied");
+            //console.log("Access denied");
         }
 
         
