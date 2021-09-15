@@ -97,12 +97,12 @@
         let user_pwd = document.getElementById('pwd').value;
 
         if(user_fname == "" || user_lname == "" || user_num == "" || user_pwd.length == "" || user_email == ""){
-            alert("Please fill all details");
+            alert("Please Enter Valied details");
             return null;
         }
 
         if(checkForNull(user_fname) || checkForNull(user_lname) || checkForNull(user_email) || checkForNull(user_num) || checkForNull(user_pwd)){
-            alert("null");
+            alert("Please Enter Valied details");
             return null
         }
 
@@ -119,13 +119,18 @@
             }
             formData.push(obj);
             localStorage.setItem('formData', JSON.stringify(formData));
+
             // console.log(localStorage.getItem('formData'));
+
             dispData();
             document.querySelector('form').reset();
             document.getElementById('fname').focus();
         } else {
             alert("Oppss... Duplicate found!!!\nYou have already signed-up Please login");
-            // console.log("Sorry already exist this account");
+
+
+            //console.log("Sorry already exist this account");
+
         }
         e.preventDefault();
     }
@@ -148,12 +153,14 @@
 
         if (Email == email2 && pass == pass2) {
             alert('Log in successfully');
+
             // console.log("success");
         } else {
             alert('Wrong email id or password');
             // console.log("Access denied");
-        }
 
+            //console.log("success");
+        } 
 
     }
 
