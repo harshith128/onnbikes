@@ -52,11 +52,11 @@
 
                     <!--- Signin form modification --->
                     <form id="register" class="input-group" role="form" onsubmit="signUp(event)">
-                        <input type="text" class="input-field" id="fname" placeholder="First name" required>
-                        <input type="text" class="input-field" id="lname" placeholder="Last name" required>
-                        <input type="email" class="input-field" id="email" placeholder="Email Id" required>
-                        <input type="text" class="input-field" id="num" placeholder="mobile number" required>
-                        <input type="password" class="input-field" id="pwd" placeholder="Enter password" required>
+                        <input type="text" class="input-field" id="fname" placeholder="First name" >
+                        <input type="text" class="input-field" id="lname" placeholder="Last name" >
+                        <input type="email" class="input-field" id="email" placeholder="Email Id" >
+                        <input type="text" class="input-field" id="num" placeholder="mobile number" >
+                        <input type="password" class="input-field" id="pwd" placeholder="Enter password" >
                         <button type="submit" class="submit-btn" class="lgsu_w">Sign Up</button>
                     </form>
                 </div>
@@ -96,7 +96,7 @@
         let user_num = document.getElementById('num').value;
         let user_pwd = document.getElementById('pwd').value;
 
-        if(user_fname == "" || user_lname == "" || user_num == "" || user_pwd.length == ""){
+        if(user_fname.trim() == "" || user_lname.trim() == "" || user_num.trim() == "" || user_pwd.length.trim() == ""){
             alert("Please fill all details");
             return null;
         }
