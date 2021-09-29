@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "25de4bee-0a31-44f1-b3bf-1f481942054a",
+		"name": "0-A-bikes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get bikes using manufacturer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2323/bikes/manufacturer/615409b54e41cc5e314ac30d",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2323",
+					"path": [
+						"bikes",
+						"manufacturer",
+						"615409b54e41cc5e314ac30d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Bikes Using Model",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2323/bikes/model/6154097e4e41cc5e314ac30b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2323",
+					"path": [
+						"bikes",
+						"model",
+						"6154097e4e41cc5e314ac30b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get bikes using Vehical Type",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:2323/bikes/vehicleType/Scooter",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "2323",
+					"path": [
+						"bikes",
+						"vehicleType",
+						"Scooter"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
