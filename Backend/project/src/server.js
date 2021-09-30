@@ -13,6 +13,7 @@ const manifacturerController = require("./controllers/manufacturer.controller");
 const bikeModelcontroller = require("./controllers/bikeModel.controller");
 const citysController = require('./controllers/city.controller');
 const addressController = require('./controllers/address.controller');
+const check_outController = require("./controllers/check_out.controller");
 
 
 app.use("/bikes",bikeController);
@@ -20,7 +21,7 @@ app.use("/manufacturer",manifacturerController);
 app.use("/models",bikeModelcontroller);
 app.use("/city",citysController);
 app.use("/address",addressController);
-
+app.use("/checkout",check_outController);
 
 //-----------------------Server Port ------------------//
 

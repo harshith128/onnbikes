@@ -166,6 +166,11 @@ function sendDataToNextPage(cityKey){
     var datas3 = JSON.parse(localStorage.getItem("Date"));
     var datas4 = JSON.parse(localStorage.getItem("bookedBike"));
 
+    var datas5 = JSON.parse(localStorage.getItem("user_login"));
+    
+    let userid= datas5.user_login;
+
+    //cityKey , userid, 
 
     var checkout_arr = [];
 
