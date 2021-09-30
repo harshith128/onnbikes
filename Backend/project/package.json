@@ -4,13 +4,14 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^6.0.8"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server":"nodemon src/server"
+    "server": "nodemon src/server"
   },
   "author": "",
   "license": "ISC"
