@@ -6,13 +6,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="../css/style_login_popup.css" type="text/css">
+    <link rel="stylesheet" href="./css/style_login_popup.css" type="text/css">
 
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </head>
 
 <body>
-    
+
     <div class="bg-image"></div>
     <div class="login-popup">
         <div class="box">
@@ -32,16 +41,16 @@
                     </div>
                     <!--- social icons for google and facebook --->
                     <div class="social-icons">
-                        <img src="../assets/fsss.jpeg">
-                        <img src="../assets/goog.png" id="goog-1">
+                        <img src="./assets/fsss.jpeg">
+                        <img src="./assets/goog.png" id="goog-1">
                     </div>
                     <div id="for_OR">
                         <p>OR</p>
                     </div>
                     <!--- login form modification --->
                     <form id="login" class="input-group" role="form" onsubmit="login2(event)">
-                        <input type="text" class="input-field" id="Email" placeholder="Email id" required>
-                        <input type="password" class="input-field" id="pass" placeholder="Enter password" required>
+                        <input type="text" class="input-field" id="Email" placeholder="Email id">
+                        <input type="password" class="input-field" id="pass" placeholder="Enter password">
                         <input type="checkbox" class="chech-box"><span id="span_A">Remember</span>
                         <a href="#" id="fogot_A">Forgot?</a>
                         <button type="submit" class="submit-btn" onclick="hidPop(event)" class="lgsu_w">log In</button>
@@ -51,12 +60,17 @@
                     </form>
 
                     <!--- Signin form modification --->
-                    <form id="register" class="input-group" role="form" onsubmit="signUp(event)">
-                        <input type="text" class="input-field" id="fname" placeholder="First name" >
-                        <input type="text" class="input-field" id="lname" placeholder="Last name" >
-                        <input type="email" class="input-field" id="email" placeholder="Email Id" >
-                        <input type="text" class="input-field" id="num" placeholder="mobile number" >
-                        <input type="password" class="input-field" id="pwd" placeholder="Enter password" >
+                    <form id="register" class="input-group" role="form" onsubmit="return validation()">
+                        <input type="text" class="input-field" id="fname" placeholder="First name">
+                        <span id="firstname" class="text-danger error_d"></span>
+                        <input type="text" class="input-field" id="lname" placeholder="Last name">
+                        <span id="lastname" class="text-danger error_d"></span>
+                        <input type="text" class="input-field" id="email" placeholder="Email Id">
+                        <span id="emailid" class="text-danger error_d"></span>
+                        <input type="text" class="input-field" id="num" placeholder="mobile number">
+                        <span id="mobnum" class="text-danger error_d"></span>
+                        <input type="password" class="input-field" id="pwd" placeholder="Enter password">
+                        <span id="passw" class="text-danger error_d"></span>
                         <button type="submit" class="submit-btn" class="lgsu_w">Sign Up</button>
                     </form>
                 </div>
@@ -64,7 +78,8 @@
         </div>
     </div>
 
-    <script src="../js/script_log_popup.js"></script>
+    <script src="./js/script_log_popup.js"></script>
+    <script src="./js/boostrap_js.js"></script>
 
 </body>
 
@@ -89,67 +104,98 @@
 
 <!--- script for signup details store in local storage --->
 <script>
-    const signUp = e => {
+    async function signUp(e) {
+        e.preventDefault();
         let user_fname = document.getElementById('fname').value;
         let user_lname = document.getElementById('lname').value;
         let user_email = document.getElementById('email').value;
         let user_num = document.getElementById('num').value;
         let user_pwd = document.getElementById('pwd').value;
 
-        if(user_fname == "" || user_lname == "" || user_num == "" || user_pwd.length == "" || user_email == ""){
-            alert("Please Enter Valid details");
+        if (user_fname == "" || user_lname == "" || user_num == "" || user_pwd.length == "" || user_email == "") {
+            alert("Please Enter Valied details");
             return null;
         }
 
-        if(checkForNull(user_fname) || checkForNull(user_lname) || checkForNull(user_email) || checkForNull(user_num) || checkForNull(user_pwd)){
-            alert("Please Enter Valid details");
+        if (checkForNull(user_fname) || checkForNull(user_lname) || checkForNull(user_email) || checkForNull(user_num) || checkForNull(user_pwd)) {
+            alert("Please Enter Valied details");
             return null
         }
 
-        var formData = JSON.parse(localStorage.getItem('formData')) || [];
-        let exist = formData.length &&
-            JSON.parse(localStorage.getItem('formData')).some(data => data.fname.toLowerCase() == document.getElementById('fname').value.toLowerCase() && data.lname.toLowerCase() == document.getElementById('lname').value.toLowerCase() && data.email.toLowerCase() == document.getElementById('email').value.toLowerCase());
-        if (!exist) {
-            var obj = {
-                fname: user_fname,
-                lname: user_lname,
-                email: user_email,
-                num: user_num,
-                pwd: user_pwd
-            }
-            formData.push(obj);
-            localStorage.setItem('formData', JSON.stringify(formData));
-
-            // console.log(localStorage.getItem('formData'));
-
-            dispData();
-            document.querySelector('form').reset();
-            document.getElementById('fname').focus();
-        } else {
-            alert("Oppss... Duplicate found!!!\nYou have already signed-up Please login");
-
-
-            //console.log("Sorry already exist this account");
-
+        var signUpForm = {
+            first_name: user_fname,
+            last_name: user_lname,
+            email: user_email,
+            mobNum: user_num,
+            password: user_pwd
         }
-        e.preventDefault();
+
+        signUpForm = JSON.stringify(signUpForm)
+        console.log("signup datails " + signUpForm)
+
+
+        let res = await fetch(`http://localhost:2737/signup/users`, {
+
+            method: "POST",
+            body: signUpForm,
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        console.log(res)
+        let data = await res.json()
+        console.log(data)
     }
+
+    function signuser() {
+        e.preventDefault();
+        let user_fname = document.getElementById('fname').value;
+        let user_lname = document.getElementById('lname').value;
+        let user_email = document.getElementById('email').value;
+        let user_num = document.getElementById('num').value;
+        let user_pwd = document.getElementById('pwd').value;
+
+        var signUpForm = {
+            first_name: user_fname,
+            last_name: user_lname,
+            email: user_email,
+            mobNum: user_num,
+            password: user_pwd
+        }
+        signUpForm = JSON.stringify(signUpForm)
+        console.log(signUpForm)
+
+        fetch(`http://localhost:2737/signup/users`, {
+            method: "POST",
+            body: signUpForm,
+            headers: {
+                "Content-Type": "application/json",
+            }
+        }).then((res) => {
+            return res.json();
+        }).then((res) => {
+            console.log(res)
+        }).catch((err) => {
+            console.log(err)
+        })
+    }
+
 
 
     function login2(el) {
         el.preventDefault();
         let Email = document.getElementById('Email').value;
         let pass = document.getElementById('pass').value;
-        
+
 
         let dt = JSON.parse(localStorage.getItem('formData'))
-        
+
 
         let email2 = dt[0].email;
 
-        
+
         let pass2 = dt[0].pwd;
-        
+
 
         if (Email == email2 && pass == pass2) {
             alert('Log in successfully');
@@ -160,12 +206,12 @@
             // console.log("Access denied");
 
             //console.log("success");
-        } 
+        }
 
     }
 
-    function checkForNull(str){
-        if(str[0] == " "){
+    function checkForNull(str) {
+        if (str[0] == " ") {
             return true
         }
         return false
