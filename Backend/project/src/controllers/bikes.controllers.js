@@ -43,6 +43,7 @@ router.delete("/:id",async(req,res)=>{
 
 router.get("/manufacturer/:id", async(req, res) =>{
     const bikes = await Bikes.find({manufacturer:req.params.id});
+    
 
     return res.status(200).send({bikes});
 })

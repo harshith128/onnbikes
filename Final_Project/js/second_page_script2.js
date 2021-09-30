@@ -1,4 +1,4 @@
-console.log("In script 2");
+//console.log("In script 2");
 
 
 //for load bikes data on page
@@ -17,7 +17,7 @@ async function callApi(){
         //console.log('data:', data.bikes[0]);
 
         var product = data.bikes;
-        console.log('product:', product)
+        //console.log('product:', product)
 
         var data_div = document.getElementById('data_div');
         data_div.innerHTML = null;

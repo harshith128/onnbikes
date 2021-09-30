@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 
 const check_out = mongoose.Schema({
+    userid:{type:Number,required:true},
     address:{type:mongoose.Schema.Types.ObjectId,ref:"pick",require:true},
     startDate:{type:String,require:true},
     endDate:{type:String,require:true},

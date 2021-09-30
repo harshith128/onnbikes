@@ -1,4 +1,4 @@
-console.log("In script 1");
+//console.log("In script 1");
     
 // This script is used for ride bar
 

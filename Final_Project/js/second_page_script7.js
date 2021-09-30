@@ -1,4 +1,4 @@
-console.log("In script 5");
+//console.log("In script 5");
 
 // function filt(ckbox){
 //     var product = JSON.parse(localStorage.getItem("bike_data"))

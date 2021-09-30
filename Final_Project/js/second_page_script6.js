@@ -1,4 +1,4 @@
-console.log("In script 4");
+//console.log("In script 4");
 
 
 function togglePopup() {
@@ -123,7 +123,7 @@ function getPickupLocations(cityKey){
         let response = await fetch(`http://localhost:2323/city/${cityKey}/address`);
 
         let data = await response.json();
-        console.log('data:', data.address);
+        //console.log('data:', data.address);
 
         var dt3 = data.address;
         //console.log('dt3:', dt3)
@@ -162,15 +162,17 @@ function getPickupLocations(cityKey){
 
 
 function sendDataToNextPage(cityKey){
-    console.log('cityKey:', cityKey);
+    
 
     var datas2 = JSON.parse(localStorage.getItem("selectedLocationData"));
     var datas3 = JSON.parse(localStorage.getItem("Date"));
     var datas4 = JSON.parse(localStorage.getItem("bookedBike"));
+    
 
     var datas5 = JSON.parse(localStorage.getItem("user_login"));
     
     let userid= datas5.user_login;
+    
 
     //cityKey , userid, 
 
@@ -206,11 +208,41 @@ function sendDataToNextPage(cityKey){
     let temp = JSON.stringify(checkout_arr);
     localStorage.setItem("checkout", temp);
 
+    // console.log("+++++++++++++++++++");
+    // console.log('userid:', userid)
+    // console.log('cityKey:', cityKey);
+    // console.log('startDate:', startDate)
+    // console.log('endDate:', endDate)
+    // console.log('plan:', plan)
+    // console.log('datas4:', datas4[0]._id)
+    
+    let bookedbikeid = datas4[0]._id;
+
+    var ckform={
+        userid:userid,
+        address:cityKey,
+        startDate:startDate,
+        endDate:endDate,
+        plan:plan,
+        bookedBike:bookedbikeid
+    }
+
+    check_out = JSON.stringify(ckform);
+
     async function sendCheckOutData(){
-        let response = await fetch(``);
-        
+        let response = await fetch(`http://localhost:2323/checkout`,{
+            method:"POST",
+            body:check_out,
+            headers:{"content-Type": "application/json"}
+        });
+
+        let data = await response.json();
+              
+        console.log('data: After Receving responce from server : ', data);
 
     }
+
+    sendCheckOutData();
 }
 
 

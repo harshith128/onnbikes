@@ -1,4 +1,4 @@
-console.log("In script 3");
+//console.log("In script 3");
 
 
 //the Fuction fun1 is used for checkbox --- MANUFACTURER
@@ -59,9 +59,10 @@ try{
     let response = await fetch(`http://localhost:2323/bikes/manufacturer/${keys}`);
 
     let data = await response.json()
+    console.log('data:', data)
     
 
-    //console.log('data:', data.bikes[0]);
+    console.log('data:', data.bikes[0]);
 
     var product = data.bikes;
     //console.log('product:', product)
