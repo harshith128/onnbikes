@@ -43,7 +43,7 @@ function autoCreatedData(){
     dt.push(newprod);
     var newprod = new create(2,"Honda Activa",289,image2,"Honda","Activa","Scooter",5);
     dt.push(newprod);
-    var newprod = new create(3,"Bajaj CT 100 ",219,image3,"Bajaj","CT 100","Motorcycle",6);
+    var newprod = new create(3,"Bajaj CT 100",219,image3,"Bajaj","CT 100","Motorcycle",6);
     dt.push(newprod);
     var newprod = new create(4,"Bajaj Avenger 220 Street ",659,image4,"Bajaj","Avenger 220 Street","Motorcycle",7);
     dt.push(newprod);
