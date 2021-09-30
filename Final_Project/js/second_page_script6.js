@@ -1,3 +1,5 @@
+console.log("In script 4");
+
 
 function togglePopup() {
     document.getElementById("popup-1").classList.toggle("active");
@@ -203,4 +205,37 @@ function sendDataToNextPage(cityKey){
     checkout_arr.push(obj);
     let temp = JSON.stringify(checkout_arr);
     localStorage.setItem("checkout", temp);
+
+    async function sendCheckOutData(){
+        let response = await fetch(``);
+        
+
+    }
 }
+
+
+// address == citykey
+//startd = startda
+//enddate = endfjdlskjf
+//paln = plan
+//booked bike
+
+
+
+
+
+
+/////////////////----------------------//////////////////
+
+function goToHomePage(){
+    location.href = "../index.html";
+}
+
+///dummy data on localstorage
+
+var obj = {
+    user_login:"253456415486431"
+}
+let jobj= JSON.stringify(obj);
+
+localStorage.setItem("user_login",jobj);
