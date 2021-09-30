@@ -415,138 +415,140 @@ function filt3(ckbox3){
 
 function fun1(ck){
     if(ck.checked){
-        console.log("Just ckecked");
-        var ckbox = "Royal Enfield"
-        filt(ckbox);
+        //console.log("Just ckecked");
+        var ckbox = "615409b54e41cc5e314ac30d"
+        callApiCheckBoxManifacturer(ckbox);
         
     }else{
-        console.log("just uncked");
-        showData()
+        //console.log("just uncked");
+        callApi();
     }
 }
 function fun2(ck){
     if(ck.checked){
-        console.log("Just ckecked");
-        var ckbox = "Bajaj"
-        filt(ckbox);
+        //console.log("Just ckecked");
+        var ckbox = "6153ee8ee7e0ae30c029b1a3"
+        callApiCheckBoxManifacturer(ckbox);
     }else{
-        console.log("just uncked");
-        showData();
+        //console.log("just uncked");
+        callApi();
     }
 }
 function fun3(ck){
     if(ck.checked){
-        console.log("Just ckecked");
-        var ckbox = "Honda"
-        filt(ckbox);
+        //console.log("Just ckecked");
+        var ckbox = "6153ee4ce7e0ae30c029b1a1"
+        callApiCheckBoxManifacturer(ckbox);
     }else{
-        console.log("just uncked");
-        showData();
+        //console.log("just uncked");
+        callApi();
     }
 }
 function fun4(ck){
     if(ck.checked){
-        console.log("Just ckecked");
-        var ckbox = "Yamaha"
-        filt(ckbox);
+        //console.log("Just ckecked");
+        var ckbox = "6153eea4e7e0ae30c029b1a5"
+        callApiCheckBoxManifacturer(ckbox);
     }else{
-        console.log("just uncked");
-        showData();
+        //console.log("just uncked");
+        callApi();
     }
 }
+
 function fun5(ck){
     if(ck.checked){
-        console.log("Just ckecked");
-        var ckbox2 = "350 Classic"
-        filt2(ckbox2);
+        //console.log("Just ckecked");
+        var ckbox2 = "6154097e4e41cc5e314ac30b"
+        callApiCheckBoxModel(ckbox2);
     }else{
-        console.log("just uncked");
-        showData();
+        //console.log("just uncked");
+        callApi();
     }
 }
 function fun6(ck){
     if(ck.checked){
-        console.log("Just ckecked");
-        var ckbox2 = "Avenger 220 Street"
-        filt2(ckbox2);
+        //console.log("Just ckecked");
+        var ckbox2 = "6153fea54e41cc5e314ac2bf"
+        callApiCheckBoxModel(ckbox2);
     }else{
-        console.log("just uncked");
-        showData();
+        //console.log("just uncked");
+        callApi();
     }
 }
 function fun7(ck){
     if(ck.checked){
-        console.log("Just ckecked");
-        var ckbox2 = "Activa"
-        filt2(ckbox2);
+        //console.log("Just ckecked");
+        var ckbox2 = "6153f1f74e41cc5e314ac296"
+        callApiCheckBoxModel(ckbox2);
     }else{
-        console.log("just uncked");
-        showData();
+        //console.log("just uncked");
+        callApi();
     }
 }
 function fun8(ck){
     if(ck.checked){
-        console.log("Just ckecked");
-        var ckbox2 = "FZ"
-        filt2(ckbox2);
+        //console.log("Just ckecked");
+        var ckbox2 = "6153f27e4e41cc5e314ac29c"
+        callApiCheckBoxModel(ckbox2);
     }else{
-        console.log("just uncked");
-        showData();
+        //console.log("just uncked");
+        callApi();
     }
 }
 function fun9(ck){
     if(ck.checked){
-        console.log("Just ckecked");
-        var ckbox2 = "Dio"
-        filt2(ckbox2);
+        //console.log("Just ckecked");
+        var ckbox2 = "6153f2a74e41cc5e314ac2a0"
+        callApiCheckBoxModel(ckbox2);
     }else{
-        console.log("just uncked");
-        showData();
+        //console.log("just uncked");
+        callApi();
     }
 }
 function fun10(ck){
     if(ck.checked){
-        console.log("Just ckecked");
-        var ckbox2 = "Pulsar"
-        filt2(ckbox2);
+        //console.log("Just ckecked");
+        var ckbox2 = "6153f2684e41cc5e314ac29a"
+        callApiCheckBoxModel(ckbox2);
     }else{
-        console.log("just uncked");
-        showData();
+        //console.log("just uncked");
+        callApi();
     }
 }
 function fun11(ck){
     if(ck.checked){
-        console.log("Just ckecked");
-        var ckbox2 = "CT 100"
-        filt2(ckbox2);
+        //console.log("Just ckecked");
+        var ckbox2 = "6153f24f4e41cc5e314ac298"
+        callApiCheckBoxModel(ckbox2);
     }else{
-        console.log("just uncked");
-        showData();
+        //console.log("just uncked");
+        callApi();
     }
 }
 function fun12(ck){
     if(ck.checked){
-        console.log("Just ckecked");
+        //console.log("Just ckecked");
         var ckbox3 = "Motorcycle"
-        filt3(ckbox3);
+        callApiCheckBoxVTyepe(ckbox3);
     }else{
-        console.log("just uncked");
-        showData();
+        //console.log("just uncked");
+        callApi();
     }
 }
 function fun13(ck){
     if(ck.checked){
-        console.log("Just ckecked");
+        //console.log("Just ckecked");
         var ckbox3 = "Scooter"
-        filt3(ckbox3);
+        callApiCheckBoxVTyepe(ckbox3);
     }else{
-        console.log("just uncked");
-        showData();
+        //console.log("just uncked");
+        callApi();
     }
 }
 
 function showData(){
     var product = JSON.parse(localStorage.getItem("bike_data"))
+    console.log('product:', product)
     
     var data_div = document.getElementById('data_div');
     data_div.innerHTML = null;
@@ -628,4 +630,426 @@ function showData(){
         data_div.append(div);
     })
 }
-showData();
+//showData();
+
+//for filter data using manifacturere
+
+async function callApiCheckBoxManifacturer(keys){
+    
+    
+    try{
+
+        let response = await fetch(`http://localhost:2323/bikes/manufacturer/${keys}`);
+
+        let data = await response.json()
+        
+
+        //console.log('data:', data.bikes[0]);
+
+        var product = data.bikes;
+        //console.log('product:', product)
+
+        var data_div = document.getElementById('data_div');
+    data_div.innerHTML = null;
+
+    product.forEach(function (products){
+        
+        var div = document.createElement('div');
+        div.classList.add("one_div1");
+
+        var div_img_div = document.createElement('div');
+        div_img_div.classList.add("img_div");
+
+        var img123 = document.createElement('img');
+        img123.classList.add("img123");
+        img123.src = products.image;
+
+        div_img_div.append(img123)
+
+        var div_bk = document.createElement('div');
+
+        var div_bike_name = document.createElement('div');
+        div_bike_name.classList.add("bike_name_bk")
+        div_bike_name.innerText = products.name;
+
+        div_bk.append(div_bike_name);
+//div s_one
+        var div_s_one =document.createElement('div');
+        div_s_one.classList.add("s_one");
+        div_s_one.classList.add("flex-child");
+
+        var div_s_one_one =document.createElement('div');
+        div_s_one_one.classList.add("s_one_one");
+        div_s_one_one.innerText = "Free 904 kms"
+
+        var div_s_one_two =document.createElement('div');
+        div_s_one_two.classList.add("s_one_two");
+
+        var div_s_one_two_center =document.createElement('div');
+        div_s_one_two_center.classList.add("center11");
+        div_s_one_two_center.innerText = " ₹"+products.price;
+        
+        div_s_one_two.append( div_s_one_two_center);
+        div_s_one.append(div_s_one_one, div_s_one_two)
+
+        //for second part
+//div s_two
+        var div_s_two =document.createElement('div');
+        div_s_two.classList.add("s_two");
+        div_s_two.classList.add("flex-child");
+
+        var div_s_two_one =document.createElement('div');
+        div_s_two_one.classList.add("s_two_one");
+        div_s_two_one.innerText = "Exess ₹2/km"
+        
+        var div_s_two_two =document.createElement('div');
+        div_s_two_two.classList.add("s_two_two");
+
+        var div_s_two_two_booking =document.createElement('div');
+        div_s_two_two_booking.classList.add("s_two_booking");
+
+        var btn = document.createElement('button');
+        btn.classList.add("btn11");
+        btn.innerText = "Book Now";
+
+        btn.onclick=(function (){
+            bookNowClicked(products);
+        })
+
+        div_s_two_two_booking.append(btn);
+        div_s_two_two.append(div_s_two_two_booking);
+        div_s_two.append(div_s_two_one,div_s_two_two);
+        
+        var onlyone = document.createElement('div');
+        onlyone.classList.add("flex-container");
+        onlyone.append(div_s_one,div_s_two)
+
+        div.append(div_img_div,div_bk,onlyone);
+
+        data_div.append(div);
+    })
+        
+        
+
+    }catch(err){
+    console.log('err:', err)
+    }
+
+    }
+
+//for filter data using Model
+
+async function callApiCheckBoxModel(keys){
+
+
+    try{
+
+        let response = await fetch(`http://localhost:2323/bikes/model/${keys}`);
+
+        let data = await response.json()
+        
+        //console.log('data:', data.bikes[0]);
+
+        var product = data.bikes;
+        //console.log('product:', product)
+
+        var data_div = document.getElementById('data_div');
+    data_div.innerHTML = null;
+
+    product.forEach(function (products){
+        
+        var div = document.createElement('div');
+        div.classList.add("one_div1");
+
+        var div_img_div = document.createElement('div');
+        div_img_div.classList.add("img_div");
+
+        var img123 = document.createElement('img');
+        img123.classList.add("img123");
+        img123.src = products.image;
+
+        div_img_div.append(img123)
+
+        var div_bk = document.createElement('div');
+
+        var div_bike_name = document.createElement('div');
+        div_bike_name.classList.add("bike_name_bk")
+        div_bike_name.innerText = products.name;
+
+        div_bk.append(div_bike_name);
+//div s_one
+        var div_s_one =document.createElement('div');
+        div_s_one.classList.add("s_one");
+        div_s_one.classList.add("flex-child");
+
+        var div_s_one_one =document.createElement('div');
+        div_s_one_one.classList.add("s_one_one");
+        div_s_one_one.innerText = "Free 904 kms"
+
+        var div_s_one_two =document.createElement('div');
+        div_s_one_two.classList.add("s_one_two");
+
+        var div_s_one_two_center =document.createElement('div');
+        div_s_one_two_center.classList.add("center11");
+        div_s_one_two_center.innerText = " ₹"+products.price;
+        
+        div_s_one_two.append( div_s_one_two_center);
+        div_s_one.append(div_s_one_one, div_s_one_two)
+
+        //for second part
+//div s_two
+        var div_s_two =document.createElement('div');
+        div_s_two.classList.add("s_two");
+        div_s_two.classList.add("flex-child");
+
+        var div_s_two_one =document.createElement('div');
+        div_s_two_one.classList.add("s_two_one");
+        div_s_two_one.innerText = "Exess ₹2/km"
+        
+        var div_s_two_two =document.createElement('div');
+        div_s_two_two.classList.add("s_two_two");
+
+        var div_s_two_two_booking =document.createElement('div');
+        div_s_two_two_booking.classList.add("s_two_booking");
+
+        var btn = document.createElement('button');
+        btn.classList.add("btn11");
+        btn.innerText = "Book Now";
+
+        btn.onclick=(function (){
+            bookNowClicked(products);
+        })
+
+        div_s_two_two_booking.append(btn);
+        div_s_two_two.append(div_s_two_two_booking);
+        div_s_two.append(div_s_two_one,div_s_two_two);
+        
+        var onlyone = document.createElement('div');
+        onlyone.classList.add("flex-container");
+        onlyone.append(div_s_one,div_s_two)
+
+        div.append(div_img_div,div_bk,onlyone);
+
+        data_div.append(div);
+    })
+        
+        
+
+    }catch(err){
+    console.log('err:', err)
+    }
+
+    }
+
+//for filter data using Vehical Type
+
+async function callApiCheckBoxVTyepe(keys){
+
+
+    try{
+
+        let response = await fetch(`http://localhost:2323/bikes/vehicleType/${keys}`);
+
+        let data = await response.json()
+        
+
+        //console.log('data:', data.bikes[0]);
+
+        var product = data.bikes;
+        //console.log('product:', product)
+
+        var data_div = document.getElementById('data_div');
+    data_div.innerHTML = null;
+
+    product.forEach(function (products){
+        
+        var div = document.createElement('div');
+        div.classList.add("one_div1");
+
+        var div_img_div = document.createElement('div');
+        div_img_div.classList.add("img_div");
+
+        var img123 = document.createElement('img');
+        img123.classList.add("img123");
+        img123.src = products.image;
+
+        div_img_div.append(img123)
+
+        var div_bk = document.createElement('div');
+
+        var div_bike_name = document.createElement('div');
+        div_bike_name.classList.add("bike_name_bk")
+        div_bike_name.innerText = products.name;
+
+        div_bk.append(div_bike_name);
+//div s_one
+        var div_s_one =document.createElement('div');
+        div_s_one.classList.add("s_one");
+        div_s_one.classList.add("flex-child");
+
+        var div_s_one_one =document.createElement('div');
+        div_s_one_one.classList.add("s_one_one");
+        div_s_one_one.innerText = "Free 904 kms"
+
+        var div_s_one_two =document.createElement('div');
+        div_s_one_two.classList.add("s_one_two");
+
+        var div_s_one_two_center =document.createElement('div');
+        div_s_one_two_center.classList.add("center11");
+        div_s_one_two_center.innerText = " ₹"+products.price;
+        
+        div_s_one_two.append( div_s_one_two_center);
+        div_s_one.append(div_s_one_one, div_s_one_two)
+
+        //for second part
+//div s_two
+        var div_s_two =document.createElement('div');
+        div_s_two.classList.add("s_two");
+        div_s_two.classList.add("flex-child");
+
+        var div_s_two_one =document.createElement('div');
+        div_s_two_one.classList.add("s_two_one");
+        div_s_two_one.innerText = "Exess ₹2/km"
+        
+        var div_s_two_two =document.createElement('div');
+        div_s_two_two.classList.add("s_two_two");
+
+        var div_s_two_two_booking =document.createElement('div');
+        div_s_two_two_booking.classList.add("s_two_booking");
+
+        var btn = document.createElement('button');
+        btn.classList.add("btn11");
+        btn.innerText = "Book Now";
+
+        btn.onclick=(function (){
+            bookNowClicked(products);
+        })
+
+        div_s_two_two_booking.append(btn);
+        div_s_two_two.append(div_s_two_two_booking);
+        div_s_two.append(div_s_two_one,div_s_two_two);
+        
+        var onlyone = document.createElement('div');
+        onlyone.classList.add("flex-container");
+        onlyone.append(div_s_one,div_s_two)
+
+        div.append(div_img_div,div_bk,onlyone);
+
+        data_div.append(div);
+    })
+        
+        
+
+    }catch(err){
+    console.log('err:', err)
+    }
+
+    }
+    
+
+//for load bikes data on page
+
+async function callApi(){
+    
+    
+    try{
+
+        let response = await fetch(`http://localhost:2323/bikes`)
+
+        let data = await response.json()
+        
+
+        //console.log('data:', data.bikes[0]);
+
+        var product = data.bikes;
+        console.log('product:', product)
+
+        var data_div = document.getElementById('data_div');
+    data_div.innerHTML = null;
+
+    product.forEach(function (products){
+        
+        var div = document.createElement('div');
+        div.classList.add("one_div1");
+
+        var div_img_div = document.createElement('div');
+        div_img_div.classList.add("img_div");
+
+        var img123 = document.createElement('img');
+        img123.classList.add("img123");
+        img123.src = products.image;
+
+        div_img_div.append(img123)
+
+        var div_bk = document.createElement('div');
+
+        var div_bike_name = document.createElement('div');
+        div_bike_name.classList.add("bike_name_bk")
+        div_bike_name.innerText = products.name;
+
+        div_bk.append(div_bike_name);
+//div s_one
+        var div_s_one =document.createElement('div');
+        div_s_one.classList.add("s_one");
+        div_s_one.classList.add("flex-child");
+
+        var div_s_one_one =document.createElement('div');
+        div_s_one_one.classList.add("s_one_one");
+        div_s_one_one.innerText = "Free 904 kms"
+
+        var div_s_one_two =document.createElement('div');
+        div_s_one_two.classList.add("s_one_two");
+
+        var div_s_one_two_center =document.createElement('div');
+        div_s_one_two_center.classList.add("center11");
+        div_s_one_two_center.innerText = " ₹"+products.price;
+        
+        div_s_one_two.append( div_s_one_two_center);
+        div_s_one.append(div_s_one_one, div_s_one_two)
+
+        //for second part
+//div s_two
+        var div_s_two =document.createElement('div');
+        div_s_two.classList.add("s_two");
+        div_s_two.classList.add("flex-child");
+
+        var div_s_two_one =document.createElement('div');
+        div_s_two_one.classList.add("s_two_one");
+        div_s_two_one.innerText = "Exess ₹2/km"
+        
+        var div_s_two_two =document.createElement('div');
+        div_s_two_two.classList.add("s_two_two");
+
+        var div_s_two_two_booking =document.createElement('div');
+        div_s_two_two_booking.classList.add("s_two_booking");
+
+        var btn = document.createElement('button');
+        btn.classList.add("btn11");
+        btn.innerText = "Book Now";
+
+        btn.onclick=(function (){
+            bookNowClicked(products);
+        })
+
+        div_s_two_two_booking.append(btn);
+        div_s_two_two.append(div_s_two_two_booking);
+        div_s_two.append(div_s_two_one,div_s_two_two);
+        
+        var onlyone = document.createElement('div');
+        onlyone.classList.add("flex-container");
+        onlyone.append(div_s_one,div_s_two)
+
+        div.append(div_img_div,div_bk,onlyone);
+
+        data_div.append(div);
+    })
+        
+        
+
+    }catch(err){
+    console.log('err:', err)
+    }
+
+    }
+
+    callApi();

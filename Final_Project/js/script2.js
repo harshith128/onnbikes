@@ -26,7 +26,10 @@ function bookNowClicked(p){
             
 
             
-            pickupLocationData(city_data.city);
+            //pickupLocationData(city_data.city);
+
+
+            newPickupLocationData(city_data.city);
             
             
 
@@ -59,21 +62,99 @@ function check_login() {
     return status;
 }
 
-function fun1234(one,two,three){
+function fun1234(cityKey){
+    //console.log('cityKey:', cityKey)
     
-    function createobj(one,two,three){
-        this.loac =one,
-        this.lc = two,
-        this.lk = three
-    }
-    var tmp = new createobj(one,two,three);
-    localStorage.setItem("selectedLocationData",JSON.stringify(tmp));
+    // function createobj(one,two,three){
+    //     this.loac =one,
+    //     this.lc = two,
+    //     this.lk = three
+    // }
+    // var tmp = new createobj(one,two,three);
+    // localStorage.setItem("selectedLocationData",JSON.stringify(tmp));
 
     location.href = "third.html";
 
-    sendDataToNextPage();
+    sendDataToNextPage(cityKey);
 }  
 
+function newPickupLocationData(city_datacity){
+    var popup_div = document.getElementById('popup_div').value;
+    popup_div = null;
+
+    let cityKey;
+
+    if(city_datacity == "hyderabad"){
+        cityKey= "6153e8299fe23b6da3228790";
+    }
+
+    if(city_datacity == "jaipur"){
+        cityKey= "6153e8359fe23b6da3228792";
+    }
+
+    if(city_datacity == "gurugram"){
+        cityKey= "6153e8439fe23b6da3228794";
+    }
+
+    if(city_datacity == "mysuru"){
+        cityKey= "6153e84c9fe23b6da3228796";
+    }
+
+    if(city_datacity == "udaipur"){
+        cityKey= "6153e85e9fe23b6da3228798";
+    }
+
+    if(city_datacity == "ahmedabad"){
+        cityKey= "6153ef5d9fe23b6da32287a3";
+    }
+
+    if(city_datacity == "bengaluru"){
+        cityKey= "6153e8119fe23b6da322878e";
+    }
+    getPickupLocations(cityKey);
+}
+
+function getPickupLocations(cityKey){
+    var popup_div = document.getElementById('popup_div');
+
+    async function callApiForAddress(cityKey){
+        let response = await fetch(`http://localhost:2323/city/${cityKey}/address`);
+
+        let data = await response.json();
+        //console.log('data:', data.address);
+
+        var dt3 = data.address;
+        //console.log('dt3:', dt3)
+        // for showing data on popups
+        dt3.forEach(function (cityes){
+        
+            var div = document.createElement('div');
+            div.style.backgroundColor = "#f7f7f7";
+            
+            var heading = document.createElement('h3')
+            heading.innerText = cityes.address;
+            var para = document.createElement('P');
+            para.innerText = cityes.station_time;
+            var para2 = document.createElement('P');
+            para2.innerText = cityes.landmark;
+            var para3 = document.createElement('P');
+            para3.style.backgroundColor ="#00b468";
+            para3.style.height = '25px';
+            para3.onclick = function(){fun1234(cityKey)}
+            para3.innerText = "5+  Available   ➜"
+    
+            div.append(heading,para,para2,para3);
+    
+            popup_div.append(div);
+            
+        })
+    }
+    callApiForAddress(cityKey);
+
+    //var dt3 =JSON.parse(localStorage.getItem("cityLocationData"));
+    
+
+}
 
 function pickupLocationData(city_datacity){
     
@@ -342,8 +423,9 @@ function pickupLocationData(city_datacity){
         })
     }
     
-
 }
+
+
 function citylocationdataobj(){
     var cityLocationArray =[];
     function create(reginumber,cityname11,place,station_timing,place_loc,available){
@@ -419,7 +501,9 @@ citylocationdataobj();
 //This Fuction is only for sendign Data to Localstorage 
 
 
-function sendDataToNextPage(){
+function sendDataToNextPage(cityKey){
+    console.log('cityKey:', cityKey);
+
     var datas2 = JSON.parse(localStorage.getItem("selectedLocationData"));
     var datas3 = JSON.parse(localStorage.getItem("Date"));
     var datas4 = JSON.parse(localStorage.getItem("bookedBike"));
