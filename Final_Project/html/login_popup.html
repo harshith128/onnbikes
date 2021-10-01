@@ -105,7 +105,7 @@
 <!--- script for signup details store in local storage --->
 <script>
     async function signUp(e) {
-        console.log("hi")
+        // console.log("hi")
         let user_fname = document.getElementById('fname').value;
         let user_lname = document.getElementById('lname').value;
         let user_email = document.getElementById('email').value;
@@ -137,8 +137,10 @@
         // console.log(data)
         if(data === true){
             alert("email id found please login")
+            location.href = "";
         } else {
             alert("signup");
+            location.href = "";
         }
     }
 
@@ -185,7 +187,7 @@
     var p = document.getElementById("pwd").value;
     var mo = document.getElementById("num").value;
     var e = document.getElementById("email").value;
-
+    clearPre()
     if (f === "") {
         document.getElementById('firstname').innerHTML = "please fill the firstname";
         // alert("please fill the firstname");
@@ -203,7 +205,7 @@
         //alert("only character allowed here");
         return false;
     }
-    document.getElementById('firstname').innerHTML = null;
+    clearPre()
     if (l === "") {
         document.getElementById('lastname').innerHTML = "please fill the lastname";
         // alert("please fill the lastname");
@@ -219,7 +221,7 @@
         //alert("only character allowed here");
         return false;
     }
-    document.getElementById('lastname').innerHTML = null;
+    clearPre()
     if (e === "") {
         document.getElementById('emailid').innerHTML = "please fill the emailid";
         //alert("please fill the Email ID");
@@ -236,7 +238,7 @@
         //alert("invalid '@' position");
         return false;
     }
-    document.getElementById('emailid').innerHTML = null;
+    clearPre()
     if (mo === "") {
         document.getElementById('mobnum').innerHTML = "please fill the mobnum";
         // alert("please fill the mobile number");
@@ -252,7 +254,7 @@
         //alert("please enter valid 10 digit mobile number");
         return false;
     }
-    document.getElementById('mobnum').innerHTML = null;
+    clearPre()
     if (p === "") {
         document.getElementById('passw').innerHTML = "please fill the pass";
         //alert("please fill the password");
@@ -263,9 +265,18 @@
         // alert("password length must be between 5 and 8");
         return false;
     }
-    document.getElementById('passw').innerHTML = null;
+    clearPre()
     
     signUp()
+}
+
+function clearPre(){
+    document.getElementById('firstname').innerHTML = null;
+    document.getElementById('lastname').innerHTML = null;
+    document.getElementById('emailid').innerHTML = null;
+    document.getElementById('mobnum').innerHTML = null;
+    document.getElementById('passw').innerHTML = null;
+    return true
 }
 
 </script>
