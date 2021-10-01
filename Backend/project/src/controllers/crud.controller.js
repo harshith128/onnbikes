@@ -31,7 +31,7 @@ const deletes = (model) => async (req, res)=>{
 //repeated 
 
 const getOne = (model)=> async (req,res) =>{
-    const item = await model.findById(req.params.id).lean().exec();
+    const item = await model.findById(req.params.id);
     return res.status(200).send({item})
 }
 

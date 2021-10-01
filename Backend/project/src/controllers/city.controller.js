@@ -25,4 +25,10 @@ router.get('/:id/address',async (req,res)=>{
     return res.status(201).send({address,city});
 });
 
+router.get('/:id/shubh/',async (req,res)=>{
+    const address = await Pick.findById(req.params.id);
+    //const city = await City.findById(req.params.id);
+
+    return res.status(201).send({address});
+});
 module.exports = router;

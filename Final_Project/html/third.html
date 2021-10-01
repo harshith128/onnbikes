@@ -75,7 +75,9 @@
             
         }
         #right_top > div{
-            margin: 20px;
+            margin: 50px;
+            margin-bottom: 10px;
+            margin-top: 30px;
             flex-grow: 1;
             /* height: 40px; */
         }
@@ -261,7 +263,7 @@
 
     </div>
     <script>
-    function show_left(){
+    async function show_left(){
         let homepage = document.getElementById("homepage");
         let content = document.getElementById("content");
         let right_3 = document.getElementById("right_3");
@@ -271,54 +273,77 @@
 
             // let parent_3 = document.getElementById("rental_data");
         let data = JSON.parse(localStorage.getItem("checkout"));
-        // console.log(data);
 
-        data.forEach(function(prod) {
+        let res = await fetch(`http://localhost:2323/checkout/${data}`);
+        let data2 = await res.json();
+        console.log('data2:', data2)
+        // console.log(typeof data);
+        // console.log(typeof data2);
+        // var booked_data = "";
+        // for(prod of data2.item){
+
+        // }
+        console.log(data2.item.bookedBike["image"]);
+            
             var div = document.createElement("div");
-            var image = document.createElement("img");
-            image.src = prod.image;
-            var excess = document.createElement("span");
-                excess.innerText = prod.excess;
-                var free = document.createElement("span");
-                free.innerText = prod.free;
+            var image1 = document.createElement("img");
+            image1.src = data2.item.bookedBike["image"];
+            image1.style.width = '400px';
 
-                var name1 = prod.name;
+            // image1.style.paddingTop = '0px'
+            var excess = document.createElement("span");
+                excess.innerText = "Excess 2km/hr";
+                excess.style.marginLeft = '46px';
+                var free = document.createElement("span");
+                free.innerText = `Free 150kms`;
+                free.style.marginLeft = '100px';
+
+                var name1 = data2.item.bookedBike["name"];
                 var n1 = name1.split(" ");
                 var p1 = n1[0];
-                var h1 = n1[1] + " " +  n1[2];
+                var h1 = "";
+                for(var i=1;i<n1.length;i++){
+                    h1 = h1 + n1[i] + " ";
+                }
+
                 var com = document.createElement("p");
-                com.innerText = p1;
-                com.style.marginBottom = "0px"
+                com.innerText = p1
+                com.style.marginTop = "50px"
+                com.style.marginBottom = "0px";
+                com.style.marginLeft = '46px';
                 var mod = document.createElement("h1");
                 mod.innerText = h1;
                 mod.style.fontSize = "20px";
                 mod.style.margin = "0px";
+                mod.style.marginLeft = '46px';
                 let address_label = document.createElement("h2");
                 address_label.innerText = "PICKUP & RETURN LOCATION ";
+                address_label.style.marginLeft = '46px';
                 // address_label.style.marginTop = "2px";
                 let address = document.createElement("p");
-                address.innerText = prod.address;
+                address.innerText =  data2.item.address["address"] + ',' + data2.item.address["landmark"];
                 address.style.color = "blue";
                 address.style.fontSize = "11px";
                 address.style.marginTop = "0px";
                 address.style.opacity = "0.6"
+                address.style.marginLeft = '46px';
 
 
                 var price = document.createElement("p");
-                price.innerText = prod.price;
+                price.innerText = data2.item.bookedBike["price"];
                 
 
                 
 
-                div.append(com,mod,image,address_label,address,excess,free);
+                div.append(com,mod,image1,address_label,address,excess,free);
+                // div.style.width = '400px'
                 content.append(div);
                 homepage.append(content);
-            });
     }
 
 
 
-        function show_right(){
+        async function show_right(){
             let homepage = document.getElementById("homepage");
             let content = document.getElementById("content");
             let right_content = document.getElementById("right_content");
@@ -362,15 +387,19 @@
             let last_button = document.getElementById("last_button");
             
 
+
             let data = JSON.parse(localStorage.getItem("checkout"));
-            data.forEach(function(product){
+
+            let res = await fetch(`http://localhost:2323/checkout/${data}`);
+            let data2 = await res.json();
+            // data2.forEach(function(product){
                 //date 
                 var arr1 = [];
                 var arr2 = [];
                 var time1 = [];
                 var time2 = [];
 // -------------------------------------------------------------------------------------------------------------------------------------------
-                var d1 = product.date1
+                var d1 = data2.item["startDate"];
                 var d1 = d1.split("T");
                 var [year1,month1,day1] = d1[0].split("-").map(Number);
                 var [hour1,minute1] = d1[1].split(":").map(Number);
@@ -429,7 +458,7 @@
                 mn1.style.font = "9px";
                // console.log(arr1[1]);
 
-                var d2 = product.date2
+                var d2 =data2.item["endDate"];
                 var d2 = d2.split("T");
                 var [year2,month2,day2] = d2[0].split("-").map(Number);
                 var [hour2,minute2] = d2[1].split(":").map(Number);
@@ -571,9 +600,9 @@
 // -------------------------------------------------------------------------------------------------------------------------------------------                
             
                 let start = document.createElement("p");//2021-08-29T12:41
-                start.innerText = product.date1;
-                let end_date = document.createElement("div");
-                end_date.innerText = product.date2;
+                start.innerText = data2.item["startDate"];
+                let e_date = document.createElement("div");
+                e_date.innerText = data2.item["endDate"];
 
                 // refundable
 
@@ -597,7 +626,7 @@
                 // pay.setAttribute("class","class1")
 
                 // pricing
-                var tot_val = product.price * number_days;
+                var tot_val = data2.item.bookedBike["price"] * number_days;
                 let tariff_val = tot_val;
                 // let pricing = document.createElement("p");
                 ban.innerText = "PRICING";
@@ -706,14 +735,17 @@
                 // btn2.innerHTML = `Payment ${product.price}`;
                 
                 var data_payment = [
+                    
                     {
-                        name:product.name,
-                        date1:product.date1,
-                        date2:product.date2,
+                        name:data2.item.bookedBike["name"],
+                        date1:data2.item["startDate"],
+                        date2:data2.item["endDate"],
                         price:tot_val,
                         tariff:tariff_val
                     }
-                ]
+                ];
+                data_payment = JSON.stringify(data_payment);
+                
 
 
                 ch2.onclick = function(){
@@ -721,8 +753,27 @@
                         btn2.style.backgroundColor = "Blue";
                         btn2.style.opacity = "1"
                         btn2.onclick = function(){
-                            localStorage.setItem("payment_data",JSON.stringify(data_payment));
+                            // localStorage.setItem("payment_data",JSON.stringify(data_payment));
+                            fetch("http://localhost:2323/fourth",{
+                                method:"POST",
+                                body:data_payment,
+                                headers:{
+                                    "Content-Type":"application/json",
+                                },
+                            })
+                            .then((res)=>{
+                                return res.json();
+                            })
+                            .then((res)=>{
+                                console.log('res:',res);
+                            })
+                            .catch((err)=>{
+                                console.log('err:', err);
+                            })
+
                             window.location.href = "payment.html";
+
+                            // console.log('data_payment:', data_payment)
                         }
                     }
                     else if (ch2.checked == false){
@@ -779,9 +830,10 @@
                 accept.append(ch2,p3);
 
                 right_content.append(right_3,promo,accept,last_button);
+                right_content.style.width = '180px';
 
 
-            });
+            // });
         }
         show_left();
         show_right();

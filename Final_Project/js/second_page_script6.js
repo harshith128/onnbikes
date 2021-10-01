@@ -128,7 +128,7 @@ function getPickupLocations(cityKey){
         //console.log('data:', data.address);
 
         var dt3 = data.address;
-        //console.log('dt3:', dt3)
+        console.log('dt3:', dt3)
         // for showing data on popups
         dt3.forEach(function (cityes){
         
@@ -144,7 +144,7 @@ function getPickupLocations(cityKey){
             var para3 = document.createElement('P');
             para3.style.backgroundColor ="#00b468";
             para3.style.height = '25px';
-            para3.onclick = function(){fun1234(cityKey)}
+            para3.onclick = function(){fun1234(cityes._id)}
             para3.innerText = "5+  Available   ➜"
     
             div.append(heading,para,para2,para3);
