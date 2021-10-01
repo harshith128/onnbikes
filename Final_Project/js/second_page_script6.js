@@ -10,6 +10,8 @@ function togglePopup() {
 }
 
 function bookNowClicked(p){
+    console.log("Booked now clicke");
+    console.log('p:', p)
     ck_login = check_login();
     
     //storing Data for next page
@@ -59,8 +61,8 @@ function bookNowClicked(p){
 }
 
 function check_login() {
-    let checks=JSON.parse(localStorage.getItem("loginData"));
-    let status = checks.isLogin;
+    let checks=JSON.parse(localStorage.getItem("user_login"));
+    let status = true;
     return status;
 }
 
@@ -265,9 +267,9 @@ function goToHomePage(){
 
 ///dummy data on localstorage
 
-var obj = {
-    user_login:"253456415486431"
-}
-let jobj= JSON.stringify(obj);
+// var obj = {
+//     user_login:"253456415486431"
+// }
+// let jobj= JSON.stringify(obj);
 
-localStorage.setItem("user_login",jobj);
+// localStorage.setItem("user_login",jobj);
