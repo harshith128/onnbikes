@@ -15,6 +15,12 @@ const citysController = require('./controllers/city.controller');
 const addressController = require('./controllers/address.controller');
 const check_outController = require("./controllers/check_out.controller");
 
+const signupControllers = require("./controllers/signup.controllers");
+const loginControllers = require("./controllers/login.controllers");
+
+app.use("/signup/users", signupControllers);
+app.use("/login/users/", loginControllers);
+
 
 app.use("/bikes",bikeController);
 app.use("/manufacturer",manifacturerController);

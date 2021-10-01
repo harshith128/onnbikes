@@ -5,7 +5,6 @@ function validation() {
     var mo = document.getElementById("num").value;
     var e = document.getElementById("email").value;
 
-    console.log(f);
     if (f === "") {
         document.getElementById('firstname').innerHTML = "please fill the firstname";
         // alert("please fill the firstname");
@@ -84,11 +83,6 @@ function validation() {
         return false;
     }
     document.getElementById('passw').innerHTML = null;
-
-
-
-
-
 
 
 }

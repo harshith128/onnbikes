@@ -53,14 +53,14 @@
                         <input type="password" class="input-field" id="pass" placeholder="Enter password">
                         <input type="checkbox" class="chech-box"><span id="span_A">Remember</span>
                         <a href="#" id="fogot_A">Forgot?</a>
-                        <button type="submit" class="submit-btn" onclick="hidPop(event)" class="lgsu_w">log In</button>
+                        <button type="submit" class="submit-btn" class="lgsu_w">log In</button>
                         <div id="new_onn_bike_sg">
                             <a href="#">New to onn Bikes?signup</a>
                         </div>
                     </form>
 
                     <!--- Signin form modification --->
-                    <form id="register" class="input-group" role="form" onsubmit="return validation()">
+                    <form id="register" class="input-group" role="form" onsubmit="return validation(event)">
                         <input type="text" class="input-field" id="fname" placeholder="First name">
                         <span id="firstname" class="text-danger error_d"></span>
                         <input type="text" class="input-field" id="lname" placeholder="Last name">
@@ -79,7 +79,7 @@
     </div>
 
     <script src="../js/script_log_popup.js"></script>
-    <script src="../js/boostrap_js.js"></script>
+    <!-- <script src="../js/boostrap_js.js"></script> -->
 
 </body>
 
@@ -105,22 +105,12 @@
 <!--- script for signup details store in local storage --->
 <script>
     async function signUp(e) {
-        e.preventDefault();
+        console.log("hi")
         let user_fname = document.getElementById('fname').value;
         let user_lname = document.getElementById('lname').value;
         let user_email = document.getElementById('email').value;
         let user_num = document.getElementById('num').value;
         let user_pwd = document.getElementById('pwd').value;
-
-        if (user_fname == "" || user_lname == "" || user_num == "" || user_pwd.length == "" || user_email == "") {
-            alert("Please Enter Valied details");
-            return null;
-        }
-
-        if (checkForNull(user_fname) || checkForNull(user_lname) || checkForNull(user_email) || checkForNull(user_num) || checkForNull(user_pwd)) {
-            alert("Please Enter Valied details");
-            return null
-        }
 
         var signUpForm = {
             first_name: user_fname,
@@ -131,10 +121,10 @@
         }
 
         signUpForm = JSON.stringify(signUpForm)
-        console.log("signup datails " + signUpForm)
+        // console.log("signup datails " + signUpForm)
 
 
-        let res = await fetch(`http://localhost:2737/signup/users`, {
+        let res = await fetch(`http://localhost:2323/signup/users`, {
 
             method: "POST",
             body: signUpForm,
@@ -142,78 +132,140 @@
                 "Content-Type": "application/json"
             }
         })
-        console.log(res)
+        // console.log(res)
         let data = await res.json()
-        console.log(data)
-    }
-
-    function signuser() {
-        e.preventDefault();
-        let user_fname = document.getElementById('fname').value;
-        let user_lname = document.getElementById('lname').value;
-        let user_email = document.getElementById('email').value;
-        let user_num = document.getElementById('num').value;
-        let user_pwd = document.getElementById('pwd').value;
-
-        var signUpForm = {
-            first_name: user_fname,
-            last_name: user_lname,
-            email: user_email,
-            mobNum: user_num,
-            password: user_pwd
+        // console.log(data)
+        if(data === true){
+            alert("email id found please login")
+        } else {
+            alert("signup");
         }
-        signUpForm = JSON.stringify(signUpForm)
-        console.log(signUpForm)
-
-        fetch(`http://localhost:2737/signup/users`, {
-            method: "POST",
-            body: signUpForm,
-            headers: {
-                "Content-Type": "application/json",
-            }
-        }).then((res) => {
-            return res.json();
-        }).then((res) => {
-            console.log(res)
-        }).catch((err) => {
-            console.log(err)
-        })
     }
 
-
-
-    function login2(el) {
+   
+    async function login2(el) {
         el.preventDefault();
         let Email = document.getElementById('Email').value;
         let pass = document.getElementById('pass').value;
+        
 
+        let loginForm = {
+            email:Email,
+            password:pass
+        }
+        loginForm = JSON.stringify(loginForm)
+        // console.log(loginForm)
 
-        let dt = JSON.parse(localStorage.getItem('formData'))
+        let res = await fetch(`http://localhost:2323/login/users`, {
 
-
-        let email2 = dt[0].email;
-
-
-        let pass2 = dt[0].pwd;
-
-
-        if (Email == email2 && pass == pass2) {
-            alert('Log in successfully');
-
-            // console.log("success");
+            method:"POST",
+            body:loginForm,
+            headers:{"Content-Type": "application/json"}
+        })
+        // console.log(res)
+        let data = await res.json()
+        let userArr = data.user
+        if(userArr.length === 0){
+            alert("enter valid details")
         } else {
-            alert('Wrong email id or password');
-            // console.log("Access denied");
-
-            //console.log("success");
+            alert("Log in successfully")
+            let userId = {userId:userArr[0]._id}
+            localStorage.setItem("user_login",JSON.stringify(userId));
+            loginPopup.classList.remove("show");
+            document.location.href = "second_page.html";
+            // console.log(userArr[0]._id)
+            // console.log(JSON.parse(localStorage.getItem("user_login")));
         }
+    }
+
+    function validation(event) {
+        event.preventDefault()
+    var f = document.getElementById("fname").value;
+    var l = document.getElementById("lname").value;
+    var p = document.getElementById("pwd").value;
+    var mo = document.getElementById("num").value;
+    var e = document.getElementById("email").value;
+
+    if (f === "") {
+        document.getElementById('firstname').innerHTML = "please fill the firstname";
+        // alert("please fill the firstname");
+        return false;
 
     }
 
-    function checkForNull(str) {
-        if (str[0] == " ") {
-            return true
-        }
-        return false
+    if ((f.length <= 2) || (f.length > 10)) {
+        document.getElementById('firstname').innerHTML = "first name length must be between 2 and 10";
+        //alert("first name length must be between 2 and 10");
+        return false;
     }
+    if (!isNaN(f)) {
+        document.getElementById('firstname').innerHTML = "only character allowed here";
+        //alert("only character allowed here");
+        return false;
+    }
+    document.getElementById('firstname').innerHTML = null;
+    if (l === "") {
+        document.getElementById('lastname').innerHTML = "please fill the lastname";
+        // alert("please fill the lastname");
+        return false;
+    }
+    if ((l.length <= 2) || (l.length > 10)) {
+        document.getElementById('lastname').innerHTML = "last name length must be between 2 and 10";
+        //alert("last name length must be between 2 and 10");
+        return false;
+    }
+    if (!isNaN(l)) {
+        document.getElementById('lastname').innerHTML = "only character allowed here";
+        //alert("only character allowed here");
+        return false;
+    }
+    document.getElementById('lastname').innerHTML = null;
+    if (e === "") {
+        document.getElementById('emailid').innerHTML = "please fill the emailid";
+        //alert("please fill the Email ID");
+        return false;
+    }
+    if ((e.charAt(e.length - 4) != ".") && (e.charAt(e.length - 3) != ".")) {
+        document.getElementById('emailid').innerHTML = "invalid '.' position";
+        //alert("invalid '.' position");
+        return false;
+
+    }
+    if (e.indexOf('@') <= 0) {
+        document.getElementById('emailid').innerHTML = "invalid '@' position";
+        //alert("invalid '@' position");
+        return false;
+    }
+    document.getElementById('emailid').innerHTML = null;
+    if (mo === "") {
+        document.getElementById('mobnum').innerHTML = "please fill the mobnum";
+        // alert("please fill the mobile number");
+        return false;
+    }
+    if (isNaN(mo)) {
+        document.getElementById('mobnum').innerHTML = "user must write a number not a character";
+        //alert("You must have to enter number not a character");
+        return false;
+    }
+    if (mo.length != 10) {
+        document.getElementById('mobnum').innerHTML = "please enter valid 10 digit mobile number";
+        //alert("please enter valid 10 digit mobile number");
+        return false;
+    }
+    document.getElementById('mobnum').innerHTML = null;
+    if (p === "") {
+        document.getElementById('passw').innerHTML = "please fill the pass";
+        //alert("please fill the password");
+        return false;
+    }
+    if ((p.length <= 5)) {
+        document.getElementById('passw').innerHTML = "password is too weak";
+        // alert("password length must be between 5 and 8");
+        return false;
+    }
+    document.getElementById('passw').innerHTML = null;
+    
+    signUp()
+}
+
 </script>
