@@ -77,7 +77,7 @@ function fun1234(cityKey){
     // var tmp = new createobj(one,two,three);
     // localStorage.setItem("selectedLocationData",JSON.stringify(tmp));
 
-    location.href = "third.html";
+    //location.href = "third.html";
 
     sendDataToNextPage(cityKey);
 }  
@@ -249,6 +249,8 @@ function sendDataToNextPage(cityKey){
         let dt = data.item._id;
         let temp = JSON.stringify(dt);
         localStorage.setItem("checkout", temp);
+
+        location.href = "third.html";
 
     }
 
