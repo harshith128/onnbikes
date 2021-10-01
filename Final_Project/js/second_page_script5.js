@@ -1,6 +1,8 @@
 
 //the Fuction fun1 is used for checkbox --- VEHICLE TYPE
 function fun12(ck){
+    untickCheckBox()
+    document.getElementById("check12").checked = true;
     if(ck.checked){
         //console.log("Just ckecked");
         var ckbox3 = "Motorcycle"
@@ -11,6 +13,8 @@ function fun12(ck){
     }
 }
 function fun13(ck){
+    untickCheckBox()
+    document.getElementById("check13").checked = true;
     if(ck.checked){
         //console.log("Just ckecked");
         var ckbox3 = "Scooter"

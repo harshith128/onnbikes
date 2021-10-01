@@ -42,16 +42,44 @@ router.delete("/:id",async(req,res)=>{
 // })
 
 router.get("/manufacturer/:id", async(req, res) =>{
-    const bikes = await Bikes.find({manufacturer:req.params.id});
+    // const bikes = await Bikes.find({manufacturer:req.params.id});
+    // console.log(req.params.id)
+    const bikes = await Bikes.find().lean().exec()
+    // console.log(bikes)
+    const manu = []
+    bikes.forEach((item) => {
+        let temp = item.manufacturer;
+        if(temp.toString() === req.params.id){
+            manu.push(item)
+        }
+    })
+    // console.log(manu)
+
+    // return res.status(200).send(manu);
+
+    return res.status(200).send({bikes:manu});
     
 
-    return res.status(200).send({bikes});
+    // return res.status(200).send({bikes});
 })
 
 router.get("/model/:id", async (req, res) => {
-    const bikes = await Bikes.find({model:req.params.id});
+    // const bikes = await Bikes.find({model:req.params.id});
 
-    return res.status(200).send({bikes});
+    // return res.status(200).send({bikes});
+    const bikes = await Bikes.find();
+    const manu = []
+    bikes.forEach((item) => {
+        let temp = item.model;
+        if(temp.toString() === req.params.id){
+            manu.push(item)
+        }
+    })
+    // console.log(manu)
+
+    // return res.status(200).send(manu);
+
+    return res.status(200).send({bikes:manu});
 })
 
 router.get("/vehicleType/:id",async (req, res) =>{

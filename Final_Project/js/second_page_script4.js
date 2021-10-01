@@ -1,6 +1,8 @@
 
 //the Fuction fun1 is used for checkbox --- MODEL
 function fun5(ck){
+    untickCheckBox()
+    document.getElementById("check5").checked = true;
     if(ck.checked){
         //console.log("Just ckecked");
         var ckbox2 = "6154097e4e41cc5e314ac30b"
@@ -11,6 +13,8 @@ function fun5(ck){
     }
 }
 function fun6(ck){
+    untickCheckBox()
+    document.getElementById("check6").checked = true;
     if(ck.checked){
         //console.log("Just ckecked");
         var ckbox2 = "6153fea54e41cc5e314ac2bf"
@@ -21,6 +25,8 @@ function fun6(ck){
     }
 }
 function fun7(ck){
+    untickCheckBox()
+    document.getElementById("check7").checked = true;
     if(ck.checked){
         //console.log("Just ckecked");
         var ckbox2 = "6153f1f74e41cc5e314ac296"
@@ -31,6 +37,8 @@ function fun7(ck){
     }
 }
 function fun8(ck){
+    untickCheckBox()
+    document.getElementById("check8").checked = true;
     if(ck.checked){
         //console.log("Just ckecked");
         var ckbox2 = "6153f27e4e41cc5e314ac29c"
@@ -41,6 +49,8 @@ function fun8(ck){
     }
 }
 function fun9(ck){
+    untickCheckBox()
+    document.getElementById("check9").checked = true;
     if(ck.checked){
         //console.log("Just ckecked");
         var ckbox2 = "6153f2a74e41cc5e314ac2a0"
@@ -51,6 +61,8 @@ function fun9(ck){
     }
 }
 function fun10(ck){
+    untickCheckBox()
+    document.getElementById("check10").checked = true;
     if(ck.checked){
         //console.log("Just ckecked");
         var ckbox2 = "6153f2684e41cc5e314ac29a"
@@ -61,6 +73,8 @@ function fun10(ck){
     }
 }
 function fun11(ck){
+    untickCheckBox()
+    document.getElementById("check11").checked = true;
     if(ck.checked){
         //console.log("Just ckecked");
         var ckbox2 = "6153f24f4e41cc5e314ac298"

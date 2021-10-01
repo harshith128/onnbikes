@@ -4,6 +4,8 @@
 //the Fuction fun1 is used for checkbox --- MANUFACTURER
 
 function fun1(ck){
+    untickCheckBox()
+    document.getElementById("check1").checked = true;
     if(ck.checked){
         //console.log("Just ckecked");
         var ckbox = "615409b54e41cc5e314ac30d"
@@ -15,6 +17,8 @@ function fun1(ck){
     }
 }
 function fun2(ck){
+    untickCheckBox()
+    document.getElementById("check2").checked = true;
     if(ck.checked){
         //console.log("Just ckecked");
         var ckbox = "6153ee8ee7e0ae30c029b1a3"
@@ -25,6 +29,8 @@ function fun2(ck){
     }
 }
 function fun3(ck){
+    untickCheckBox()
+    document.getElementById("check3").checked = true;
     if(ck.checked){
         //console.log("Just ckecked");
         var ckbox = "6153ee4ce7e0ae30c029b1a1"
@@ -35,6 +41,8 @@ function fun3(ck){
     }
 }
 function fun4(ck){
+    untickCheckBox()
+    document.getElementById("check4").checked = true;
     if(ck.checked){
         //console.log("Just ckecked");
         var ckbox = "6153eea4e7e0ae30c029b1a5"
@@ -59,10 +67,10 @@ try{
     let response = await fetch(`http://localhost:2323/bikes/manufacturer/${keys}`);
 
     let data = await response.json()
-    console.log('data:', data)
+    // console.log('data:', data)
     
 
-    console.log('data:', data.bikes[0]);
+    // console.log('data:', data.bikes[0]);
 
     var product = data.bikes;
     //console.log('product:', product)
