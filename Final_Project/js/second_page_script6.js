@@ -11,7 +11,7 @@ function togglePopup() {
 
 function bookNowClicked(p){
     console.log("Booked now clicke");
-    console.log('p:', p)
+    //console.log('p:', p)
     ck_login = check_login();
     
     //storing Data for next page
@@ -164,51 +164,52 @@ function getPickupLocations(cityKey){
 
 
 function sendDataToNextPage(cityKey){
+    //console.log('sendDataToNextPage:');
     
 
-    var datas2 = JSON.parse(localStorage.getItem("selectedLocationData"));
+    //var datas2 = JSON.parse(localStorage.getItem("selectedLocationData"));
     var datas3 = JSON.parse(localStorage.getItem("Date"));
     var datas4 = JSON.parse(localStorage.getItem("bookedBike"));
     
 
     var datas5 = JSON.parse(localStorage.getItem("user_login"));
+    //console.log('datas5:', datas5)
     
-    let userid= datas5.user_login;
+    let userid= datas5.userId;
     
 
     //cityKey , userid, 
 
     var checkout_arr = [];
 
-    var id = datas4[0].id;
-    var cityname = datas3.city;
-    var city_location = datas2.loac;
-    var city_location_address = datas2.lk;
-    var city_location_station_timing = datas2.lc;
+    // var id = datas4[0].id;
+    // var cityname = datas3.city;
+    // var city_location = datas2.loac;
+    // var city_location_address = datas2.lk;
+    // var city_location_station_timing = datas2.lc;
     var endDate = datas3.endDate;
     var startDate = datas3.startDate;
     var plan = datas3.plan;
-    var image = datas4[0].image;
-    var bikeName = datas4[0].name;
-    var price = datas4[0].price;
+    // var image = datas4[0].image;
+    // var bikeName = datas4[0].name;
+    // var price = datas4[0].price;
 
-    var address = city_location+", "+city_location_address;
+    // var address = city_location+", "+city_location_address;
 
-    var obj={
-        cityName: cityname,
-        plan:plan,
-        address:address,
-        date1:startDate,
-        date2:endDate,
-        excess:"Exess 2km/hr",
-        free: "free 150 kms",
-        image: image,
-        name: bikeName,
-        price: price,
-    }
-    checkout_arr.push(obj);
-    let temp = JSON.stringify(checkout_arr);
-    localStorage.setItem("checkout", temp);
+    // var obj={
+    //     cityName: cityname,
+    //     plan:plan,
+    //     address:address,
+    //     date1:startDate,
+    //     date2:endDate,
+    //     excess:"Exess 2km/hr",
+    //     free: "free 150 kms",
+    //     image: image,
+    //     name: bikeName,
+    //     price: price,
+    // }
+    //checkout_arr.push(obj);
+
 
     // console.log("+++++++++++++++++++");
     // console.log('userid:', userid)
@@ -230,8 +231,11 @@ function sendDataToNextPage(cityKey){
     }
 
     check_out = JSON.stringify(ckform);
+    localStorage.setItem("ldskjf",check_out);
 
     async function sendCheckOutData(){
+        console.log('sendCheckOutData:');
+
         let response = await fetch(`http://localhost:2323/checkout`,{
             method:"POST",
             body:check_out,
@@ -239,8 +243,12 @@ function sendDataToNextPage(cityKey){
         });
 
         let data = await response.json();
+              //console.log('data:', data.item._id)
               
-        console.log('data: After Receving responce from server : ', data);
+        //console.log('data: After Receving responce from server : ', data.item._id);
+        let dt = data.item._id;
+        let temp = JSON.stringify(dt);
+        localStorage.setItem("checkout", temp);
 
     }
 
