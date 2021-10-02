@@ -8,10 +8,10 @@
     <link rel="icon" href="../assets/favicon32.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet"> -->
     <style>
         * {
-            margin: 0px;
+            margin: 0px; 
             padding: 0px;
             font-family: 'Montserrat', sans-serif;
             color: rgb(88, 88, 88);
@@ -147,6 +147,29 @@
         .reducesize {
             font-size: 12px;
         }
+
+        /* ///////////// */
+
+                 @media only screen and (max-width: 1030px) {
+            #payment-page{
+                display: grid;
+                grid-template-columns: auto;
+                grid-template: "b1"
+                               "b2";
+            }
+            #pay-options {
+            grid-area: b1;
+            width: 75%;
+            margin:5% auto;
+            }
+            #book-details {
+            margin:auto;
+            grid-area: b2;
+            width: 75%;
+           }
+
+         }
+
     </style>
 </head>
 <body>
