@@ -14,6 +14,7 @@ const bikeModelcontroller = require("./controllers/bikeModel.controller");
 const citysController = require('./controllers/city.controller');
 const addressController = require('./controllers/address.controller');
 const check_outController = require("./controllers/check_out.controller");
+const fourthController = require('./controllers/fourth_page.controller');
 
 const signupControllers = require("./controllers/signup.controllers");
 const loginControllers = require("./controllers/login.controllers");
@@ -28,6 +29,7 @@ app.use("/models",bikeModelcontroller);
 app.use("/city",citysController);
 app.use("/address",addressController);
 app.use("/checkout",check_outController);
+app.use("/fourth",fourthController);
 
 //-----------------------Server Port ------------------//
 
