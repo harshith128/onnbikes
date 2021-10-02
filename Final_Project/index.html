@@ -8,19 +8,22 @@
     <link rel="icon" href="./assets/favicon32.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet"> -->
     <link rel = "shortcut icon" href = "https://pbs.twimg.com/profile_images/1212630252196790272/FxWkibqG.jpg" type = "image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="icon" href="./assets/favicon32.png"/>
     <style>
         * {
-            padding: 0;
-            margin: 0;
             font-family: 'Montserrat', sans-serif;
+        } 
+        body{
+            width: 100%;
+            padding: 0%; 
+            margin: 0%;
         }
         #scroll {
-            height: 70px;
+            height: 5.5rem ;
             background-color: rgba(0, 0, 0, 0);
             position: fixed;
             top: -100px;
@@ -32,12 +35,12 @@
             background-color: white;
         }
         .nav-bar {
-            margin: auto 40px;
+            margin: auto 5rem;
             display: flex;
             color: white;
         }
         .nav-bar > div, #scroll > div{
-            margin: 30px;
+            margin: 0.7rem ;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
@@ -46,71 +49,74 @@
             align-items: center;
             cursor: pointer;
             font-weight: 600;
-            font-size: 15px;
+            font-size: 100%;
         }
         .nav-bar > div:hover, #scroll > div:hover {
             color: orange;
         }
         #logo {
-            width: 40%;
+            width: 35%;
             border-radius: 5px;
         }
         #page-details {
             background-image: url("https://www.onnbikes.com/img/Self-ride-bike-rentals-desktop@2x.jpg");
             background-color: rgba(255,255,255,0.6);
-            height: 600px;
-            background-size: auto 580px;
+            height: 36rem;
+            background-size: 100%;
             background-repeat: no-repeat;
-            margin-bottom: 30px;
+            margin-bottom: 3.5rem;
         }
         #info-bar {
             text-align: center;
             margin: auto;
-            margin-top: 150px;
+            margin-top: 9rem;
             color: white;
         }
         .head {
-            font-size: 56px;
-            margin: 25px 0px 10px;
+            font-size: 3.5rem;
             font-weight: 700;
-            line-height: 61.6px;
+            margin: 0.5rem;
+            line-height: 1.5rem;
         }
         .plan {
-            font-size: 26px;
-            line-height: 28px;
+            font-size: 1.9rem;
             font-weight: 500;
-            margin-bottom: 25px;
+            margin-bottom: 0rem;
         }
         #ride-bar {
-            width: 75%;
+            width: 69.1%;
             margin: auto;
-            margin-top: 15px;
             display: flex;
             border: none;
-            background-color: white;
+            margin-top: 1rem;
         }
         #ride-bar > div{
             flex-grow: 1;
             text-align: center;
+            background-color: white;
         }
         #ride-bar * {
             border: none;
             cursor: pointer;
         }
         #ride-bar select, #ride-bar input{
-            padding: 20px;
-            padding-top: 24px;
             color: rgb(88, 88, 88);
+            padding: 1.4rem;
+            padding-top: 1.5rem;
+        }
+        .rideBtn{
+            background-color: rgb(30, 45, 81) !important;
         }
         .rideBtn button{
             background-color: rgb(30, 45, 81);
             height: 100%;
             color: white;
-            font-size: 24px;
-            line-height: 37.1429px;
+            font-size: 1.5rem;
+            /* line-height: 37.1429px; */
             font-weight: 400;
-            padding: 16px;
+            padding: 1rem;
         }
+
         .appLink {
             margin-bottom: 50px;
             display: flex;
@@ -263,7 +269,7 @@
             padding-left: 10px;
         }
         .facts{
-            background-color: rgb(243, 243, 243);
+            /* background-color: rgb(243, 243, 243); */
             color: rgb(88, 88, 88);
         }
         .facts > h1 {
@@ -322,6 +328,359 @@
         span {
             font-size: 40px;
         }
+
+    /* //////////////////// */
+
+     @media only screen and (max-width: 900px) {
+        #info-bar {
+            margin-top: 6rem;
+        }
+        .head {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin: 0.5rem;
+            line-height: 1.5rem;
+        }
+        .plan {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 0rem;
+        }
+        .nav-bar > div, #scroll > div{
+            margin: 0.7rem ;
+            flex-grow: 1;
+            font-weight: 600;
+        }
+         #ride-bar {
+            display: none;
+        }
+     }
+
+
+    @media only screen and (max-width: 1000px) {
+        #page-details {
+            margin-bottom: -9rem;
+        }
+        #info-bar {
+            margin-top: 6rem;
+        }
+        .head {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin: 0.5rem;
+            line-height: 1.5rem;
+        }
+        .plan {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 0rem;
+        }
+        .nav-bar > div, #scroll > div{
+            margin: 0.7rem ;
+            flex-grow: 1;
+            font-weight: 600;
+            font-size: 80%;
+        }
+         #ride-bar {
+            display: none;
+        }
+        .appLink {
+            margin-bottom: 50px;
+            display: grid;
+            grid-template-columns: auto;
+        }
+        .safty {
+            margin-bottom: 50px;
+            display: grid;
+            grid-template-columns: auto;
+            grid-gap:10px;
+            margin: 4%;
+        }
+        .safty > div {
+            margin: 1%;
+            text-align: center;
+            padding: 18px 9px;
+            padding-bottom: 10rem;
+        }
+        .press {
+            margin: 30px 120px;
+            display: grid;
+            grid-template-columns: auto;       
+        }
+        .press > div:nth-child(1){
+            grid-area:p1;
+        }
+        .press > div:nth-child(2){
+            margin-top: -0.6rem;
+            grid-area:p2;
+        }
+        .press > div:nth-child(3){
+            margin-top: 1.6rem;
+            grid-area:p3;
+        }
+        .press > div:nth-child(4){
+            grid-area:p4;
+        }
+        .press > div:nth-child(5){
+            margin-top: 1rem;
+            grid-area:p5;
+        }
+        .press {
+            grid-template: "p1 p1 p2 p2"
+                        "p3 p4 p4 p5";   
+        }
+        .press img {
+            width: 70%;
+        }
+        .contact{
+            display: grid;
+            grid-template-columns: auto; 
+            margin: auto;
+        }
+        .contact > div:nth-child(1){
+            width: 76%;
+            margin: 2rem 15%;
+             display: grid;
+            grid-template-columns: auto;
+        }
+        .contact > div > input:nth-child(-n + 2){
+            width:94%;
+        }
+        .contact > div:nth-child(2){
+            width: 76%;
+            margin: 10px 15%;
+            display: grid;
+            grid-template-columns: auto;
+        }
+        .faq{
+            margin:auto 5%;
+            display: grid;
+            grid-template-columns: auto;
+            width: 90%;
+            grid-template: "f1"
+                            "f2";
+        }
+        .faq div:nth-child(1){
+            width: 80%;
+            grid-area: f1;
+        }
+        .faq div:nth-child(2){
+            width: 80%;
+            grid-area: f2;
+        }
+        .bikes div{
+            display: grid;
+            grid-template-columns: auto;
+            width: 75%;
+            grid-gap: 0rem;
+        }
+        .bikes p {
+            line-height: 1rem;
+            font-weight: 100;
+            font-size: 14px;
+        }
+        
+    } 
+
+    @media only screen and (min-width: 1000px) {
+        .nav-bar {
+            margin: auto 5rem;
+        }
+        .nav-bar > div, #scroll > div{
+            margin: 0.7rem ;
+            flex-grow: 1;
+            font-weight: 600;
+            font-size: 87%;
+        }
+        #logo {
+            width: 35%;
+            border-radius: 5px;
+        }
+        #page-details {
+            margin-bottom: -6.5rem;
+        }
+        #info-bar {
+            margin-top: 6rem;
+        }
+        .head {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin: 0.5rem;
+            line-height: 1.5rem;
+        }
+        .plan {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 0rem;
+        }
+        #ride-bar {
+            width: 96%;
+            margin-top: 1rem;
+        }
+        #ride-bar select, #ride-bar input{
+            width: 90%;
+        }
+        .rideBtn button{
+            width: 100%;
+            font-weight: 350;
+            font-size:1rem;
+        }
+       
+    }
+    
+     @media only screen and (min-width: 1100px) {
+        .nav-bar {
+            margin: auto 5rem;
+        }
+        .nav-bar > div, #scroll > div{
+            margin: 0.7rem ;
+            flex-grow: 1;
+            font-weight: 600;
+            font-size: 89%;
+        }
+        #logo {
+            width: 35%;
+            border-radius: 5px;
+        }
+        #page-details {
+            margin-bottom: -4.5rem;
+        }
+        #info-bar {
+            margin-top: 7rem;
+        }
+        .head {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin: 0.5rem;
+            line-height: 1.5rem;
+        }
+        .plan {
+            font-size: 1.4rem;
+            font-weight: 570;
+            margin-bottom: 0rem;
+        }
+        #ride-bar {
+            width: 92%;
+            margin-top: 1rem;
+        }
+        #ride-bar select, #ride-bar input{
+            width: 90%; 
+        }
+        .rideBtn button{
+            width: 100%;
+            font-weight: 350;
+            font-size:1.3rem;
+        }
+       
+      }
+
+       @media only screen and (min-width: 1200px) {
+        .nav-bar > div, #scroll > div{
+            font-size: 98%;
+        }
+        #page-details {
+            margin-bottom: -1.5rem;
+        }
+        #info-bar {
+            margin-top: 8.5rem;
+        }
+        #ride-bar {
+            width: 88%;
+            margin-top: 1rem;
+        }
+        #ride-bar > div{
+            padding:0.1rem;
+        }
+        #ride-bar select, #ride-bar input{
+            width: 90%; 
+        }
+        .rideBtn button{
+            width: 100%;
+            font-weight: 350;
+            font-size:1.3rem;
+        }
+       
+      }
+
+      @media only screen and (min-width: 1300px) {
+        .nav-bar > div, #scroll > div{
+            font-size: 98%;
+        }
+        #page-details {
+            margin-bottom: 1.2rem;
+        }
+        #info-bar {
+            margin-top: 9.5rem;
+        }
+        #ride-bar {
+            width: 82%;
+        }
+        #ride-bar > div{
+           padding:0.2rem; 
+        }
+        #ride-bar select, #ride-bar input{
+            width: 90%;
+        }
+        .rideBtn button{
+            width: 100%;
+            font-weight: 350;
+            font-size:1.3rem;
+        }
+       
+      }
+
+        @media only screen and (min-width: 1400px) {
+        .nav-bar > div, #scroll > div{
+            font-size: 98%;
+        }
+        #info-bar {
+            margin-top: 9.5rem;
+        }
+        #ride-bar {
+            width: 79%;
+        }
+        #ride-bar > div{
+            padding:0.2rem;     
+        }
+        #ride-bar select, #ride-bar input{
+            width: 90%;
+        }
+        .rideBtn button{
+            font-weight: 350;
+            font-size:1.5rem;
+        }
+       
+      }
+
+        @media only screen and (min-width: 1550px) {
+        .nav-bar > div, #scroll > div{
+            font-size: 99%;
+        }
+         #page-details {
+            margin-bottom: 2.5rem;
+        }
+        #info-bar {
+            margin-top: 10.2rem;
+        }
+        #ride-bar {
+            width: 70%;
+        }
+        #ride-bar > div{
+             padding:0.3rem;     
+        }
+        #ride-bar select, #ride-bar input{
+            width: 90%;
+        }
+        .rideBtn button{
+            font-size:1.3rem;
+        }
+       
+      }
+          
+     input:focus, textarea:focus, select:focus{
+        outline: none; 
+     }
+
     </style>
 </head>
 <body>
