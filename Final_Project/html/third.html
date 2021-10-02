@@ -11,6 +11,8 @@
     <style>
         * {
             font-family: 'Montserrat', sans-serif;
+            margin: 0px;
+            padding: 0px;
         }
 
         #overall {
@@ -22,7 +24,7 @@
         #homepage {
             margin: 200px;
             margin-top: 0px;
-            height: 100vh;
+            height: 60vh;
         }
 
         #content {
@@ -88,7 +90,7 @@
         }
 
         #right_top>div {
-            margin: 50px;
+            margin: 10%;
             margin-bottom: 10px;
             margin-top: 30px;
             flex-grow: 1;
@@ -104,15 +106,20 @@
             background-color: white;
             /* border: 1px solid greenyellow; */
             margin: 2px;
+            padding: 5%;
             box-shadow: 2px 2px 2px 2px grey;
+        }
+
+        #right_3 div {
+            flex-grow: 1;
+        }
+
+        #right_3 div:nth-child(2) {
+            text-align: end;
         }
 
         .class1 {
             font-size: 13px;
-        }
-
-        .class2 {
-            display: flex;
         }
 
         #price {
@@ -123,30 +130,40 @@
             border: 1px solid grey;
             box-shadow: 0 3px 10px rgb(0 0 0 / 0.6);
             background-color: white;
-            padding: 10px;
+            padding: 5%;
         }
 
         #code {
             margin: 5px;
             background-color: white;
+            margin-bottom: 5%;
         }
 
         #app {
             margin-left: 5px;
         }
 
-        #ch {
-            margin-top: 12px;
+        /* #ch {
+            /* margin-top: 12px; */
+
+        /* } */
+        */ #ins_p {
+            text-align: end;
         }
 
-        #ins_p {
-            margin-left: 200px;
+        #insure span:nth-child(3) {
+            flex-grow: 3;
+        }
+
+        #insure {
+            margin-bottom: 5%;
         }
 
         #div2 {
             display: flex;
             margin: 10px;
             margin-right: 10%;
+            margin-left: 0%;
             font-size: 10px;
             /* border: 1px solid green ; */
 
@@ -157,9 +174,28 @@
         #div3 {
             display: flex;
             margin: 10px;
-            margin-left: 10%;
+            margin-left: 30%;
+            margin-right: 0%;
             font-size: 10px;
+            text-align: end;
+
             /* border: 1px solid green ; */
+        }
+
+        #div3 span {
+            text-align: end;
+            margin-right: 0px;
+            flex-grow: 1;
+        }
+
+        #div3 span:nth-child(2) {
+            margin-left: 0%;
+            margin-top: 2%;
+        }
+
+        #div2 span:nth-child(2) {
+            margin-left: 12%;
+            margin-top: 2%;
         }
 
         #d_time1,
@@ -204,27 +240,71 @@
         }
 
         #t_price {
-            margin-top: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 5%;
         }
 
-        #tariff {
+        #t_price>div {
+            flex-grow: 1;
+
+        }
+
+        #t_price>div:nth-child(2) {
+            text-align: end;
+        }
+
+        /* #tariff {
             margin-right: 0px;
 
-        }
+        } */
 
         #price {
             margin-left: 10%;
         }
-        #in input{
-            width: 90%;
-        }
-        .class1{
+
+        #in input {
             width: 100%;
-            text-align: center;
         }
-        #ins_p{
-            margin-left: 25%;
+
+        .class1 {
+            width: 100%;
+            text-align: left;
+        }
+
+        .class2 {
+            display: flex;
+
+        }
+
+        #ins_p {
+            /* margin-left: 25%; */
+            text-align: end;
+        }
+
+        #total div {
+            flex-grow: 1;
+
+        }
+
+        #total>div:nth-child(2) {
+            text-align: end;
+        }
+
+        #ban {
+            margin-bottom: 10%;
+        }
+
+        #div1 div {
+            flex-grow: 1;
+        }
+
+        #last_button button {
+            background-color: blue;
+            opacity: 0.5;
+            width: 334px;
+            height: 34px;
+            margin-left: 8px;
+            font-size: 20px;
+            color: white;
         }
     </style>
 </head>
@@ -307,6 +387,7 @@
                     <button onclick="apply()">apply</button> -->
                 <!-- </div> -->
             </div>
+            <div id="left_content"></div>
 
         </div>
 
@@ -334,7 +415,7 @@
             // }
             console.log(data2.item.bookedBike["image"]);
 
-            var div = document.createElement("div");
+            var div = document.getElementById("left_content")
             var image1 = document.createElement("img");
             image1.src = data2.item.bookedBike["image"];
             image1.style.width = '400px';
@@ -657,15 +738,15 @@
 
             let ref = document.createElement("div");
             ref.innerText = "Refundable Deposit";
-            ref.style.padding = "10px"
-            ref.style.marginBottom = "0px"
-            ref.style.fontSize = "15px"
+            // ref.style.padding = "10px"
+            // ref.style.marginBottom = "0px"
+            // ref.style.fontSize = "15px"
             let dep = document.createElement("div");
             dep.innerText = "0";
-            dep.style.padding = "8px"
-            dep.style.paddingTop = "18px"
-            dep.style.paddingLeft = "60px"
-            dep.style.paddingRight = "0px"
+            // dep.style.padding = "8px"
+            // dep.style.paddingTop = "18px"
+            // dep.style.paddingLeft = "60px"
+            // dep.style.paddingRight = "0px"
 
 
             let pay = document.createElement("p");
@@ -865,16 +946,16 @@
             tot_sen.innerText = "Total amount is";
             let tot_price = document.createElement("div");
             tot_price.innerText = tot_val
-            tot_price.style.marginLeft = "20%"
+            // tot_price.style.marginLeft = "20%"
             let btn2 = document.createElement("button");
             btn2.innerHTML = `Payment ${tot_val}`;
-            btn2.style.backgroundColor = "Blue";
-            btn2.style.opacity = "0.5";
-            btn2.style.width = "334px";
-            btn2.style.height = "34px"
-            btn2.style.marginLeft = "8px"
-            btn2.style.fontSize = "20px"
-            btn2.style.color = "white"
+            // btn2.style.backgroundColor = "Blue";
+            // btn2.style.opacity = "0.5";
+            // btn2.style.width = "334px";
+            // btn2.style.height = "34px"
+            // btn2.style.marginLeft = "8px"
+            // btn2.style.fontSize = "20px"
+            // btn2.style.color = "white"
 
             // console.log(tot_val);
 
@@ -900,7 +981,7 @@
 
                             {
                                 user_id: data2.item["_id"],
-                                name:data2.item.bookedBike["name"],
+                                name: data2.item.bookedBike["name"],
                                 date1: data2.item["startDate"],
                                 date2: data2.item["endDate"],
                                 price: tot_val,
@@ -979,7 +1060,7 @@
 
             total_cont.append(tot_sen, tot_price);
             total_cont.setAttribute("class", "class2");
-            promo.append(t_price, code, insure, div1, total_cont);
+            promo.append(t_price, code, insure, total_cont, div1);
 
             last_button.append(btn2)
             check_last.append(ch2);
