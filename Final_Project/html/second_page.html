@@ -8,51 +8,15 @@
     <link rel="icon" href="../assets/favicon32.png"/>
     <link rel='stylesheet' href='../css/styles1.css'/>
     <link rel='stylesheet' href="../css/styles2.css"/>
-    
+    <link rel='stylesheet' href="../css/style.navbar.css"/>
+    <link rel='stylesheet' href="../css/style.ridebar.css"/>
 </head>
 <body>
-    <div class="bg-image"></div>
     <div id="page-details">
-        <div class="nav-bar">
-            <div onclick="goToHomePage()">HOME</div>
-            <div>OFFERS</div>
-            <div>RENT-TO-OWN</div>
-            <div>
-                <img class="top_img_icon" src="https://www.onnbikes.com/img/ONN-logo-unit-without-shadow.png" id="logo"/>
-            </div>
-            <div>FAQ</div>
-            <div>WELCOME</div>
-            <div>+918378007800</div>
-        </div>
-        
     </div>
+    <div class="bg-image"></div>
+    
     <div id="ride-bar">
-        <div  class="city">
-            <select  id="city_name" class="select_class">
-                <option value="bengaluru">BENGALURU</option>
-                <option value="hyderabad">HYDERABAD</option>
-                <option value="jaipur">JAIPUR</option>
-                <option value="gurugram">GURUGRAM</option>
-                <option value="mysuru">MYSURU</option>
-                <option value="udaipur">UDAIPUR</option>
-                <option value="ahmedabad">AHMEDABAD</option>
-            </select>
-        </div>
-        <div class="booking">
-            <select id="second_select" class="select_from_ride_bar">
-                <option value="hour">HOURLY/DAILY</option>
-                <option value="day">30 DAY BOOKING</option>
-            </select>
-        </div>
-        <div class="startDate">
-            <input id="startDate" type="datetime-local" placeholder="START DATE" class="start_date_cal"/>
-        </div>
-        <div class="endDate">
-            <input id="endDate" type="datetime-local" placeholder="END DATE" class="end_date_cal"/>
-        </div>
-        <div class="rideBtn">
-            <button onclick="rideNow()"><a>RIDE NOW</a></button>
-        </div>
     </div>
     <div id="main_div">
         <div id="sort_div">
@@ -148,5 +112,17 @@
 <script src="../js/second_page_script6.js"></script>
 <script src="../js/second_page_script7.js"></script>
 <script src="../js/script_uncheck.js"></script>
+<script src="../js/city.popup.js"></script>
 </body>
 </html>
+<script type="module">
+    import navbar from "../components/navbar.js"
+    //console.log(navbar)
+    let addNavbar = document.getElementById("page-details");
+    addNavbar.innerHTML = navbar()
+
+    import ridebar from "../components/ridebar.js"
+    console.log(ridebar)
+    let addRidebar = document.getElementById("ride-bar");
+    addRidebar.innerHTML = ridebar()
+</script>

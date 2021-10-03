@@ -8,6 +8,7 @@
     <title>Rent a Bike or Scooty with Zero Deposite at ₹ 8/Hour - ONN Bikes</title>
     <link rel="shortcut icon" href="https://pbs.twimg.com/profile_images/1212630252196790272/FxWkibqG.jpg"
         type="image/x-icon">
+        <link rel='stylesheet' href="../css/style.navbar.css"/>
     <style>
         * {
             font-family: 'Montserrat', sans-serif;
@@ -310,17 +311,19 @@
 </head>
 
 <body id="overall">
+    <div id="page-details">
+    </div>
     <div id="homepage">
-        <div id="nav">
+        <!-- <div id="nav">
             <div>HOME</div>
             <div>OFFERS</div>
             <div>RENT-TO-OWN</div>
             <div id="image"></div>
-            <!-- <img src="https://www.onnbikes.com/img/ONN-logo-unit-without-shadow.png" alt=""></div> -->
+            <img src="https://www.onnbikes.com/img/ONN-logo-unit-without-shadow.png" alt=""></div>
             <div>FAQ</div>
             <div>WELCOME</div>
             <div>9876543210</div>
-        </div>
+        </div> -->
         <div id="content">
             <div id="right_content">
                 <div id="right_top">
@@ -1080,3 +1083,9 @@
 </body>
 
 </html>
+<script type="module">
+    import navbar from "../components/navbar.js"
+    //console.log(navbar)
+    let addto = document.getElementById("page-details");
+    addto.innerHTML = navbar()
+</script>
