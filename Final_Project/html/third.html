@@ -8,7 +8,7 @@
     <title>Rent a Bike or Scooty with Zero Deposite at ₹ 8/Hour - ONN Bikes</title>
     <link rel="shortcut icon" href="https://pbs.twimg.com/profile_images/1212630252196790272/FxWkibqG.jpg"
         type="image/x-icon">
-        <link rel='stylesheet' href="../css/style.navbar.css"/>
+    <link rel='stylesheet' href="../css/style.navbar.css" />
     <style>
         * {
             font-family: 'Montserrat', sans-serif;
@@ -20,68 +20,74 @@
             background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/doodles.png");
             background-color: rgba(255, 255, 255, 0.6);
             background-blend-mode: lighten;
+            width: 100%;
         }
 
         #homepage {
-            margin: 200px;
-            margin-top: 0px;
-            height: 60vh;
+            margin: auto 10%;
+            margin-top: -1rem;
+            width: auto;
+            /* height: 10vh; */
         }
 
         #content {
-            display: flex;
-            flex-direction: row-reverse;
+            display: grid;
+            grid-template-rows: auto;
+            grid-template: "r1 r2";
+            margin: auto;
+            /* flex-direction: row; */
             /* border: 1px solid blue; */
-            margin-top: 10px;
+            /* margin-top: 50px; */
             height: 520px;
+            width: 90%;
         }
 
-        #content>div {
+        /* #content>div {
             flex-grow: 2;
-        }
+        } */
 
-        #content img {
-            width: 170px;
+        /* #content img {
+            width: 500px;
             margin-left: 10px;
             margin-bottom: 0px;
-        }
+        } */
 
-        #nav {
-            /* border: 1px solid black; */
+        /* #nav {
             height: 70px;
             display: flex;
             flex-direction: row;
-        }
+        } */
 
+        /* 
         #nav>div {
             flex-grow: 1;
-            /* border: 1px solid red; */
+            border: 1px solid red;
             text-align: center;
             color: #1E2D51;
             font-weight: 790;
-            padding: 30px;
+            padding: 100px;
             font-size: 12px;
-        }
+        } */
 
-        #nav>div:nth-child(4) {
+        /* #nav>div:nth-child(4) {
             height: 10px;
             width: 5px;
-            /* border: 1px solid #E0E0E0; */
+            border: 1px solid #E0E0E0;
             box-shadow: 0 3px 10px rgb(0 0 0 / 0.6);
             background-color: white;
-        }
+        } */
 
-        #image {
+        /* #image {
             background-image: url("https://www.onnbikes.com/img/ONN-logo-unit-without-shadow.png");
-            /* width: auto; */
+            width: auto;
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
             background-color: rgba(255, 255, 255, 0.6);
             background-blend-mode: multiply;
             border-radius: 20px;
-            /* border: 1px solid #E0E0E0; */
-        }
+            border: 1px solid #E0E0E0;
+        } */
 
         #right_top {
             display: flex;
@@ -92,21 +98,24 @@
 
         #right_top>div {
             margin: 10%;
-            margin-bottom: 10px;
-            margin-top: 30px;
+            margin-bottom: 0.6rem;
+            /* margin-top: 30px; */
             flex-grow: 1;
             /* height: 40px; */
+            background-color: #fff;
+            /* line-height: 10%; */
+            font-family: Montserrat,sans-serif;
+            color: #1e2d51;
         }
 
-        #right_content {
-            /* border: 1px solid black ; */
-            width: 0px;
-        }
+        /* #right_content {
+            border: 1px solid black ;
+        } */
 
         #right_3 {
             background-color: white;
             /* border: 1px solid greenyellow; */
-            margin: 2px;
+            margin: 0.1rem;
             padding: 5%;
             box-shadow: 2px 2px 2px 2px grey;
         }
@@ -120,35 +129,32 @@
         }
 
         .class1 {
-            font-size: 13px;
+            font-size: 0.8rem;
         }
 
-        #price {
+        /* #price {
             margin-left: 180px;
-        }
+        } */
 
         #promo {
             border: 1px solid grey;
             box-shadow: 0 3px 10px rgb(0 0 0 / 0.6);
             background-color: white;
             padding: 5%;
+            margin-bottom: 3%;
+            background-color: #fff;
+            /* line-height: 10%; */
+            font-family: Montserrat,sans-serif;
+            color: #092a3a;
         }
 
         #code {
-            margin: 5px;
+            margin: 1rem;
             background-color: white;
             margin-bottom: 5%;
         }
 
-        #app {
-            margin-left: 5px;
-        }
-
-        /* #ch {
-            /* margin-top: 12px; */
-
-        /* } */
-        */ #ins_p {
+        #ins_p {
             text-align: end;
         }
 
@@ -162,10 +168,10 @@
 
         #div2 {
             display: flex;
-            margin: 10px;
+            margin: 0.8rem;
             margin-right: 10%;
             margin-left: 0%;
-            font-size: 10px;
+            font-size: 0.7rem;
             /* border: 1px solid green ; */
 
             text-align: center;
@@ -174,10 +180,10 @@
 
         #div3 {
             display: flex;
-            margin: 10px;
+            margin: 0.8rem;
             margin-left: 30%;
             margin-right: 0%;
-            font-size: 10px;
+            font-size: 0.7rem;
             text-align: end;
 
             /* border: 1px solid green ; */
@@ -185,7 +191,7 @@
 
         #div3 span {
             text-align: end;
-            margin-right: 0px;
+            /* margin-right: 0px; */
             flex-grow: 1;
         }
 
@@ -201,43 +207,48 @@
 
         #d_time1,
         #d_time2 {
-            margin-top: 10px;
+            margin-top: 0rem;
         }
 
-        #accept {
-            margin-top: 10px;
+        /* #accept {
+            margin-top: 0;
+        } */
+
+        #right_3>div,p{
+            /* margin: 3px; */
+            font-size: 0.7rem;
+            background-color: #fff;
+            /* line-height: 10%; */
+            font-family: Montserrat,sans-serif;
+            color: #092a3a;
         }
 
-        #right_top p {
-            margin: 3px;
-            font-size: 10px;
-        }
 
         #dt1,
         #dt2 {
-            font-size: 26px;
+            font-size: 2rem;
         }
 
         #tm1,
         #tm2 {
-            font-size: 13px;
-            margin-top: 0px;
+            font-size: 1rem;
+            /* margin-top: 0px; */
         }
 
         #mn1,
         #mn2 {
-            font-size: 9px;
+            font-size: 0.5rem;
         }
 
         #st_date,
         #end_date {
-            color: #1E2D51;
+            color: rgb(30, 45, 81);
         }
 
         h2 {
-            margin-top: 2px;
-            font-size: 15px;
-            margin-bottom: 3px;
+            margin-top: 0.8rem;
+            font-size: 1.2rem;
+            margin-bottom: 0.6rem;
         }
 
         #t_price {
@@ -264,6 +275,32 @@
 
         #in input {
             width: 100%;
+            background-color: white;
+            background-position: 2% 2%;
+            box-sizing: border-box;
+            appearance: none;
+            padding: 4%;
+            outline: none;
+            border: 0.1px solid grey;
+            color: transparent;
+        }
+
+        #in input:focus::placeholder {
+            color: transparent;
+        }
+
+        #in input::placeholder {
+            color: #222;
+            transition: color 0.3s ease
+        }
+
+        #app button {
+            text-align: center;
+            box-shadow: 0 0.1rem #999;
+            margin-top: 10%;
+            background-color: white;
+            border-radius: 15px;
+            border: 0.1px solid grey;
         }
 
         .class1 {
@@ -291,7 +328,7 @@
         }
 
         #ban {
-            margin-bottom: 10%;
+            margin-bottom: 6%;
         }
 
         #div1 div {
@@ -299,19 +336,103 @@
         }
 
         #last_button button {
-            background-color: blue;
+            background-color: #1d2d51;
             opacity: 0.5;
-            width: 334px;
+            width: 100%;
             height: 34px;
-            margin-left: 8px;
-            font-size: 20px;
+            /* margin-left: 8px; */
+            font-size: 1.15rem;
             color: white;
+            margin-top: 0.6rem;
+            padding: 0.25rem;
+            /* line-height: 30%; */
+        }
+
+        #right_content {
+            width: 100%;
+            grid-area: r2;
+        }
+
+        #left_content {
+            grid-area: r1;
+            width: 100%;
+            /* margin: 0%; */
+        }
+
+        #logo1 {
+            width: 40%;
+            display: none;
+        }
+        #accept u{
+            color: #214BA0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        @media only screen and (max-width:1000px) {
+            #content {
+                display: grid;
+                width: 100%;
+                /* margin: auto; */
+                justify-items: center;
+                grid-template-columns: auto;
+                grid-template: "r1"
+                    "r2";
+            }
+
+            #right_content {
+                width: 100%;
+                grid-area: r2;
+            }
+
+            #left_content {
+                grid-area: r1;
+                /* margin-right: -10rem; */
+                width: 100%;
+                justify-items: center;
+                /* margin: auto; */
+                margin-top: 1rem;
+            }
+            #left_content{
+                color: #092a3a;
+                font-family: 'Montserrat', sans-serif;
+            }
+
+            .nav-bar {
+                /* border: 1px solid black; */
+                display: none;
+            }
+
+            /* .logo1_div{
+                display: block;
+                background-color: white;
+                border: 1px solid #808080;
+                width: 40%;
+                padding: 1%;
+                margin: auto;
+                justify-content: center;
+                margin-left: 8%;
+                margin-right: -2rem;
+
+            } */
+            #logo1 {
+                width: 10%;
+                display: block;
+                border: 1px solid rgb(206, 202, 202);
+                border-radius: 20%;
+                margin-left: 15%;
+                margin-top: 2%;
+
+            }
         }
     </style>
 </head>
 
 <body id="overall">
     <div id="page-details">
+    </div>
+    <div>
+
+        <img onclick="goToHomePage()" src="https://www.onnbikes.com/img/ONN-logo-unit-without-shadow.png" id="logo1" />
     </div>
     <div id="homepage">
         <!-- <div id="nav">
@@ -325,6 +446,7 @@
             <div>9876543210</div>
         </div> -->
         <div id="content">
+            <div id="left_content"></div>
             <div id="right_content">
                 <div id="right_top">
                     <div id="st_date">
@@ -390,12 +512,16 @@
                     <button onclick="apply()">apply</button> -->
                 <!-- </div> -->
             </div>
-            <div id="left_content"></div>
+
 
         </div>
 
     </div>
     <script>
+        function goToHomePage() {
+            // console.log('Home');
+            location.href = "../index.html";
+        }
         async function show_left() {
             let homepage = document.getElementById("homepage");
             let content = document.getElementById("content");
@@ -421,15 +547,18 @@
             var div = document.getElementById("left_content")
             var image1 = document.createElement("img");
             image1.src = data2.item.bookedBike["image"];
-            image1.style.width = '400px';
+            image1.style.width = '50%';
 
             // image1.style.paddingTop = '0px'
             var excess = document.createElement("span");
             excess.innerText = "Excess 2km/hr";
-            excess.style.marginLeft = '46px';
+            excess.style.marginLeft = '2.5rem';
             var free = document.createElement("span");
             free.innerText = `Free 150kms`;
-            free.style.marginLeft = '100px';
+            free.style.marginLeft = '5rem';
+            // excess.style.marginTop = 'auto 100px';
+            // free.style.marginTop = '2.7rem';
+
 
             var name1 = data2.item.bookedBike["name"];
             var n1 = name1.split(" ");
@@ -441,25 +570,30 @@
 
             var com = document.createElement("p");
             com.innerText = p1
-            com.style.marginTop = "50px"
-            com.style.marginBottom = "0px";
-            com.style.marginLeft = '46px';
+
+            com.style.marginTop = "1rem"
+            // com.style.marginBottom = "0px";
+            com.style.marginLeft = '3rem';
+            com.style.color = "rgb(30, 45, 81)";
             var mod = document.createElement("h1");
             mod.innerText = h1;
-            mod.style.fontSize = "20px";
-            mod.style.margin = "0px";
-            mod.style.marginLeft = '46px';
+            mod.style.fontSize = "1.5rem";
+            // mod.style.margin = "0px";
+            mod.style.marginLeft = '3rem';
+            mod.style.color = "rgb(30, 45, 81)";
             let address_label = document.createElement("h2");
             address_label.innerText = "PICKUP & RETURN LOCATION ";
-            address_label.style.marginLeft = '46px';
+            /* address_label.style.color = "rgb(30, 45, 81)"; */
+            address_label.style.marginLeft = '2.5rem';
             // address_label.style.marginTop = "2px";
             let address = document.createElement("p");
             address.innerText = data2.item.address["address"] + ',' + data2.item.address["landmark"];
             address.style.color = "blue";
-            address.style.fontSize = "11px";
-            address.style.marginTop = "0px";
+            address.style.fontSize = "0.8rem";
+            // address.style.marginTop = "0px";
             address.style.opacity = "0.6"
-            address.style.marginLeft = '46px';
+            address.style.marginLeft = '2.5rem';
+            address.style.marginBottom = '0.8rem'
 
 
             var price = document.createElement("p");
@@ -584,11 +718,11 @@
                     break;
             }
             dt1.innerText = arr1[2];
-            dt1.style.font = "26px";
+            // dt1.style.font = "26px";
             tm1.innerText = time1[0] + ":" + time1[1];
-            tm1.style.font = "13px";
+            // tm1.style.font = "13px";
             mn1.innerText = text + " " + arr1[0];
-            mn1.style.font = "9px";
+            // mn1.style.font = "9px";
             // console.log(arr1[1]);
 
             var d2 = data2.item["endDate"];
@@ -743,9 +877,10 @@
             ref.innerText = "Refundable Deposit";
             // ref.style.padding = "10px"
             // ref.style.marginBottom = "0px"
-            // ref.style.fontSize = "15px"
+            ref.style.fontSize = "0.85rem"
             let dep = document.createElement("div");
             dep.innerText = "0";
+            dep.style.fontSize = "1rem";
             // dep.style.padding = "8px"
             // dep.style.paddingTop = "18px"
             // dep.style.paddingLeft = "60px"
@@ -754,8 +889,8 @@
 
             let pay = document.createElement("p");
             pay.innerText = "This amount has to be paid at the time of vehicle delivery";
-            pay.style.marginTop = "1px";
-            pay.style.fontSize = "10px"
+            // pay.style.marginTop = "1px";
+            pay.style.fontSize = "0.6rem"
             // pay.setAttribute("class","class1")
 
             // pricing
@@ -770,88 +905,26 @@
             tariff_var.setAttribute("class", "class1");
             // let price = document.createElement("p");
             price_var.innerText = tot_val;
-            price_var.style.fontSize = "14px"
+            // price_var.style.fontSize = "14px"
 
             let input = document.createElement("input");
             input.setAttribute("type", "text");
-            input.style.borderRadius = "10px";
-            // input_value = input.value;
+            input.placeholder = "Promocode";
+            input.style.borderRadius = "3rem";
+            input_value = input.value;
             let btn = document.createElement("button");
-            btn.innerText = "Apply promocode";
+            btn.innerText = "Apply";
             btn.setAttribute("class", "class1");
-            localStorage.setItem("total_price", JSON.stringify({ price: tot_val }));
-
-            // var data_payment = [
-
-            //     {
-            //         name: data2.item["_id"],
-            //         date1: data2.item["startDate"],
-            //         date2: data2.item["endDate"],
-            //         price: tot_val,
-            //         tariff: tariff_val
-            //     }
-            // ];
-            // data_payment = JSON.stringify(data_payment);
-
-            // fetch("http://localhost:2323/fourth", {
-            //     method: "POST",
-            //     body: data_payment,
-            //     headers: {
-            //         "Content-Type": "application/json",
-            //     },
-            // })
-            //     .then((res1) => {
-            //         return res1.json();
-            //     })
-            //     .then((res1) => {
-            //         console.log('res1:', res1);
-            //     })
-            //     .catch((err) => {
-            //         console.log('err:', err);
-            //     })
-
-
-
-            // console.log(data_payment);
+            btn.style.marginLeft = "1rem";
             btn.onclick = function () {
                 //console.log(input.value);
                 if (input.value == "masai30") {
                     tot_val = Math.floor(tot_val - (tot_val * 0.3));
-                    if (localStorage.getItem("cart") === null) {
-                        localStorage.setItem("cart", JSON.stringify([]));
-                    }
-                    let crt = JSON.parse(localStorage.getItem("payment_data"));
-                    crt = tot_val;
-                    localStorage.setItem("total_price", JSON.stringify({ price: crt }));
                     tot_price.innerText = tot_val;
                     btn2.innerHTML = `Payment ${tot_val}`;
                     btn.onclick = "";
-                    btn.innerText = "Promocode Applied"
+                    btn.innerText = "Applied"
                     btn.style.color = "green";
-                    // var code_patch = [{
-                    //     price: tot_val
-                    // }];
-                    // code_patch = JSON.stringify(code_patch);
-
-                    // fetch(`http://localhost:2323/fourth/${data}`, {
-                    //     method: "PATCH",
-                    //     headers: {
-                    //         "Content-Type": "application/json",
-                    //     },
-                    //     body: JSON.stringify({
-                    //         price:tot_val
-                    //     })
-
-                    // })
-                    //     .then((res2) => {
-                    //         return res2.json();
-                    //     })
-                    //     .then((res2) => {
-                    //         console.log('res2:', res2);
-                    //     })
-                    //     .catch((err) => {
-                    //         console.log('err:', err);
-                    //     })
                 }
                 else {
                     alert("not a valid code");
@@ -866,12 +939,12 @@
             label.innerText = "Insure my ride";
             // label.style.marginRight = "0"
             let ins_price = document.createElement("P");
-            ins_price.innerText = "0";
+            // ins_price.innerText = "0";
             // ins_price.style.marginLeft = "0"
             label.setAttribute("class", "class1")
             let para = document.createElement("p");
             para.innerText = "*Covers the rider,pillion and vehicle T&C apply";
-            para.style.fontSize = "10px";
+            // para.style.fontSize = "10px";
             check.onclick = function () {
                 if (check.checked == true) {
                     ins_price.innerText = "+15";
@@ -879,30 +952,6 @@
                     tot_price.innerText = tot_val;
                     localStorage.setItem("total_price", JSON.stringify({ price: tot_val }));
                     btn2.innerHTML = `Payment ${tot_val}`;
-                    // tot_price.setAttribute("class","class1")
-                    // var code_patch2 = {
-                    //     price: tot_val
-                    // };
-                    // code_patch2 = JSON.stringify(code_patch2);
-
-                    // fetch(`http://localhost:2323/fourth/${data2.item["_id"]}`, {
-                    //     method: "PATCH",
-                    //     headers: {
-                    //         "Content-Type": "application/json",
-                    //     },
-                    //     body: JSON.stringify({
-                    //         price:tot_val
-                    //     })
-                    // })
-                    //     .then((res3) => {
-                    //         return res3.json();
-                    //     })
-                    //     .then((res3) => {
-                    //         console.log('res3:', res3);
-                    //     })
-                    //     .catch((err) => {
-                    //         console.log('err:', err);
-                    //     })
                 }
                 else if (check.checked == false) {
                     ins_price.innerText = "0";
@@ -910,30 +959,6 @@
                     tot_price.innerText = tot_val;
                     btn2.innerHTML = `Payment ${tot_val}`;
                     localStorage.setItem("total_price", JSON.stringify({ price: tot_val }));
-                    // tot_price.setAttribute("class","class1")
-                    var code_patch3 = {
-                        price: tot_val
-                    };
-                    code_patch3 = JSON.stringify(code_patch3);
-
-                    // fetch(`http://localhost:2323/fourth/${data2.item["_id"]}`, {
-                    //     method: "PATCH",
-                    //     headers: {
-                    //         "Content-Type": "application/json",
-                    //     },
-                    //     body: JSON.stringify({
-                    //         price:tot_val
-                    //     })
-                    // })
-                    //     .then((res4) => {
-                    //         return res4.json();
-                    //     })
-                    //     .then((res4) => {
-                    //         console.log('res4:', res4);
-                    //     })
-                    //     .catch((err) => {
-                    //         console.log('err:', err);
-                    //     })
                 }
             }
             console.log(tot_val);
@@ -966,7 +991,7 @@
             ch2.setAttribute("type", "checkbox");
             let p3 = document.createElement("u");
             p3.innerText = "I agree to the terms of use";
-            p3.style.color = "blue";
+            // p3.style.color = "#214BA0";
             // let btn2 = document.createElement("button");
             // btn2.innerHTML = `Payment ${product.price}`;
 
@@ -977,7 +1002,7 @@
 
             ch2.onclick = function () {
                 if (ch2.checked == true) {
-                    btn2.style.backgroundColor = "Blue";
+                    btn2.style.backgroundColor = "#1d2d51";
                     btn2.style.opacity = "1"
                     btn2.onclick = function () {
                         var data_payment = [
@@ -1018,7 +1043,7 @@
                     }
                 }
                 else if (ch2.checked == false) {
-                    btn2.style.backgroundColor = "Blue";
+                    btn2.style.backgroundColor = "#1d2d51";
                     btn2.style.opacity = "0.5";
                     btn2.onclick = "";
                 }
@@ -1071,7 +1096,7 @@
             accept.append(ch2, p3);
 
             right_content.append(right_3, promo, accept, last_button);
-            right_content.style.width = '180px';
+            right_content.style.width = '100%';
 
 
             // });
