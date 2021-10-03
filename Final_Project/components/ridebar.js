@@ -45,10 +45,10 @@ function ridebar(){
     <div class="startDate">
         <input type="datetime-local" placeholder="START DATE" />
     </div>
-    <div class="endDate">
+    <div class="endDate" onclick="callStart()">
         <input type="datetime-local" placeholder="END DATE" />
     </div>
-    <div class="rideBtn">
+    <div class="rideBtn" onclick="rideNow()">
         <button>RIDE NOW</button>
     </div>`
  }

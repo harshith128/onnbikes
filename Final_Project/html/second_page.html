@@ -103,7 +103,19 @@
             </div>
         </div>
     </div>
+    <script type="module">
+        import navbar from "../components/navbar.js"
+        //console.log(navbar)
+        let addNavbar = document.getElementById("page-details");
+        addNavbar.innerHTML = navbar()
+    
+        import ridebar from "../components/ridebar.js"
+        //console.log(ridebar)
+        let addRidebar = document.getElementById("ride-bar");
+        addRidebar.innerHTML = ridebar()
 
+        rideNowAuto();
+    </script>
 <script src="../js/second_page_script1.js"></script>
 <script src='../js/second_page_script2.js'></script>
 <script src="../js/second_page_script3.js"></script>
@@ -115,14 +127,3 @@
 <script src="../js/city.popup.js"></script>
 </body>
 </html>
-<script type="module">
-    import navbar from "../components/navbar.js"
-    //console.log(navbar)
-    let addNavbar = document.getElementById("page-details");
-    addNavbar.innerHTML = navbar()
-
-    import ridebar from "../components/ridebar.js"
-    console.log(ridebar)
-    let addRidebar = document.getElementById("ride-bar");
-    addRidebar.innerHTML = ridebar()
-</script>

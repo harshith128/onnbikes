@@ -1,6 +1,6 @@
 //console.log("In script 1");
     
-// This script is used for ride bar
+// // This script is used for ride bar
 
 function checkStartDate(){
     let start_div = document.querySelector(".startDate");
@@ -38,7 +38,7 @@ function callStart(){
         alert("Please select Valid Starting Date and Time")
     }
 }
-document.querySelector(".endDate").querySelector("input").addEventListener("click", callStart);
+// document.querySelector(".endDate").querySelector("input").addEventListener("click", callStart);
 
 function checkEndDate(){
     let start_div = document.querySelector(".startDate");
@@ -80,8 +80,10 @@ function checkEndDate(){
 
 function rideNow(){
         
-    let select_city = document.querySelector(".city");
-    let city = select_city.querySelector("select").value;
+    let select_city = document.getElementById("select_c");
+    let city = select_city.innerText;
+    city = city.toLowerCase()
+    //console.log(city)
 
     let select_plan = document.querySelector(".booking");
     let plan = select_plan.querySelector("select").value;
@@ -105,11 +107,14 @@ function rideNow(){
     }
 }
 
-document.querySelector(".rideBtn").querySelector("button").addEventListener("click", rideNow);
+// document.querySelector(".rideBtn").addEventListener("click", rideNow);
 
 
+
+//this is working
 function rideNowAuto(){
     let date =JSON.parse(localStorage.getItem("Date"));
+    //console.log(date)
     
     if(date == null){
         console.log("null")
@@ -117,21 +122,21 @@ function rideNowAuto(){
         
         //console.log(date);
         let cityname = date.city;
-        var element = document.getElementById("city_name");
-        element.value = cityname;
+        cityname = cityname.toUpperCase()
+        var element = document.getElementById("select_c");
+        element.innerText = cityname;
 
         let second_select2 = date.plan;
-        var second_select = document.getElementById("second_select");
+        var second_select = document.querySelector(".booking").querySelector("select");
         second_select.value = second_select2;
 
         let stdate = date.startDate;
-        var startDate = document.getElementById("startDate");
+        var startDate = document.querySelector(".startDate").querySelector("input");
         startDate.value = stdate;
 
         let endate = date.endDate;
-        var endDate = document.getElementById("endDate");
+        var endDate = document.querySelector(".endDate").querySelector("input");
         endDate.value = endate;
 
     }
 }
-rideNowAuto();
