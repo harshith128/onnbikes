@@ -535,14 +535,14 @@
 
             let res = await fetch(`http://localhost:2323/checkout/${data}`);
             let data2 = await res.json();
-            console.log('data2:', data2)
+            // console.log('data2:', data2)
             // console.log(typeof data);
             // console.log(typeof data2);
             // var booked_data = "";
             // for(prod of data2.item){
 
             // }
-            console.log(data2.item.bookedBike["image"]);
+            // console.log(data2.item.bookedBike["image"]);
 
             var div = document.getElementById("left_content")
             var image1 = document.createElement("img");
@@ -961,7 +961,7 @@
                     localStorage.setItem("total_price", JSON.stringify({ price: tot_val }));
                 }
             }
-            console.log(tot_val);
+            // console.log(tot_val);
             //exclude
             let p1 = document.createElement("span");
             p1.innerText = "Excludes fuel";
@@ -1030,14 +1030,14 @@
                                 return res.json();
                             })
                             .then((res) => {
-                                console.log('res:', res);
+                                // console.log('res:', res);
                             })
                             .catch((err) => {
-                                console.log('err:', err);
+                                // console.log('err:', err);
                             })
 
                         window.location.href = "payment.html";
-                        console.log(data_payment);
+                        // console.log(data_payment);
 
                         // console.log('data_payment:', data_payment)
                     }
