@@ -171,6 +171,7 @@ body {
 }
 
 #main_div{
+    margin-top: 50px;
     display: grid;
     grid-template-columns: 20% 80%;
     /* background-image: "https://www.toptal.com/designers/subtlepatterns/patterns/doodles.png"; */

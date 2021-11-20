@@ -186,3 +186,8 @@
     font-weight: 400;
     padding: 1rem;
 }
+input:focus,
+        textarea:focus,
+        select:focus {
+        outline: none;
+}
